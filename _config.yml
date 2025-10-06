@@ -1,3 +1,13 @@
 title: Parker Hong
 description: My personal portfolio site
 theme: jekyll-theme-cayman
+
+navigation:
+  - title: "Home"
+    url: /
+  - title: "Projects"
+    url: /projects
+  - title: "About Me"
+    url: /about
+  - title: "Resume"
+    url: /resume
