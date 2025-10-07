@@ -7,9 +7,9 @@ title: "About Me"
 
 ![Parker Hong](images/profile.jpg){:width="200px" style="border-radius: 50%"}
 
-Hi! I'm Parker Hong, a passionate developer currently learning full-stack development. I love building apps that solve real problems.
+Hi! I'm Parker Hong, a junior studying Manufacturing and Design Engineering at Northwestern University. I am also pursuing a minor in Architectural Engineering and Design as well as working on some independent design projects this fall.
 
-When I'm not coding, I enjoy hiking, photography, and exploring new tech.
+When I'm not engineering, I am rowing, biking, doing my RA duties, or solving puzzles.
 
 ---
 
