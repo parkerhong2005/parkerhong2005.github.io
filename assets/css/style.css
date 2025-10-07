@@ -1,3 +1,17 @@
+/* Import Open Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Set background and font */
+body {
+  background-color: #fffbea; /* light cream */
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Optional: also set font for headers and nav */
+h1, h2, h3, h4, h5, h6, nav, footer {
+  font-family: 'Open Sans', sans-serif;
+}
+
 nav ul {
   list-style-type: none;
   padding: 0;
