@@ -1,13 +1,15 @@
 title: Parker Hong
 description: My personal portfolio site
-theme: jekyll-theme-cayman
+baseurl: ""  # Leave blank for user/organization site
+url: "https://parkerhong2005.github.io"
 
-navigation:
-  - title: "Home"
-    url: /
-  - title: "Projects"
-    url: /projects
-  - title: "About Me"
-    url: /about
-  - title: "Resume"
-    url: /resume
+# Tell Jekyll where to look for custom layout
+markdown: kramdown
+theme: null  # disable default theme completely
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
