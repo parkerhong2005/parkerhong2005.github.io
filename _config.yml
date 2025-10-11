@@ -13,3 +13,8 @@ defaults:
       type: "pages"
     values:
       layout: default
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
