@@ -8,9 +8,14 @@ permalink: /projects/
   {% for project in site.projects %}
   <div class="project-card">
     <a href="{{ project.url }}">
-      <img src="{{ project.image }}" alt="{{ project.title }}" class="project-thumb" />
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.description }}</p>
+      <div class="project-image-wrapper">
+        <img src="{{ project.image }}" alt="{{ project.title }}" class="project-image" />
+        <div class="project-overlay">
+          <p class="project-tools">{{ project.tools }}</p>
+          <p class="project-shortdesc">{{ project.short_description }}</p>
+        </div>
+      </div>
+      <h2 class="project-title">{{ project.title }}</h2>
     </a>
   </div>
   {% endfor %}
