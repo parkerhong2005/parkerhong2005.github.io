@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 /* Fonts: Montserrat for headings, Open Sans for body */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap');
 
 /* Color palette */
 :root {
@@ -16,7 +16,7 @@
 /* Body & global font */
 body {
   background-color: var(--color-bg);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   color: var(--color-dark);
   margin: 0;
   padding: 0;
@@ -25,7 +25,7 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Urbanist', sans-serif;
   color: var(--color-dark);
   margin: 0;
 }
@@ -200,7 +200,7 @@ img {
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: var(--color-dark);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Urbanist', sans-serif;
 }
 
 .resume-section {
