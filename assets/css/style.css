@@ -189,3 +189,26 @@ img {
   border: none;
   vertical-align: middle;
 }
+
+/*--------------------------------------------------------------
+  7. RESUME PAGE
+--------------------------------------------------------------*/
+
+.resume-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 120px); /* full screen minus nav/footer space */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.resume-frame {
+  width: 100%;
+  height: 100%;
+  max-width: 900px; /* optional: cap width for desktop */
+  border: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}

@@ -1,11 +1,15 @@
 ---
 layout: default
 title: "Resume"
+permalink: /resume/
 ---
 
-# 📄 My Resume
+<h1 class="page-title">Resume</h1>
 
-<object data="Hong_Parker_Resume.pdf" type="application/pdf" width="100%" height="800px">
-    <p>Your browser does not support PDFs.
-       <a href="resume.pdf">Download the PDF</a>.</p>
-</object>
+<div class="resume-container">
+  <iframe 
+    src="/assets/Hong_Parker_Resume.pdf#view=FitH" 
+    class="resume-frame" 
+    title="Resume PDF"
+  ></iframe>
+</div>
