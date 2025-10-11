@@ -7,10 +7,11 @@
 
 /* Color palette: professional/darker */
 :root {
-  --color-bg: #1A1A1A;       /* very dark gray background */
-  --color-dark: #E0E0E0;     /* light gray text */
-  --color-accent: #0A84FF;   /* deep, professional blue accent */
-  --color-light: #FFFFFF;    /* white text */
+  --color-bg: #1E1E1E;       /* dark grey background */
+  --color-dark: #E5E5E5;     /* very light grey text */
+  --color-accent: #D32F2F;   /* strong, professional red accent */
+  --color-light: #FFFFFF;    /* pure white text */
+  --color-muted: #A0A0A0;    /* medium grey for secondary text or subtle borders */
 }
 
 /* Body & global font */
