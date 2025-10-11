@@ -2,16 +2,15 @@
   1. IMPORTS & GLOBAL STYLES
 --------------------------------------------------------------*/
 
-/* Fonts: bold for headings, clean for body */
+/* Fonts: Montserrat for headings, Open Sans for body */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
 
 /* Color palette */
 :root {
-  --color-bg: #F5F5F5;          /* light gray background */
-  --color-dark: #1F1F1F;        /* dark text / nav */
-  --color-accent: #E63946;      /* racing red */
-  --color-accent2: #0077FF;     /* electric blue */
-  --color-light: #FFFFFF;       /* white text */
+  --color-bg: #F5F5F5;       /* light background */
+  --color-dark: #1F1F1F;     /* body text */
+  --color-accent: #0077FF;   /* subtle accent */
+  --color-light: #FFFFFF;    /* white text */
 }
 
 /* Body & global font */
@@ -52,7 +51,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: var(--color-accent2);
+  background-color: var(--color-accent);
   color: var(--color-light);
 }
 
@@ -64,7 +63,7 @@ nav ul li a:hover {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* always 3 columns */
-  gap: 0.5rem; /* minimal gap */
+  gap: 0.5rem; /* small gap */
   padding: 0.25rem; /* minimal outer padding */
   margin: 0 auto;
   max-width: 100%;
@@ -76,11 +75,11 @@ nav ul li a:hover {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  border-radius: 8px; /* subtle rounded corners */
+  border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Image wrapper to maintain square aspect ratio */
+/* Image wrapper */
 .project-image-wrapper {
   position: relative;
   width: 100%;
@@ -97,21 +96,21 @@ nav ul li a:hover {
   transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect: zoom, dim, and subtle shadow */
+/* Hover effect: zoom and dim */
 .project-card:hover .project-image {
   transform: scale(1.05);
-  filter: brightness(60%);
+  filter: brightness(50%);
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-/* Overlay text with slide-up animation */
+/* Overlay text */
 .project-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  color: var(--color-light);
+  color: var(--color-light); /* all text white */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,11 +132,13 @@ nav ul li a:hover {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  color: var(--color-light);
 }
 
 .overlay-desc {
   font-size: 1rem;
   max-width: 90%;
+  color: var(--color-light);
 }
 
 /* Tools badges */
@@ -150,8 +151,8 @@ nav ul li a:hover {
 }
 
 .tool-pill {
-  background-color: var(--color-accent2);
-  color: var(--color-light);
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark background */
+  color: var(--color-light); /* white text */
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.5rem;
@@ -161,7 +162,7 @@ nav ul li a:hover {
 }
 
 .tool-pill:hover {
-  background-color: var(--color-accent);
+  background-color: rgba(0, 0, 0, 0.7); /* slightly darker on hover */
 }
 
 /*--------------------------------------------------------------
@@ -179,4 +180,3 @@ nav ul li a:hover {
 /*--------------------------------------------------------------
   5. OPTIONAL: OTHER GLOBAL STYLES
 --------------------------------------------------------------*/
-/* Buttons, footer, headings, and other custom global styles can go here */
