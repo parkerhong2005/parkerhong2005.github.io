@@ -7,9 +7,9 @@
 
 /* Color palette: dark grey + red scheme */
 :root {
-  --color-bg: #DA0000;             /* slightly lighter dark grey for body */
+  --color-bg: #830F10;             /* slightly lighter dark grey for body */
   --color-dark: #E5E5E5;           /* very light grey text */
-  --color-accent: #830F10;         /* strong red accent */
+  --color-accent: #DA0000;         /* strong red accent */
   --color-light: #FFFFFF;          /* pure white text */
   --color-muted: #A0A0A0;          /* medium grey for secondary text or borders */
   --color-header-footer: #574D4C;  /* black for header and footer */
