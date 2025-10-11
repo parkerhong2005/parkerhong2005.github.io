@@ -90,3 +90,13 @@ nav ul li a:hover {
   font-size: 0.85rem;
   line-height: 1.2;
 }
+
+/* Make all images in Markdown content responsive and fit the container */
+.markdown-content img,
+.project-content img {
+  max-width: 100%;      /* Never exceed the container width */
+  height: auto;         /* Maintain aspect ratio */
+  display: block;       /* Remove inline gaps */
+  margin: 1rem auto;    /* Optional: center the image with some spacing */
+  border-radius: 8px;   /* Optional: subtle rounded corners */
+}
