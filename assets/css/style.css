@@ -77,6 +77,11 @@ nav ul li a:hover {
   cursor: pointer;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
 }
 
 /* Image wrapper to maintain square aspect ratio */
@@ -104,7 +109,7 @@ nav ul li a:hover {
 }
 
 /*--------------------------------------------------------------
-  4. OVERLAY (Text, Description, Tools)
+  4. OVERLAY (Text, Description)
 --------------------------------------------------------------*/
 
 /* Overlay covering entire card */
@@ -123,19 +128,20 @@ nav ul li a:hover {
   transition: opacity 0.3s ease;
   padding: 1rem;
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.6); /* subtle dark overlay */
 }
 
 .project-card:hover .project-overlay {
   opacity: 1;
 }
 
-/* Container for all overlay elements */
+/* Container for overlay elements */
 .overlay-content {
   display: flex;
   flex-direction: column;    /* stack items vertically */
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;               /* spacing between title, description, and tools */
+  gap: 0.5rem;               /* spacing between title & description */
   width: 100%;
   max-width: 90%;
 }
@@ -144,35 +150,24 @@ nav ul li a:hover {
 .overlay-title {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 0;                 /* ensures it's on its own line */
+  margin: 0;
   line-height: 1.2;
+  color: var(--color-light);
 }
 
 /* Description */
 .overlay-desc {
   font-size: 1rem;
-  margin: 0;                 /* ensures it's on its own line */
+  margin: 0;
   line-height: 1.3;
+  color: var(--color-light);
+  opacity: 0.95;
 }
 
-/* Tools badges container */
-.overlay-tools {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;        /* spacing above pills */
-}
-
-/* Individual tool pills */
+/* Remove tools */
+.overlay-tools,
 .tool-pill {
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark */
-  color: var(--color-light);           /* white text */
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.25rem 0.5rem;
-  border-radius: 12px;
-  white-space: nowrap;
+  display: none !important;
 }
 
 /*--------------------------------------------------------------
@@ -188,6 +183,9 @@ nav ul li a:hover {
 }
 
 /*--------------------------------------------------------------
-  6. OPTIONAL: OTHER GLOBAL STYLES
+  6. OPTIONAL: GLOBAL UTILS
 --------------------------------------------------------------*/
-/* Buttons, footer, headings, and other custom global styles can go here */
+img {
+  border: none;
+  vertical-align: middle;
+}
