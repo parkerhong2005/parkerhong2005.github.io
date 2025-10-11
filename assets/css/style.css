@@ -5,13 +5,14 @@
 /* Fonts: Urbanist for everything */
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap');
 
-/* Color palette: professional/darker */
+/* Color palette: dark grey + red scheme */
 :root {
-  --color-bg: #1E1E1E;       /* dark grey background */
-  --color-dark: #E5E5E5;     /* very light grey text */
-  --color-accent: #D32F2F;   /* strong, professional red accent */
-  --color-light: #FFFFFF;    /* pure white text */
-  --color-muted: #A0A0A0;    /* medium grey for secondary text or subtle borders */
+  --color-bg: #2A2A2A;             /* slightly lighter dark grey for body */
+  --color-dark: #E5E5E5;           /* very light grey text */
+  --color-accent: #D32F2F;         /* strong red accent */
+  --color-light: #FFFFFF;          /* pure white text */
+  --color-muted: #A0A0A0;          /* medium grey for secondary text or borders */
+  --color-header-footer: #000000;  /* black for header and footer */
 }
 
 /* Body & global font */
@@ -37,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 nav ul {
   list-style: none;
   padding: 0;
-  background-color: var(--color-dark);
+  background-color: var(--color-header-footer);
   display: flex;
   gap: 1rem;
   margin: 0;
@@ -52,8 +53,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: var(--color-accent);
-  color: var(--color-light);
+  color: var(--color-accent);
+  background-color: transparent; /* remove opaque box */
 }
 
 /*--------------------------------------------------------------
@@ -227,7 +228,7 @@ img {
 }
 
 .resume-download:hover {
-  background-color: #005fcc;
+  background-color: #b22a2a; /* slightly darker red hover */
   transform: translateY(-2px);
 }
 
@@ -267,7 +268,7 @@ main {
 /* Footer */
 .site-footer {
   width: 100%;
-  background-color: var(--color-dark);
+  background-color: var(--color-header-footer);
   color: var(--color-light);
   text-align: center;
   padding: 1rem 0;
@@ -289,7 +290,7 @@ main {
   Responsive Header & Navigation
 --------------------------------------------------------------*/
 nav {
-  background-color: var(--color-dark);
+  background-color: var(--color-header-footer);
   padding: 0.5rem 1rem;
 }
 
