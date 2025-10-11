@@ -1,3 +1,4 @@
+---
 title: "Brake Caliper Design"
 image: "/images/grid_brakecaliper.jpg"
 description: "Engineered a lightweight, high-performance brake caliper for improved stopping power and reduced unsprung mass."
