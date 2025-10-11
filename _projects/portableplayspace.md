@@ -1,6 +1,6 @@
 ---
 title: "Portable Playspace"
-image: "/images/grid_portableplayspace.jpg"
+image: "/images/grid_portableplayspace.png"
 description: "Created a portable interactive playspace for the Evanston Public Library at the Robert Crown Center."
 short_description: "Portable wooden playspace."
 tools: ["SolidWorks", "CNC Mill", "DFM"]
