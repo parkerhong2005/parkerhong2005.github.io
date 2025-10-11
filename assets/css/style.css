@@ -128,10 +128,11 @@ nav ul li a:hover {
 /* Container for overlay content (title, desc, tools) */
 .overlay-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* stack vertically */
   justify-content: center;
   align-items: center;
   gap: 0.5rem; /* spacing between title/desc/tools */
+  max-width: 90%;
 }
 
 /* Overlay text styling */
@@ -139,12 +140,13 @@ nav ul li a:hover {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-light);
+  margin: 0; /* ensure separate line */
 }
 
 .overlay-desc {
   font-size: 1rem;
-  max-width: 90%;
   color: var(--color-light);
+  margin: 0; /* separate line under title */
 }
 
 /* Tools badges */
@@ -153,11 +155,12 @@ nav ul li a:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
+  margin-top: 0.5rem; /* space above pills */
 }
 
 .tool-pill {
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark for contrast */
-  color: var(--color-light); /* white text */
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark */
+  color: var(--color-light);           /* white text */
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.5rem;
@@ -167,7 +170,7 @@ nav ul li a:hover {
 }
 
 .tool-pill:hover {
-  background-color: rgba(0, 0, 0, 0.7); /* darker on hover */
+  background-color: rgba(0, 0, 0, 0.7); /* slightly darker on hover */
 }
 
 /*--------------------------------------------------------------
@@ -175,4 +178,14 @@ nav ul li a:hover {
 --------------------------------------------------------------*/
 .markdown-content img,
 .project-content img {
-  max-wid
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+}
+
+/*--------------------------------------------------------------
+  5. OPTIONAL: OTHER GLOBAL STYLES
+--------------------------------------------------------------*/
+/* Buttons, footer, headings, and other custom global styles can go here */
