@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Formula Racing Steering Wheel"
-image: /assets/images/formula_render.jpg
+image: /assets/images/grid_formulawheel.jpg
 date: 2025-09-01
 description: "Designed a carbon fiber steering wheel optimizing driver ergonomics and reducing mass for Northwestern Formula Racing."
 tools: ["SolidWorks", "Carbon Fiber Layup", "Ergonomics"]
