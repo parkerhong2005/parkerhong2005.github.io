@@ -50,9 +50,25 @@ nav ul li a:hover {
 /* Grid container */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 0; /* Seamless, no gaps between cards */
-  margin: 0;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+  gap: 1rem; /* space between cards */
+  padding: 1rem; /* outer margin so images "expand" inside page */
+  margin: 0 auto;
+  max-width: 1200px; /* optional: constrain the grid width */
+  box-sizing: border-box;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
 }
 
 /* Individual project card */
@@ -85,10 +101,10 @@ nav ul li a:hover {
   filter: brightness(60%);
 }
 
-/* Overlay text on hover */
+/* Overlay text on hover with slide-up animation */
 .project-overlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -99,12 +115,14 @@ nav ul li a:hover {
   align-items: center;
   text-align: center;
   opacity: 0;
+  transform: translateY(20px); /* start slightly below */
   padding: 1rem;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .project-card:hover .project-overlay {
   opacity: 1;
+  transform: translateY(0); /* slide up into view */
 }
 
 /* Overlay text styling */
@@ -117,18 +135,6 @@ nav ul li a:hover {
 .overlay-desc {
   font-size: 1rem;
   max-width: 90%;
-}
-
-/* Tools badges (optional if you want to show tech stack) */
-.project-tools {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.project-shortdesc {
-  font-size: 0.85rem;
-  line-height: 1.2;
 }
 
 /*--------------------------------------------------------------
