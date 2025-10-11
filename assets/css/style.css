@@ -2,21 +2,32 @@
   1. IMPORTS & GLOBAL STYLES
 --------------------------------------------------------------*/
 
-/* Import Open Sans from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* Fonts: bold for headings, clean for body */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
 
-/* Body & Font Settings */
+/* Color palette */
+:root {
+  --color-bg: #F5F5F5;          /* light gray background */
+  --color-dark: #1F1F1F;        /* dark text / nav */
+  --color-accent: #E63946;      /* racing red */
+  --color-accent2: #0077FF;     /* electric blue */
+  --color-light: #FFFFFF;       /* white text */
+}
+
+/* Body & global font */
 body {
-  background-color: #fffbea; /* light cream */
+  background-color: var(--color-bg);
   font-family: 'Open Sans', sans-serif;
+  color: var(--color-dark);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Headers & Navigation inherit font */
-h1, h2, h3, h4, h5, h6, nav, footer {
-  font-family: 'Open Sans', sans-serif;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-dark);
   margin: 0;
 }
 
@@ -26,22 +37,23 @@ h1, h2, h3, h4, h5, h6, nav, footer {
 nav ul {
   list-style: none;
   padding: 0;
-  background-color: #222;
+  background-color: var(--color-dark);
   display: flex;
   gap: 1rem;
   margin: 0;
 }
 
 nav ul li a {
-  color: #fff;
+  color: var(--color-light);
   text-decoration: none;
   padding: 0.5rem 1rem;
   display: block;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 nav ul li a:hover {
-  background-color: #555;
+  background-color: var(--color-accent2);
+  color: var(--color-light);
 }
 
 /*--------------------------------------------------------------
@@ -52,10 +64,10 @@ nav ul li a:hover {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* always 3 columns */
-  gap: 0.5rem; /* small gap between cards */
+  gap: 0.5rem; /* minimal gap */
   padding: 0.25rem; /* minimal outer padding */
   margin: 0 auto;
-  max-width: 100%; /* fill viewport width */
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -64,6 +76,8 @@ nav ul li a:hover {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 8px; /* subtle rounded corners */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* Image wrapper to maintain square aspect ratio */
@@ -80,13 +94,14 @@ nav ul li a:hover {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect: zoom & dim image */
+/* Hover effect: zoom, dim, and subtle shadow */
 .project-card:hover .project-image {
   transform: scale(1.05);
   filter: brightness(60%);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
 /* Overlay text with slide-up animation */
@@ -96,7 +111,7 @@ nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  color: #fff;
+  color: var(--color-light);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -116,7 +131,7 @@ nav ul li a:hover {
 /* Overlay text styling */
 .overlay-title {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
@@ -135,8 +150,8 @@ nav ul li a:hover {
 }
 
 .tool-pill {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #333;
+  background-color: var(--color-accent2);
+  color: var(--color-light);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.5rem;
@@ -146,7 +161,7 @@ nav ul li a:hover {
 }
 
 .tool-pill:hover {
-  background-color: #fff;
+  background-color: var(--color-accent);
 }
 
 /*--------------------------------------------------------------
