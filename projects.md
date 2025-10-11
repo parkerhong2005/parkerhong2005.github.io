@@ -1,18 +1,17 @@
 ---
 layout: default
 title: "Projects"
+permalink: /projects/
 ---
-
-# 🚀 Projects
-
-### Awesome App  
-A web app that does something cool.  
-[GitHub Repo](https://github.com/parkerhong2005/awesome-app) | [Live Demo](https://awesome-app.example.com)
-
-### Portfolio Site  
-This site built with GitHub Pages and Jekyll.  
-[GitHub Repo](https://github.com/parkerhong2005/parkerhong2005.github.io)
-
----
-
-Want to see more? Check out my [GitHub profile](https://github.com/parkerhong2005).
+<h1>Projects</h1>
+<div class="project-grid">
+  {% for project in site.projects %}
+  <div class="project-card">
+    <a href="{{ project.url }}">
+      <img src="{{ project.image }}" alt="{{ project.title }}" class="project-thumb" />
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.description }}</p>
+    </a>
+  </div>
+  {% endfor %}
+</div>
