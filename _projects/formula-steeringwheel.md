@@ -3,6 +3,7 @@ title: "Formula Racing Steering Wheel"
 image: "/images/grid_formulawheel.jpg"
 description: "Designed a carbon fiber steering wheel optimizing driver ergonomics and reducing mass for Northwestern Formula Racing."
 short_description: "New steering wheel for NUFR."
+order: 2
 tools: ["SolidWorks", "Carbon Fiber Layup", "Ergonomics"]
 ---
 

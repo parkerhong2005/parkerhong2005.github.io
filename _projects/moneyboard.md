@@ -3,6 +3,7 @@ title: "Money Board"
 image: "/images/grid_moneyboard.jpg"
 description: "Created an assistive money board for adults with intellectual and developmental disabilities."
 short_description: "Money Board for teaching American currency."
+order: 9
 tools: ["Rapid Prototyping", "Mill", "Laser Cutter"]
 ---
 

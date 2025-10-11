@@ -3,6 +3,7 @@ title: "Brake Caliper Design"
 image: "/images/grid_brakecaliper.jpg"
 description: "Engineered a lightweight, high-performance brake caliper for improved stopping power and reduced unsprung mass."
 short_description: "Lightweight, high-performance brake caliper."
+order: 7
 tools: ["SolidWorks", "Finite Element Analysis", "CNC Machining"]
 ---
 

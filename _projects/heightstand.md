@@ -3,6 +3,7 @@ title: "The Heightstand"
 image: "/images/grid_heightstand.jpg"
 description: "Designed and built an adjustable nightstand system for students with lofted beds."
 short_description: "Adjustable nightstand."
+order: 8
 tools: ["Rapid Prototyping", "Recycling", "Machining"]
 ---
 
