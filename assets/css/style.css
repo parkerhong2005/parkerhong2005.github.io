@@ -7,12 +7,12 @@
 
 /* Color palette: dark grey + red scheme */
 :root {
-  --color-bg: #2A2A2A;             /* slightly lighter dark grey for body */
+  --color-bg: #DA0000;             /* slightly lighter dark grey for body */
   --color-dark: #E5E5E5;           /* very light grey text */
-  --color-accent: #D32F2F;         /* strong red accent */
+  --color-accent: #830F10;         /* strong red accent */
   --color-light: #FFFFFF;          /* pure white text */
   --color-muted: #A0A0A0;          /* medium grey for secondary text or borders */
-  --color-header-footer: #000000;  /* black for header and footer */
+  --color-header-footer: #574D4C;  /* black for header and footer */
 }
 
 /* Body & global font */
@@ -228,7 +228,7 @@ img {
 }
 
 .resume-download:hover {
-  background-color: #b22a2a; /* slightly darker red hover */
+  background-color: #5c0a0a; /* slightly darker red hover */
   transform: translateY(-2px);
 }
 
@@ -337,3 +337,4 @@ nav ul li a:hover {
     font-size: 0.9rem;
   }
 }
+
