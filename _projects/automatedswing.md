@@ -1,6 +1,6 @@
 ---
 title: "Automated Swing"
-image: "/images/grid_automatedswing.jpg"
+image: "/images/grid_automatedswing.jpeg"
 description: "Developed a fully automated playground swing for individuals with difficulty swinging themselves."
 short_description: "Automated a swing."
 tools: ["Rhino", "Revit", "AutoCAD"]
