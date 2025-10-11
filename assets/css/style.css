@@ -252,6 +252,17 @@ img {
   8. FOOTER & RESPONSIVE HEADER
 --------------------------------------------------------------*/
 
+/* Sticky footer setup */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* pushes footer down */
+}
+
 /* Footer */
 .site-footer {
   width: 100%;
@@ -260,7 +271,7 @@ img {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  margin-top: 2rem;
+  margin-top: auto; /* ensures footer sticks at bottom */
 }
 
 .site-footer a {
@@ -303,7 +314,9 @@ nav ul li a:hover {
   color: var(--color-accent);
 }
 
-/* On very small screens */
+/*--------------------------------------------------------------
+  Mobile adjustments
+--------------------------------------------------------------*/
 @media (max-width: 600px) {
   nav ul {
     flex-direction: column;
