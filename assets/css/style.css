@@ -567,11 +567,11 @@ nav ul li a:hover {
 
 /* Position arrows */
 .left-arrow {
-  left: 1.5rem;
+  left: 3rem;
 }
 
 .right-arrow {
-  right: 1.5rem;
+  right: 3rem;
 }
 
 /* Optional: reduce arrow size on mobile */
