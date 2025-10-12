@@ -340,15 +340,16 @@ nav ul li a:hover {
 
 /* Hero section */
 .home-page .hero {
-  position: relative; /* for background image layering */
+  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* align content to top */
   text-align: center;
-  background-color: var(--color-bg); /* fallback color */
+  background-color: var(--color-bg);
   color: var(--color-light);
   height: 90vh;
   padding: 2rem;
+  padding-top: 15vh; /* pushes content down about 15% of viewport height */
   overflow: visible;
 }
 
