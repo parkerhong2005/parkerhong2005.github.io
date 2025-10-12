@@ -488,28 +488,77 @@ main {
 }
 
 /*--------------------------------------------------------------
-  11. ABOUT PAGE
+  ABOUT PAGE LAYOUT — Text + Image
 --------------------------------------------------------------*/
 
 .about-page {
-  padding: 4rem 2rem;
+  display: flex;
+  flex-wrap: wrap;              /* allows stacking on smaller screens */
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem;
   background-color: var(--color-bg);
   color: var(--color-light);
-  max-width: 900px;
-  margin: 0 auto;
   text-align: left;
 }
 
-.about-page h1,
-.about-page h2 {
-  color: var(--color-red);
+/* Text content */
+.about-text {
+  flex: 1 1 55%;                /* takes about 55% of the width */
+  min-width: 280px;
 }
 
-.about-page p,
-.about-page li {
+.about-text h1,
+.about-text h2 {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.about-text p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+
+/* Image container */
+.about-image {
+  flex: 1 1 40%;                /* about 40% of the width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 350px;             /* prevents it from being too large */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  object-fit: cover;
+}
+
+/* Mobile layout — stack vertically */
+@media (max-width: 768px) {
+  .about-page {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    order: -1; /* puts image above text */
+  }
+
+  .about-image img {
+    max-width: 250px;
+  }
+
+  .about-text {
+    flex: 1 1 100%;
+  }
+}
+
 
 /*--------------------------------------------------------------
   12. MEDIA QUERIES (Mobile)
