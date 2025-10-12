@@ -19,10 +19,17 @@ title: Home
     </p>
   </section>
 
-  <section id="projects" class="projects-preview">
-    <h2>Featured Projects</h2>
-    <div class="project-grid">
-      <!-- Project cards here -->
-    </div>
-  </section>
+  <section id="projects" class="projects-carousel">
+  <h2>Featured Projects</h2>
+  <div class="carousel-container">
+    {% for project in site.projects limit:9 %}
+      <div class="carousel-item">
+        {% include project-card.html
+           image=project.image
+           title=project.title
+           description=project.description %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
 </main>
