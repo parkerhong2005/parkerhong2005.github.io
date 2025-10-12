@@ -488,29 +488,31 @@ main {
 }
 
 /*--------------------------------------------------------------
-  ABOUT PAGE LAYOUT — Text + Image (Image on Right)
+  ABOUT PAGE LAYOUT — Text Left, Image Right (with extra gap)
 --------------------------------------------------------------*/
 
 .about-page {
   display: flex;
-  flex-direction: row-reverse;   /* ✅ image on the right */
-  flex-wrap: wrap;               /* allows stacking on smaller screens */
+  flex-direction: row;        /* ensure text left, image right on wide screens */
+  flex-wrap: wrap;            /* allows stacking on smaller screens */
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 4rem;                  /* increased gap between text and image */
   max-width: 1100px;
   margin: 4rem auto;
-  padding: 2rem 4rem;            /* ✅ adds side padding for breathing room */
+  padding: 2rem 4rem;         /* breathing room from page edges */
   background-color: var(--color-bg);
   color: var(--color-light);
   text-align: left;
   box-sizing: border-box;
 }
 
-/* Text content */
+/* Text content (always on the left on wide screens) */
 .about-text {
+  order: 0;                   /* explicit: keep text first */
   flex: 1 1 55%;
-  min-width: 280px;
+  min-width: 300px;
+  padding-right: 2.5rem;      /* extra padding between text and image */
 }
 
 .about-text h1,
@@ -525,22 +527,49 @@ main {
   margin-bottom: 1rem;
 }
 
-/* Image container */
+/* Image container (always on the right on wide screens) */
 .about-image {
-  flex: 1 1 40%;
+  order: 1;                   /* explicit: place image after text */
+  flex: 0 0 360px;            /* fixed-ish column for image */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;                 /* ✅ adds spacing around the image */
+  padding-left: 1rem;         /* small padding within image column */
 }
 
 .about-image img {
   width: 100%;
-  max-width: 350px;
+  max-width: 360px;           /* prevents it from being too large on desktop */
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
   object-fit: cover;
+}
+
+/* Mobile layout — stack vertically, image above text */
+@media (max-width: 768px) {
+  .about-page {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;            /* reduce side padding on mobile */
+    gap: 1.5rem;
+  }
+
+  .about-image {
+    order: -1;                /* show image above text on mobile */
+    flex: 0 0 auto;
+    padding-left: 0;          /* remove extra padding on mobile */
+  }
+
+  .about-image img {
+    max-width: 250px;         /* scale down for smaller screens */
+  }
+
+  .about-text {
+    order: 0;
+    flex: 1 1 100%;
+    padding-right: 0;         /* reset desktop-only padding */
+  }
 }
 
 /* Mobile layout — stack vertically */
