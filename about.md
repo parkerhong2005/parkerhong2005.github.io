@@ -6,7 +6,7 @@ permalink: /about/
 
 <!-- ABOUT SECTION -->
 <section id="about" class="home-section about-section">
-  <div class="about-intro">
+  <div class="about-image">
     <img src="/images/headshot.jpg" alt="Portrait of Parker Hong" class="about-headshot">
     <div class="about-text">
       <h2>About Me</h2>
