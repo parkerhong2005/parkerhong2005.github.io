@@ -3,10 +3,6 @@ layout: default
 title: "About Me"
 permalink: /about/
 ---
-layout: default
-title: "About Me"
-permalink: /about/
----
 
 <!-- ABOUT SECTION -->
 <section id="about" class="home-section about-section">
