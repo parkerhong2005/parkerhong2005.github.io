@@ -16,7 +16,7 @@ permalink: /projects/
       <div class="project-overlay">
         <div class="overlay-content">
           <h2 class="overlay-title">{{ project.title }}</h2>
-          <p class="overlay-desc">{{ project.description }}</p>
+          <p class="overlay-desc">{{ project.short_description }}</p>
           <div class="overlay-tools">
             {% for tool in project.tools %}
               <span class="tool-pill">{{ tool }}</span>
