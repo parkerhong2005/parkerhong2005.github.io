@@ -28,6 +28,7 @@ title: Home
 
     <!-- Carousel container -->
     <div class="carousel-container">
+      {% assign sorted_projects = site.projects | sort: "order" %}
       {% for project in site.projects limit:9 %}
         <div class="carousel-item">
           {% include project-card.html image=project.image title=project.title description=project.short_description %}

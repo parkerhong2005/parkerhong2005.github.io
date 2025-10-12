@@ -460,25 +460,32 @@ nav ul li a:hover {
   position: relative;
 }
 
+/* Carousel arrows */
 .carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black */
   border: none;
-  color: var(--color-light);
+  color: var(--color-red); /* matches your red accent */
   font-size: 2rem;
-  padding: 0.25rem 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%; /* circle shape */
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
   z-index: 10;
-  border-radius: 50%;
-  transition: background 0.3s ease;
 }
 
 .carousel-arrow:hover {
-  background-color: rgba(178, 42, 42, 0.8); /* darker red hover */
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
 }
 
+/* Position left and right arrows */
 .left-arrow {
   left: 0.5rem;
 }
