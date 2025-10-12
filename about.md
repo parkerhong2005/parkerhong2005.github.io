@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <!-- ABOUT SECTION -->
-<section id="about" class="home-section about-section">
+<section id="about" class="home-section about-page">
   <div class="about-text">
     <h2>About Me</h2>
       <p>
