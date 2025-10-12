@@ -5,6 +5,7 @@ title: Home
 
 <main class="home-page">
   <section class="hero">
+    <div class="hero-bg"></div>
     <div class="hero-content">
       <h1>Parker Hong</h1>
       <p>Design | Prototyping | User Experience</p>
