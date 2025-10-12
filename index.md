@@ -22,26 +22,24 @@ title: Home
   <!-- FEATURED PROJECTS CAROUSEL -->
   <section id="projects" class="projects-carousel">
   <h2>Featured Projects</h2>
-  <div class="carousel-wrapper">
+  <div class="carousel-wrapper">  
     <!-- Left arrow -->
     <button class="carousel-arrow left-arrow">&#10094;</button>
-
     <!-- Carousel container -->
     <div class="carousel-container">
-      {% for project in site.projects limit:6 %}
+      {% for project in site.projects limit:9 %}
         <div class="carousel-item">
-          {% include project-card.html
-             image=project.image
-             title=project.title
-             description=project.description %}
+          {% include project-card.html 
+            image="{{ project.image }}" 
+            title="{{ project.title }}" 
+            description="{{ project.description }}" %}
         </div>
       {% endfor %}
     </div>
-
     <!-- Right arrow -->
     <button class="carousel-arrow right-arrow">&#10095;</button>
-  </div>
-</section>
+    </div>
+  </section>
 </main>
 
 <script>
