@@ -7,12 +7,12 @@
 
 /* Color palette: dark grey + red scheme */
 :root {
-  --color-bg: #830F10;             
-  --color-dark: #E5E5E5;           
-  --color-accent: #DA0000;         
-  --color-light: #FFFFFF;          
-  --color-muted: #A0A0A0;          
-  --color-header-footer: #322e2e;  
+  --color-bg: #830F10;
+  --color-dark: #E5E5E5;
+  --color-accent: #DA0000;
+  --color-light: #FFFFFF;
+  --color-muted: #A0A0A0;
+  --color-header-footer: #322e2e;
 }
 
 /* Body & global font */
@@ -35,18 +35,28 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
   2. NAVIGATION
 --------------------------------------------------------------*/
+
+nav {
+  background-color: var(--color-header-footer);
+  padding: 0.5rem 1rem;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
   background-color: var(--color-header-footer);
   display: flex;
-  gap: 1rem;
-  margin: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
 }
 
 nav ul li a {
   color: var(--color-light);
   text-decoration: none;
+  font-weight: 600;
   padding: 0.5rem 1rem;
   display: block;
   transition: background 0.2s ease, color 0.2s ease;
@@ -54,25 +64,23 @@ nav ul li a {
 
 nav ul li a:hover {
   color: var(--color-accent);
-  background-color: transparent; /* remove opaque box */
+  background-color: transparent;
 }
 
 /*--------------------------------------------------------------
   3. PROJECT GRID (Portfolio)
 --------------------------------------------------------------*/
 
-/* Grid container */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* always 3 columns */
-  gap: 0.5rem; /* minimal gap between cards */
-  padding: 0.25rem; /* minimal outer padding */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 0.25rem;
   margin: 0 auto;
   max-width: 100%;
   box-sizing: border-box;
 }
 
-/* Individual project card */
 .project-card {
   position: relative;
   overflow: hidden;
@@ -86,7 +94,6 @@ nav ul li a:hover {
   transform: scale(1.02);
 }
 
-/* Image wrapper to maintain square aspect ratio */
 .project-image-wrapper {
   position: relative;
   width: 100%;
@@ -94,7 +101,6 @@ nav ul li a:hover {
   overflow: hidden;
 }
 
-/* Project image */
 .project-image {
   width: 100%;
   height: 100%;
@@ -103,7 +109,6 @@ nav ul li a:hover {
   transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect: zoom and dim */
 .project-card:hover .project-image {
   transform: scale(1.05);
   filter: brightness(50%);
@@ -114,7 +119,6 @@ nav ul li a:hover {
   4. OVERLAY (Text, Description)
 --------------------------------------------------------------*/
 
-/* Overlay covering entire card */
 .project-overlay {
   position: absolute;
   top: 0;
@@ -122,33 +126,31 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;   /* horizontal centering */
-  align-items: center;       /* vertical centering */
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: var(--color-light); /* all text white */
+  color: var(--color-light);
   opacity: 0;
   transition: opacity 0.3s ease;
   padding: 1rem;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.6); /* subtle dark overlay */
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .project-card:hover .project-overlay {
   opacity: 1;
 }
 
-/* Container for overlay elements */
 .overlay-content {
   display: flex;
-  flex-direction: column;    /* stack items vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;               /* spacing between title & description */
+  gap: 0.5rem;
   width: 100%;
   max-width: 90%;
 }
 
-/* Title */
 .overlay-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -157,7 +159,6 @@ nav ul li a:hover {
   color: var(--color-light);
 }
 
-/* Description */
 .overlay-desc {
   font-size: 1rem;
   margin: 0;
@@ -166,7 +167,6 @@ nav ul li a:hover {
   opacity: 0.95;
 }
 
-/* Remove tools */
 .overlay-tools,
 .tool-pill {
   display: none !important;
@@ -175,6 +175,7 @@ nav ul li a:hover {
 /*--------------------------------------------------------------
   5. MARKDOWN CONTENT IMAGES
 --------------------------------------------------------------*/
+
 .markdown-content img,
 .project-content img {
   max-width: 100%;
@@ -187,6 +188,7 @@ nav ul li a:hover {
 /*--------------------------------------------------------------
   6. OPTIONAL: GLOBAL UTILS
 --------------------------------------------------------------*/
+
 img {
   border: none;
   vertical-align: middle;
@@ -215,7 +217,6 @@ img {
   box-sizing: border-box;
 }
 
-/* Download button */
 .resume-download {
   background-color: var(--color-accent);
   color: var(--color-light);
@@ -228,21 +229,19 @@ img {
 }
 
 .resume-download:hover {
-  background-color: #5c0a0a; /* slightly darker red hover */
+  background-color: #5c0a0a;
   transform: translateY(-2px);
 }
 
-/* Container for iframe */
 .resume-container {
-  width: 80vw;             /* full viewport width */
-  height: calc(100vh - 150px); /* nearly full height, minus nav/button space */
+  width: 80vw;
+  height: calc(100vh - 150px);
   border: none;
   border-radius: 0;
   overflow: hidden;
   box-shadow: none;
 }
 
-/* Embedded PDF */
 .resume-frame {
   width: 100%;
   height: 100%;
@@ -254,7 +253,6 @@ img {
   8. FOOTER & RESPONSIVE HEADER
 --------------------------------------------------------------*/
 
-/* Sticky footer setup */
 html, body {
   height: 100%;
   display: flex;
@@ -262,10 +260,9 @@ html, body {
 }
 
 main {
-  flex: 1; /* pushes footer down */
+  flex: 1;
 }
 
-/* Footer */
 .site-footer {
   width: 100%;
   background-color: var(--color-header-footer);
@@ -273,7 +270,7 @@ main {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.9rem;
-  margin-top: auto; /* ensures footer sticks at bottom */
+  margin-top: auto;
 }
 
 .site-footer a {
@@ -287,121 +284,67 @@ main {
 }
 
 /*--------------------------------------------------------------
-  Responsive Header & Navigation
+  9. HOME PAGE — HERO, INTRO, PROJECTS PREVIEW
 --------------------------------------------------------------*/
-nav {
-  background-color: var(--color-header-footer);
-  padding: 0.5rem 1rem;
-}
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap; /* allows wrapping on smaller screens */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  color: var(--color-light);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s ease, background-color 0.2s ease;
-}
-
-nav ul li a:hover {
-  color: var(--color-accent);
-}
-
-/*--------------------------------------------------------------
-  Mobile adjustments
---------------------------------------------------------------*/
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr; /* 1 column for projects */
-  }
-
-  .overlay-title {
-    font-size: 1.25rem;
-  }
-
-  .overlay-desc {
-    font-size: 0.9rem;
-  }
-}
-
-/* Hero section */
+/* Hero Section */
 .home-page .hero {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* align content to top */
+  align-items: flex-start;
   text-align: center;
   background-color: var(--color-bg);
   color: var(--color-light);
   height: 90vh;
   padding: 2rem;
-  padding-top: 15vh; /* pushes content down about 15% of viewport height */
+  padding-top: 15vh;
   overflow: visible;
 }
 
-/* Background image */
 .hero-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/profile.jpg'); 
+  background-image: url('/images/home_background.jpg');
   background-size: cover;
   background-position: center;
-  filter: brightness(50%); /* dims the image */
-  z-index: 0; /* behind text */
+  filter: brightness(50%);
+  z-index: 0;
 }
 
-/* Optional overlay for extra dimming */
 .home-page .hero::after {
   content: "";
   position: absolute;
-  bottom: -50px; /* pulls image down */
+  bottom: -50px;
   left: 0;
   width: 100%;
   height: 50px;
-  background: inherit; /* same background as hero */
+  background: inherit;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-/* Hero content above background */
 .hero-content {
   position: relative;
-  z-index: 1; /* ensures text is on top */
+  z-index: 1;
   max-width: 800px;
   padding: 0 1rem;
 }
 
-/* Heading */
 .hero-content h1 {
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-/* Paragraph */
 .hero-content p {
   font-size: clamp(1rem, 1.2vw + 0.5rem, 1.25rem);
   margin-bottom: 2rem;
-  color: var(--color-light); /* override dark for readability */
+  color: var(--color-light);
 }
 
-/* Button */
 .hero-content .btn-primary {
   background-color: var(--color-red);
   color: var(--color-light);
@@ -413,10 +356,11 @@ nav ul li a:hover {
 }
 
 .hero-content .btn-primary:hover {
-  background-color: #a00a0a; /* slightly darker red */
+  background-color: #a00a0a;
   transform: translateY(-2px);
 }
 
+/* Button */
 .btn-primary {
   background-color: var(--color-accent);
   color: var(--color-light);
@@ -428,7 +372,7 @@ nav ul li a:hover {
 }
 
 .btn-primary:hover {
-  background-color: #b22a2a; /* darker red hover */
+  background-color: #b22a2a;
   transform: translateY(-2px);
 }
 
@@ -451,7 +395,7 @@ nav ul li a:hover {
   line-height: 1.6;
 }
 
-/* Projects Preview Section */
+/* Projects Preview */
 .home-page .projects-preview {
   max-width: 1200px;
   margin: 3rem auto;
@@ -464,12 +408,14 @@ nav ul li a:hover {
   margin-bottom: 2rem;
 }
 
-/* Make the project grid smaller on home page */
 .home-page .project-grid {
   gap: 1rem;
 }
 
-/* Projects carousel */
+/*--------------------------------------------------------------
+  10. PROJECTS CAROUSEL
+--------------------------------------------------------------*/
+
 .projects-carousel {
   max-width: 100%;
   padding: 2rem 1rem;
@@ -482,20 +428,26 @@ nav ul li a:hover {
   margin-bottom: 1rem;
 }
 
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
 .carousel-container {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-
-  /* Hide scrollbars */
-  scrollbar-width: none;      /* Firefox */
-  -ms-overflow-style: none;   /* IE 10+ */
+  padding: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .carousel-container::-webkit-scrollbar {
-  display: none;              /* Chrome, Safari, Edge */
+  display: none;
 }
 
 .carousel-item {
@@ -504,44 +456,6 @@ nav ul li a:hover {
   scroll-snap-align: start;
 }
 
-@media (max-width: 600px) {
-  .carousel-item {
-    width: 80%;
-  }
-}
-
-/* Carousel wrapper */
-.carousel-wrapper {
-  position: relative;
-  overflow: hidden;
-  margin: 2rem 0;
-}
-
-/* Horizontal scroll for items */
-.carousel-container {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 0.5rem;
-}
-
-/* Hide scrollbar */
-.carousel-container::-webkit-scrollbar {
-  display: none;
-}
-.carousel-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Individual project item */
-.carousel-item {
-  flex: 0 0 auto; /* ensures items do not shrink */
-  width: 300px;   /* adjust card width */
-}
-
-/* Carousel arrows */
 .carousel-arrow {
   position: absolute;
   top: 50%;
@@ -565,7 +479,6 @@ nav ul li a:hover {
   transform: translateY(-50%) scale(1.1);
 }
 
-/* Position arrows */
 .left-arrow {
   left: 3rem;
 }
@@ -574,13 +487,9 @@ nav ul li a:hover {
   right: 3rem;
 }
 
-/* Optional: reduce arrow size on mobile */
-@media (max-width: 600px) {
-  .carousel-arrow {
-    font-size: 1.5rem;
-    padding: 0.2rem 0.4rem;
-  }
-}
+/*--------------------------------------------------------------
+  11. ABOUT PAGE
+--------------------------------------------------------------*/
 
 .about-page {
   padding: 4rem 2rem;
@@ -591,11 +500,45 @@ nav ul li a:hover {
   text-align: left;
 }
 
-.about-page h1, .about-page h2 {
+.about-page h1,
+.about-page h2 {
   color: var(--color-red);
 }
 
-.about-page p, .about-page li {
+.about-page p,
+.about-page li {
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+/*--------------------------------------------------------------
+  12. MEDIA QUERIES (Mobile)
+--------------------------------------------------------------*/
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay-title {
+    font-size: 1.25rem;
+  }
+
+  .overlay-desc {
+    font-size: 0.9rem;
+  }
+
+  .carousel-item {
+    width: 80%;
+  }
+
+  .carousel-arrow {
+    font-size: 1.5rem;
+    padding: 0.2rem 0.4rem;
+  }
 }
