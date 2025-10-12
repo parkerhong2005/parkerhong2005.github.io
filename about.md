@@ -6,14 +6,14 @@ permalink: /about/
 
 <!-- ABOUT SECTION -->
 <section id="about" class="home-section about-section">
-  <div class="about-image">
-    <img src="/images/headshot.jpg" alt="Portrait of Parker Hong" class="about-headshot">
-    <div class="about-text">
-      <h2>About Me</h2>
+  <div class="about-text">
+    <h2>About Me</h2>
       <p>
         I am a junior from Chicago, Illinois, where I went to Lane Tech High School and rowed for the Chicago Rowing Foundation (both starting in 2017). I knew from an early age that I wanted to be an engineer or an architect, and always had a deep passion for people and teams. The MaDE and AED programs at Northwestern are the perfect intersection of all three, giving me valuable engineering project experience while allowing me to collaborate with a diverse student body. When I'm not engineering, there's a good chance you'll find me on the Chicago River somewhere, either rowing a boat or coaching one. I also enjoy biking, exploring the Chicagoland food scene, and solving any puzzle I can get my eyes or ears or hands on.
       </p>
     </div>
+    <div class="about-image">
+    <img src="/images/headshot.jpg" alt="Portrait of Parker Hong" class="about-headshot">
   </div>
 </section>
 
