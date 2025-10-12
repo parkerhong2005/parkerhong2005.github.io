@@ -19,17 +19,45 @@ title: Home
     </p>
   </section>
 
+  <!-- FEATURED PROJECTS CAROUSEL -->
   <section id="projects" class="projects-carousel">
   <h2>Featured Projects</h2>
-  <div class="carousel-container">
-    {% for project in site.projects limit:9 %}
-      <div class="carousel-item">
-        {% include project-card.html
-           image=project.image
-           title=project.title
-           description=project.description %}
-      </div>
-    {% endfor %}
+  <div class="carousel-wrapper">
+    <!-- Left arrow -->
+    <button class="carousel-arrow left-arrow">&#10094;</button>
+
+    <!-- Carousel container -->
+    <div class="carousel-container">
+      {% for project in site.projects limit:6 %}
+        <div class="carousel-item">
+          {% include project-card.html
+             image=project.image
+             title=project.title
+             description=project.description %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Right arrow -->
+    <button class="carousel-arrow right-arrow">&#10095;</button>
   </div>
 </section>
 </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".carousel-container");
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+
+  const scrollAmount = 320; // pixels to scroll per click, adjust for your card width + gap
+
+  leftArrow.addEventListener("click", () => {
+    container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  });
+
+  rightArrow.addEventListener("click", () => {
+    container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  });
+});
+</script>

@@ -433,11 +433,64 @@ nav ul li a:hover {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 1rem;
+
+  /* Hide scrollbars */
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE 10+ */
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Edge */
 }
 
 .carousel-item {
   flex: 0 0 auto;
-  width: 300px;          /* width of each card */
+  width: 300px;
   scroll-snap-align: start;
+}
+
+@media (max-width: 600px) {
+  .carousel-item {
+    width: 80%;
+  }
+}
+
+/* Carousel wrapper to position arrows */
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.6);
+  border: none;
+  color: var(--color-light);
+  font-size: 2rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(178, 42, 42, 0.8); /* darker red hover */
+}
+
+.left-arrow {
+  left: 0.5rem;
+}
+
+.right-arrow {
+  right: 0.5rem;
+}
+
+/* Optional: reduce arrow size on mobile */
+@media (max-width: 600px) {
+  .carousel-arrow {
+    font-size: 1.5rem;
+    padding: 0.2rem 0.4rem;
+  }
 }
