@@ -30,7 +30,7 @@ title: Home
     <div class="carousel-container">
       {% for project in site.projects limit:9 %}
         <div class="carousel-item">
-          {% include project-card.html image='{{ project.image }}' %}
+          {% include project-card.html title='{{project.title}}' %}
         </div>
       {% endfor %}
     </div>
