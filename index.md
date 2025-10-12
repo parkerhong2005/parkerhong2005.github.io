@@ -7,14 +7,14 @@ title: Home
   <section class="hero">
     <div class="hero-content">
       <h1>Parker Hong</h1>
-      <p>Engineering | Design | Impact</p>
+      <p>Design | Prototyping | User Experience</p>
     </div>
   </section>
 
   <section class="intro">
     <h2>About Me</h2>
     <p>
-      I'm a junior at Northwestern University from Chicago, Illinois. I am currently majoring in Manufacturing and Design Engineering and pursuing a minor in Architectural Engineering and Design.
+      I'm a junior at Northwestern University majoring in Manufacturing and Design Engineering (MaDE) and pursuing a minor in Architectural Engineering and Design. I am interested in the rapid prototyping process, computer-aided design (CAD), and the user experience (UX) side of engineering. Check out my projects past, present, and future, and feel free to reach out!
     </p>
   </section>
 

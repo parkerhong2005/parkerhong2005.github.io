@@ -526,3 +526,25 @@ nav ul li a:hover {
     padding: 0.2rem 0.4rem;
   }
 }
+
+.home-section#about {
+  padding: 4rem 2rem;
+  background-color: var(--color-bg); /* consistent with homepage body */
+  color: var(--color-light);
+  text-align: center;
+}
+
+.home-section#about h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--color-red); /* consistent accent */
+}
+
+.home-section#about .about-content p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-light); 
+}
