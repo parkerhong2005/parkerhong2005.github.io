@@ -24,13 +24,7 @@ title: Home
   <h2>Featured Projects</h2>
   <div class="carousel-wrapper">  
     <!-- Left arrow -->
-    <!-- Left arrow -->
-    <button class="carousel-arrow left-arrow" aria-label="Previous project">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-red)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
-
+    <button class="carousel-arrow left-arrow">&#10094;</button>
     <!-- Carousel container -->
     <div class="carousel-container">
       {% assign sorted_projects = site.projects | sort: "order" %}
@@ -40,13 +34,8 @@ title: Home
         </div>
       {% endfor %}
     </div>
-
     <!-- Right arrow -->
-    <button class="carousel-arrow right-arrow" aria-label="Next project">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-red)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
+    <button class="carousel-arrow right-arrow">&#10095;</button>
   </div>
 </section>
 
