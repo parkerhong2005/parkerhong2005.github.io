@@ -488,26 +488,28 @@ main {
 }
 
 /*--------------------------------------------------------------
-  ABOUT PAGE LAYOUT — Text + Image
+  ABOUT PAGE LAYOUT — Text + Image (Image on Right)
 --------------------------------------------------------------*/
 
 .about-page {
   display: flex;
-  flex-wrap: wrap;              /* allows stacking on smaller screens */
+  flex-direction: row-reverse;   /* ✅ image on the right */
+  flex-wrap: wrap;               /* allows stacking on smaller screens */
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  max-width: 1000px;
+  gap: 3rem;
+  max-width: 1100px;
   margin: 4rem auto;
-  padding: 2rem;
+  padding: 2rem 4rem;            /* ✅ adds side padding for breathing room */
   background-color: var(--color-bg);
   color: var(--color-light);
   text-align: left;
+  box-sizing: border-box;
 }
 
 /* Text content */
 .about-text {
-  flex: 1 1 55%;                /* takes about 55% of the width */
+  flex: 1 1 55%;
   min-width: 280px;
 }
 
@@ -519,35 +521,39 @@ main {
 
 .about-text p {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
 /* Image container */
 .about-image {
-  flex: 1 1 40%;                /* about 40% of the width */
+  flex: 1 1 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;                 /* ✅ adds spacing around the image */
 }
 
 .about-image img {
   width: 100%;
-  max-width: 350px;             /* prevents it from being too large */
+  max-width: 350px;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   object-fit: cover;
 }
 
 /* Mobile layout — stack vertically */
 @media (max-width: 768px) {
   .about-page {
-    flex-direction: column;
+    flex-direction: column;      /* ✅ stacks vertically */
     text-align: center;
+    padding: 2rem;               /* reduces side padding */
   }
 
   .about-image {
-    order: -1; /* puts image above text */
+    order: -1;                   /* ✅ image appears above text */
+    padding: 0;                  /* removes extra space on mobile */
   }
 
   .about-image img {
@@ -558,7 +564,6 @@ main {
     flex: 1 1 100%;
   }
 }
-
 
 /*--------------------------------------------------------------
   12. MEDIA QUERIES (Mobile)
