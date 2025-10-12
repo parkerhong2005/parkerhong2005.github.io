@@ -7,7 +7,7 @@ permalink: /about/
 <!-- ABOUT SECTION -->
 <section id="about" class="home-section about-section">
   <div class="about-intro">
-    <img src="/assets/images/headshot.jpg" alt="Portrait of Parker Hong" class="about-headshot">
+    <img src="/images/headshot.jpg" alt="Portrait of Parker Hong" class="about-headshot">
     <div class="about-text">
       <h2>About Me</h2>
       <p>
@@ -22,17 +22,17 @@ permalink: /about/
   <h2>Interests</h2>
   <div class="home-cards">
     <div class="home-card">
-      <img src="/assets/images/cad.jpg" alt="3D CAD design example" class="card-image">
+      <img src="/images/cad.jpg" alt="3D CAD design example" class="card-image">
       <h3>3D Design & CAD</h3>
       <p>I am passionate about creating detailed designs in SolidWorks, Rhino, and many other CAD softwares.</p>
     </div>
     <div class="home-card">
-      <img src="/assets/images/user-design.jpg" alt="User-centered design illustration" class="card-image">
+      <img src="/images/user-design.jpg" alt="User-centered design illustration" class="card-image">
       <h3>User-Centered Design</h3>
       <p>Engineering with empathy, keeping the user at the focus of design.</p>
     </div>
     <div class="home-card">
-      <img src="/assets/images/prototyping.jpg" alt="Rapid prototyping workspace" class="card-image">
+      <img src="/images/prototyping.jpg" alt="Rapid prototyping workspace" class="card-image">
       <h3>Rapid Prototyping</h3>
       <p>I enjoy trying new things, working with machines, and making– whether it's with cardboard or carbon fiber.</p>
     </div>
@@ -44,17 +44,17 @@ permalink: /about/
   <h2>Extracurricular Activities</h2>
   <div class="home-cards">
     <div class="home-card">
-      <img src="/assets/images/crew.jpg" alt="Rowing team on the Chicago River" class="card-image">
+      <img src="/images/crew.jpg" alt="Rowing team on the Chicago River" class="card-image">
       <h3>Northwestern Crew</h3>
       <p>Current men's varsity captain, former recruitment chair and athlete since 2023. Three-time Illinois state champion, and contributed to the best men's team finish at ACRA nationals in program history in the spring 2025 season.</p>
     </div>
     <div class="home-card">
-      <img src="/assets/images/formula.jpg" alt="Formula SAE race car chassis" class="card-image">
+      <img src="/images/formula.jpg" alt="Formula SAE race car chassis" class="card-image">
       <h3>Northwestern Formula Racing</h3>
       <p>Chassis engineer focusing on ergonomics and user interface, designing a new steering wheel maximized for driver and vehicle performance.</p>
     </div>
     <div class="home-card">
-      <img src="/assets/images/coach.jpg" alt="Coaching athletes on the water" class="card-image">
+      <img src="/images/coach.jpg" alt="Coaching athletes on the water" class="card-image">
       <h3>Rowing Coach</h3>
       <p>Giving back to the sport that taught me my most important life lessons, showing young athletes how to get the most out of themselves mentally and physically day in and day out.</p>
     </div>
