@@ -52,18 +52,18 @@ title: Home
 
 <!-- Carousel script -->
 <script>
-  const container = document.querySelector('.carousel-container');
-  const leftArrow = document.querySelector('.left-arrow');
-  const rightArrow = document.querySelector('.right-arrow');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const carousel = document.querySelector('.carousel-container');
 
-  const scrollAmount = 300; // adjust to project card width + gap
+const scrollAmount = 320; // distance to scroll per click (adjust to card width + gap)
 
-  leftArrow.addEventListener('click', () => {
-    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
+leftArrow.addEventListener('click', () => {
+  carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
 
-  rightArrow.addEventListener('click', () => {
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  });
+rightArrow.addEventListener('click', () => {
+  carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
 </script>
 </main>
