@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "The Heightstand"
-image: "/images/grid_heightstand.png"
+image: "/images/grid_heightstand.jpg"
 short_description: "Nightstand for lofted beds."
 order: 8
 what_image: "/images/pulley_mockup_sketch.JPG"
