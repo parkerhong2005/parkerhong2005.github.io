@@ -605,3 +605,55 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
+
+/*--------------------------------------------------------------
+  Lightbox (Image Popup)
+--------------------------------------------------------------*/
+.lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+  color: #fff;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1rem;
+  max-width: 80%;
+}
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.2);
+}

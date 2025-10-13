@@ -99,3 +99,52 @@ layout: default
     </div>
   </section>
 </main>
+
+<!-- Lightbox container -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="Expanded view">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<!-- Lightbox JS -->
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const images = document.querySelectorAll('.image-grid img');
+  let currentIndex = 0;
+
+  function showLightbox(index) {
+    const img = images[index];
+    if (!img) return;
+    currentIndex = index;
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = img.alt || '';
+    lightbox.classList.add('active');
+  }
+
+  function hideLightbox() {
+    lightbox.classList.remove('active');
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => showLightbox(index));
+  });
+
+  lightboxClose.addEventListener('click', hideLightbox);
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) hideLightbox();
+  });
+
+  // Navigation
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'ArrowRight') showLightbox((currentIndex + 1) % images.length);
+    if (e.key === 'ArrowLeft') showLightbox((currentIndex - 1 + images.length) % images.length);
+    if (e.key === 'Escape') hideLightbox();
+  });
+</script>
