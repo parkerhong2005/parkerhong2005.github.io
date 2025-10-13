@@ -1,3 +1,9 @@
+---
+layout: default
+title: About
+permalink: /projects/
+---
+
 <!-- ABOUT PAGE -->
 <section id="about" class="about-page">
   <!-- Full-width banner image -->
