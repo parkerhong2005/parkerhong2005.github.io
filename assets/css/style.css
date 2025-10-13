@@ -641,7 +641,7 @@ main {
   height: auto;
   padding: 2rem 0;
   z-index: 10001;
-  background: transparent; /* Ensure no background color */
+  /* Remove background: transparent from here */
 }
 
 .lightbox-content img {
@@ -650,7 +650,7 @@ main {
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-  background: transparent; /* Ensure image has no background */
+  background: transparent; /* Keep image background transparent */
 }
 
 .lightbox-caption {
@@ -660,7 +660,7 @@ main {
   font-size: 1rem;
   padding: 0 1rem;
   z-index: 10001;
-  background: transparent; /* Ensure caption has no background */
+  background: transparent; /* Keep caption background transparent */
 }
 
 /* Close button */
@@ -724,7 +724,23 @@ main {
   right: 2rem;
 }
 
-/* Remove any potential black backgrounds from lightbox elements */
-.lightbox * {
+/* Only make specific elements transparent, not the main lightbox */
+.lightbox-content,
+.lightbox-content img,
+.lightbox-caption,
+.lightbox-close,
+.lightbox-nav {
   background: transparent !important;
+}
+
+/* Ensure the lightbox background covers everything */
+.lightbox::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  z-index: -1;
 }
