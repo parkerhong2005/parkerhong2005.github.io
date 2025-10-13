@@ -4,8 +4,6 @@ title: "Resume"
 permalink: /resume/
 ---
 
-<h1 class="page-title">Resume</h1>
-
 <div class="resume-section">
 
   <!-- Embedded Resume -->
