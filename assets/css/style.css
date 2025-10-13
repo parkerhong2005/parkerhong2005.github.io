@@ -620,8 +620,7 @@ main {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  /* Allow scrolling of background content */
-  pointer-events: none;
+  /* Allow scrolling of background content - NO pointer-events: none */
 }
 
 .lightbox.active {
@@ -629,7 +628,7 @@ main {
 }
 
 .lightbox-content {
-  position: fixed; /* Changed to fixed to stay in place during scroll */
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -638,11 +637,11 @@ main {
   align-items: center;
   justify-content: center;
   max-width: 90vw;
-  max-height: 70vh; /* 25% top + 25% bottom = 50% used, 50% free */
+  max-height: 70vh;
   width: auto;
   height: auto;
-  pointer-events: auto; /* Re-enable pointer events for the content */
-  padding: 2rem 0; /* Added padding for top and bottom spacing */
+  padding: 2rem 0;
+  z-index: 10001; /* Higher than other lightbox elements */
 }
 
 .lightbox-content img {
@@ -656,25 +655,24 @@ main {
 .lightbox-caption {
   text-align: center;
   color: #f0f0f0;
-  margin-top: 1rem; /* Increased margin for better spacing */
+  margin-top: 1rem;
   font-size: 1rem;
-  pointer-events: auto;
   padding: 0 1rem;
+  z-index: 10001;
 }
 
 /* Close button */
 .lightbox-close {
-  position: fixed; /* Changed to fixed */
-  top: 2rem; /* Increased from 1rem for better padding */
-  right: 2rem; /* Increased from 1.5rem for better padding */
-  font-size: 2.5rem; /* Slightly larger for better visibility */
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2.5rem;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease;
-  z-index: 10000;
-  pointer-events: auto;
+  z-index: 10002; /* Highest z-index */
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -690,20 +688,19 @@ main {
 
 /* Navigation arrows */
 .lightbox-nav {
-  position: fixed; /* Changed to fixed */
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3rem; /* Slightly larger for better visibility */
+  font-size: 3rem;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 1rem; /* Increased padding for larger click area */
+  padding: 1rem;
   user-select: none;
   opacity: 0.7;
   transition: opacity 0.2s;
-  z-index: 10000;
-  pointer-events: auto;
+  z-index: 10002; /* Highest z-index */
   width: 4rem;
   height: 4rem;
   display: flex;
@@ -718,22 +715,14 @@ main {
 }
 
 .lightbox-prev {
-  left: 2rem; /* Increased from 1rem for better padding */
+  left: 2rem;
 }
 
 .lightbox-next {
-  right: 2rem; /* Increased from 1rem for better padding */
+  right: 2rem;
 }
 
-/* Ensure the lightbox background covers everything and stays fixed */
-.lightbox::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.85);
-  z-index: -1;
-  pointer-events: none;
+/* Single front layer - all lightbox elements stay together */
+.lightbox.active * {
+  pointer-events: auto;
 }
