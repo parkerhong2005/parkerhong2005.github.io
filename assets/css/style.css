@@ -205,44 +205,45 @@ img {
 /*--------------------------------------------------------------
   7. RESUME PAGE — Full-Screen PDF with Floating Download Button
 --------------------------------------------------------------*/
-
 .resume-section {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: calc(100vh - 120px);
+  /* accounts for header + footer */
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
   box-sizing: border-box;
-  min-height: 0; /* allows flex child to shrink properly on mobile */
 }
 
-/* PDF fills available space between header and footer */
+/* PDF fills available space */
 .resume-container {
-  flex: 1;                  /* take all remaining space */
+  flex: 1;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: stretch;      /* fill vertical space */
+  align-items: center;
   overflow: hidden;
   box-sizing: border-box;
 }
 
 .resume-frame {
-  flex: 1;                  /* fill container */
-  width: 100%;
+  width: 90%;
+  height: 100%;
   border: none;
   display: block;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
 }
 
-/* Floating download button */
+/* Floating button */
 .resume-download {
   position: fixed;
-  bottom: 12px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--accent-color);
@@ -252,7 +253,7 @@ img {
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
   font-size: 0.9rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease, transform 0.2s ease;
   z-index: 1000;
 }
@@ -265,26 +266,6 @@ img {
 /* Remove title if present */
 .page-title {
   display: none !important;
-}
-
-/*--------------------------------------------------------------
-  12. MOBILE-SPECIFIC ADJUSTMENTS
---------------------------------------------------------------*/
-@media (max-width: 768px) {
-  .resume-section {
-    padding: 0 0.5rem;
-    min-height: 0; /* allow iframe to stretch correctly */
-  }
-
-  .resume-frame {
-    border-radius: 2px;
-  }
-
-  .resume-download {
-    bottom: 8px;
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -551,7 +532,8 @@ main {
 }
 
 .project-section:nth-child(even) {
-  flex-direction: row-reverse; /* alternate image left/right for variety */
+  flex-direction: row-reverse;
+  /* alternate image left/right for variety */
 }
 
 .project-image {
@@ -562,7 +544,7 @@ main {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .project-text {
@@ -589,10 +571,12 @@ main {
   }
 
   .project-section:nth-child(even) {
-    flex-direction: column; /* reset row-reverse for mobile */
+    flex-direction: column;
+    /* reset row-reverse for mobile */
   }
 
-  .project-image, .project-text {
+  .project-image,
+  .project-text {
     flex: 1 1 100%;
   }
 }
