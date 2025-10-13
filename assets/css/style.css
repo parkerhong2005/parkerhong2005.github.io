@@ -610,30 +610,26 @@ main {
   Lightbox Styles
 --------------------------------------------------------------*/
 .lightbox {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
+  width: 100vw;    /* full viewport width */
+  height: 100vh;   /* full viewport height */
+  background: rgba(0,0,0,0.85);
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 9999;
 }
 
 .lightbox.active {
-  opacity: 1;
-  visibility: visible;
+  display: flex;
 }
 
-.lightbox-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
+.lightbox-content img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
 }
 
 .lightbox img {
