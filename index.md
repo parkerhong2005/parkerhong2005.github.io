@@ -14,7 +14,7 @@ title: Home
       <div class="hero-text">
         <h1>Parker Hong</h1>
         <h2>Manufacturing & Design Engineering (MaDE)</h2>
-        <p>Northwestern University | Class of 2026</p>
+        <p>Northwestern University | Class of 2027</p>
         <p>Email: <a href="mailto:parkerhong@u.northwestern.edu">parkerhong@u.northwestern.edu</a></p>
         <p>LinkedIn: <a href="https://linkedin.com/in/parkerhong" target="_blank">linkedin.com/in/parkerhong</a></p>
       </div>

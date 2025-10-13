@@ -207,32 +207,34 @@ img {
 --------------------------------------------------------------*/
 
 .page-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
+  display: none; /* hide title if you want true full-screen view */
 }
 
 .resume-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: 0;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  background-color: var(--bg-color);
 }
 
 .resume-download {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   background-color: var(--accent-color);
-  color: var(--light);
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  margin: 1rem 0;
   transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 10;
 }
 
 .resume-download:hover {
@@ -241,10 +243,16 @@ img {
 }
 
 .resume-container {
-  width: 80vw;
-  height: calc(100vh - 150px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   border: none;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
+  z-index: 1;
 }
 
 .resume-frame {
@@ -252,6 +260,7 @@ img {
   height: 100%;
   border: none;
   display: block;
+  object-fit: contain;
 }
 
 /*--------------------------------------------------------------
