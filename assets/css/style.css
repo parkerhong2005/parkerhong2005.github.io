@@ -475,7 +475,7 @@ main {
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: var(--accent-color);
+  color: var(--text-color);
 }
 
 .about-content p {
