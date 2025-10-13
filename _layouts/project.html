@@ -14,13 +14,13 @@ layout: default
   <section class="project-section">
     <div class="project-image">
       {% if page.what_gallery %}
-      <div class="image-grid">
+      <div class="image-grid what-gallery">
         {% for item in page.what_gallery %}
-        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}">
+        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="what">
         {% endfor %}
       </div>
       {% else %}
-      <img src="{{ page.what_image }}" alt="Sketch of {{ page.title }}" data-caption="Sketch of {{ page.title }}">
+      <img src="{{ page.what_image }}" alt="Sketch of {{ page.title }}" data-caption="Sketch of {{ page.title }}" data-gallery="what">
       {% endif %}
     </div>
     <div class="project-text">
@@ -33,19 +33,19 @@ layout: default
   <section class="project-section">
     <div class="project-image">
       {% if page.how_gallery %}
-      <div class="image-grid">
+      <div class="image-grid how-gallery">
         {% for item in page.how_gallery %}
-        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}">
+        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
         {% endfor %}
       </div>
       {% elsif page.how_images %}
-      <div class="image-grid">
+      <div class="image-grid how-gallery">
         {% for image in page.how_images %}
-        <img src="{{ image }}" alt="Process image for {{ page.title }}" data-caption="Process image for {{ page.title }}">
+        <img src="{{ image }}" alt="Process image for {{ page.title }}" data-caption="Process image for {{ page.title }}" data-gallery="how">
         {% endfor %}
       </div>
       {% else %}
-      <img src="{{ page.how_image }}" alt="CAD / Mockup of {{ page.title }}" data-caption="CAD / Mockup of {{ page.title }}">
+      <img src="{{ page.how_image }}" alt="CAD / Mockup of {{ page.title }}" data-caption="CAD / Mockup of {{ page.title }}" data-gallery="how">
       {% endif %}
     </div>
     <div class="project-text">
@@ -61,13 +61,13 @@ layout: default
   <section class="project-section">
     <div class="project-image">
       {% if page.why_gallery %}
-      <div class="image-grid">
+      <div class="image-grid why-gallery">
         {% for item in page.why_gallery %}
-        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}">
+        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="why">
         {% endfor %}
       </div>
       {% else %}
-      <img src="{{ page.why_image }}" alt="Coming soon!" data-caption="Coming soon!">
+      <img src="{{ page.why_image }}" alt="Coming soon!" data-caption="Coming soon!" data-gallery="why">
       {% endif %}
     </div>
     <div class="project-text">
@@ -96,34 +96,55 @@ layout: default
   const nextBtn = document.getElementById('lightboxNext');
   const prevBtn = document.getElementById('lightboxPrev');
   
-  // Get all images from all sections
-  const images = Array.from(document.querySelectorAll('.image-grid img, .project-image img'));
+  let currentGallery = [];
   let currentIndex = 0;
 
-  function openLightbox(index) {
-    const img = images[index];
+  // Get all images and organize by gallery
+  const allImages = document.querySelectorAll('.image-grid img, .project-image img');
+  const galleries = {
+    what: Array.from(document.querySelectorAll('[data-gallery="what"]')),
+    how: Array.from(document.querySelectorAll('[data-gallery="how"]')),
+    why: Array.from(document.querySelectorAll('[data-gallery="why"]'))
+  };
+
+  function openLightbox(galleryName, index) {
+    currentGallery = galleries[galleryName];
     currentIndex = index;
+    
+    const img = currentGallery[currentIndex];
     lightboxImg.src = img.src;
     lightboxCaption.textContent = img.dataset.caption || img.alt || '';
     lightbox.classList.add('active');
-    // Note: We're NOT setting body overflow to hidden to allow background scrolling
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
+    currentGallery = [];
   }
 
   function showNext() {
-    openLightbox((currentIndex + 1) % images.length);
+    if (currentGallery.length === 0) return;
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    const img = currentGallery[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = img.dataset.caption || img.alt || '';
   }
 
   function showPrev() {
-    openLightbox((currentIndex - 1 + images.length) % images.length);
+    if (currentGallery.length === 0) return;
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    const img = currentGallery[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = img.dataset.caption || img.alt || '';
   }
 
-  images.forEach((img, index) => {
+  // Add click events to all images
+  allImages.forEach((img) => {
     img.addEventListener('click', () => {
-      openLightbox(index);
+      const galleryName = img.dataset.gallery;
+      const galleryImages = galleries[galleryName];
+      const index = galleryImages.indexOf(img);
+      openLightbox(galleryName, index);
     });
   });
 
@@ -143,5 +164,10 @@ layout: default
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Prevent lightbox from closing when clicking on content
+  document.querySelector('.lightbox-content').addEventListener('click', e => {
+    e.stopPropagation();
   });
 </script>
