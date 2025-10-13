@@ -1,23 +1,48 @@
 ---
 layout: default
 ---
-<article class="project">
-  <header class="project-header">
-    <h1>{{ page.title }}</h1>
-    {% if page.image %}
-      <img src="{{ page.image }}" alt="{{ page.title }}" class="project-hero" />
-    {% endif %}
-    <p class="project-description">{{ page.description }}</p>
-    <p class="project-tools">
-      {% for tool in page.tools %}
-        <span class="tag">{{ tool }}</span>
-      {% endfor %}
-    </p>
-  </header>
 
-  <section class="project-content">
-    {{ content }}
+<main class="project-page">
+  <section class="project-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="subtitle">{{ page.subtitle }}</p>
+    {% endif %}
   </section>
 
-  <a href="/projects/" class="back-link">← Back to Projects</a>
-</article>
+  <!-- WHAT Section -->
+  <section class="project-section">
+    <div class="project-image">
+      <img src="{{ page.what_image }}" alt="Sketch of {{ page.title }}">
+    </div>
+    <div class="project-text">
+      <h2>What</h2>
+      <p>{{ page.what_text }}</p>
+    </div>
+  </section>
+
+  <!-- HOW Section -->
+  <section class="project-section">
+    <div class="project-image">
+      <img src="{{ page.how_image }}" alt="CAD / Mockup of {{ page.title }}">
+    </div>
+    <div class="project-text">
+      <h2>How</h2>
+      <p>{{ page.how_text }}</p>
+      {% if page.tools %}
+        <p><strong>Tools / Software:</strong> {{ page.tools }}</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- WHY Section -->
+  <section class="project-section">
+    <div class="project-image">
+      <img src="{{ page.why_image }}" alt="Final Product of {{ page.title }}">
+    </div>
+    <div class="project-text">
+      <h2>Why</h2>
+      <p>{{ page.why_text }}</p>
+    </div>
+  </section>
+</main>
