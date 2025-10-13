@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About
-permalink: /projects/
+permalink: /about/
 ---
 
 <!-- ABOUT PAGE -->
