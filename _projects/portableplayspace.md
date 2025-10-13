@@ -10,7 +10,7 @@ how_gallery:
     - image: /images/playspace_how.JPG
     - caption: "A full-size cardboard mockup of the theater."
     - image: /images/playspace_how2.png
-    - caption: "3D prints of the components.
+    - caption: "3D prints of the components."
     - image: /images/playspace_how4.JPG
     - caption: "Using the CNC mill to cleanly cut out the boxes."
     - image: /images/playspace_how3.JPG
