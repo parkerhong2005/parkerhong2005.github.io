@@ -115,11 +115,16 @@ layout: default
     lightboxImg.src = img.src;
     lightboxCaption.textContent = img.dataset.caption || img.alt || '';
     lightbox.classList.add('active');
+    
+    // Prevent body scroll but allow lightbox background to show scrolling
+    document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
     currentGallery = [];
+    // Restore body scroll
+    document.body.style.overflow = '';
   }
 
   function showNext() {
@@ -152,7 +157,7 @@ layout: default
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
 
-  // Close when clicking outside image
+  // Close when clicking on the dimmed background
   lightbox.addEventListener('click', e => {
     if (e.target === lightbox) closeLightbox();
   });
@@ -166,8 +171,17 @@ layout: default
     if (e.key === 'Escape') closeLightbox();
   });
 
-  // Prevent lightbox from closing when clicking on content
-  document.querySelector('.lightbox-content').addEventListener('click', e => {
+  // Prevent lightbox from closing when clicking on content or controls
+  lightbox.querySelector('.lightbox-content').addEventListener('click', e => {
+    e.stopPropagation();
+  });
+  closeBtn.addEventListener('click', e => {
+    e.stopPropagation();
+  });
+  nextBtn.addEventListener('click', e => {
+    e.stopPropagation();
+  });
+  prevBtn.addEventListener('click', e => {
     e.stopPropagation();
   });
 </script>

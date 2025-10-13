@@ -642,6 +642,7 @@ main {
   width: auto;
   height: auto;
   pointer-events: auto; /* Re-enable pointer events for the content */
+  padding: 2rem 0; /* Added padding for top and bottom spacing */
 }
 
 .lightbox-content img {
@@ -655,17 +656,18 @@ main {
 .lightbox-caption {
   text-align: center;
   color: #f0f0f0;
-  margin-top: 0.75rem;
+  margin-top: 1rem; /* Increased margin for better spacing */
   font-size: 1rem;
   pointer-events: auto;
+  padding: 0 1rem;
 }
 
 /* Close button */
 .lightbox-close {
   position: fixed; /* Changed to fixed */
-  top: 1rem;
-  right: 1.5rem;
-  font-size: 2rem;
+  top: 2rem; /* Increased from 1rem for better padding */
+  right: 2rem; /* Increased from 1.5rem for better padding */
+  font-size: 2.5rem; /* Slightly larger for better visibility */
   color: white;
   background: none;
   border: none;
@@ -673,10 +675,17 @@ main {
   transition: transform 0.2s ease;
   z-index: 10000;
   pointer-events: auto;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lightbox-close:hover {
   transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
 }
 
 /* Navigation arrows */
@@ -684,27 +693,47 @@ main {
   position: fixed; /* Changed to fixed */
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2.5rem;
+  font-size: 3rem; /* Slightly larger for better visibility */
   color: white;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0 1rem;
+  padding: 1rem; /* Increased padding for larger click area */
   user-select: none;
   opacity: 0.7;
   transition: opacity 0.2s;
   z-index: 10000;
   pointer-events: auto;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lightbox-nav:hover {
   opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
 }
 
 .lightbox-prev {
-  left: 1rem;
+  left: 2rem; /* Increased from 1rem for better padding */
 }
 
 .lightbox-next {
-  right: 1rem;
+  right: 2rem; /* Increased from 1rem for better padding */
+}
+
+/* Ensure the lightbox background covers everything and stays fixed */
+.lightbox::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  z-index: -1;
+  pointer-events: none;
 }
