@@ -210,9 +210,9 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
-  height: calc(100vh - 120px); /* accounts for header + footer */
+  min-height: calc(100vh - 120px); /* accounts for header + footer */
   margin: 0;
   padding: 0;
   background-color: var(--bg-color);
@@ -225,13 +225,14 @@ img {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   overflow: hidden;
   box-sizing: border-box;
 }
 
 .resume-frame {
-  width: 90%;
+  width: 100%;
+  max-width: 100%;
   height: 100%;
   border: none;
   display: block;
@@ -243,7 +244,7 @@ img {
 /* Floating button */
 .resume-download {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--accent-color);
@@ -266,6 +267,28 @@ img {
 /* Remove title if present */
 .page-title {
   display: none !important;
+}
+
+/*--------------------------------------------------------------
+  MOBILE-SPECIFIC ADJUSTMENTS
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .resume-section {
+    min-height: calc(100vh - 100px); /* reduce for smaller header/footer on mobile */
+    padding: 0 0.5rem;
+  }
+
+  .resume-frame {
+    width: 100%;
+    height: calc(100vh - 120px); /* fill vertical space */
+    border-radius: 2px;
+  }
+
+  .resume-download {
+    bottom: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
 }
 
 /*--------------------------------------------------------------
