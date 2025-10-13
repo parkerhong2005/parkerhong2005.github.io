@@ -1,612 +1,4 @@
 /*--------------------------------------------------------------
-  1. IMPORTS & GLOBAL STYLES
---------------------------------------------------------------*/
-
-/* Fonts: Urbanist for everything */
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap');
-
-/* Color palette: clean professional (white, black, blue-gray accents) */
-:root {
-  --bg-color: #ffffff;
-  --text-color: #111111;
-  --subtext-color: #555555;
-  --accent-color: #004aad;
-  /* clean, engineering blue */
-  --light-gray: #f5f5f5;
-  --border-color: #e0e0e0;
-  --header-footer-bg: #111111;
-  --light: #ffffff;
-}
-
-/* Body & global font */
-body {
-  background-color: var(--bg-color);
-  font-family: 'Urbanist', sans-serif;
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Urbanist', sans-serif;
-  color: var(--text-color);
-  margin: 0;
-}
-
-/*--------------------------------------------------------------
-  2. NAVIGATION
---------------------------------------------------------------*/
-
-nav {
-  background-color: var(--header-footer-bg);
-  padding: 0.5rem 1rem;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: var(--header-footer-bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-nav ul li a {
-  color: var(--light);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  display: block;
-  transition: color 0.2s ease;
-}
-
-nav ul li a:hover {
-  color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-  3. PROJECT GRID (Portfolio)
---------------------------------------------------------------*/
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  padding: 0.25rem;
-  margin: 0 auto;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.project-card {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  background-color: var(--light);
-}
-
-.project-card:hover {
-  transform: scale(1.02);
-}
-
-.project-image-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-}
-
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.05);
-  filter: brightness(70%);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/*--------------------------------------------------------------
-  4. OVERLAY (Text, Description)
---------------------------------------------------------------*/
-
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--light);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 1rem;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.65);
-}
-
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
-.overlay-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  max-width: 90%;
-}
-
-.overlay-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.2;
-  color: var(--light);
-}
-
-.overlay-desc {
-  font-size: 1rem;
-  margin: 0;
-  line-height: 1.3;
-  color: var(--light);
-  opacity: 0.95;
-}
-
-.overlay-tools,
-.tool-pill {
-  display: none !important;
-}
-
-/*--------------------------------------------------------------
-  5. MARKDOWN CONTENT IMAGES
---------------------------------------------------------------*/
-
-.markdown-content img,
-.project-content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem auto;
-  border-radius: 8px;
-}
-
-/*--------------------------------------------------------------
-  6. OPTIONAL: GLOBAL UTILS
---------------------------------------------------------------*/
-
-img {
-  border: none;
-  vertical-align: middle;
-}
-
-/*--------------------------------------------------------------
-  7. RESUME PAGE — Full-Screen PDF with Floating Download Button
---------------------------------------------------------------*/
-.resume-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: calc(100vh - 120px);
-  /* accounts for header + footer */
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-  box-sizing: border-box;
-}
-
-/* PDF fills available space */
-.resume-container {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.resume-frame {
-  width: 90%;
-  height: 100%;
-  border: none;
-  display: block;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
-}
-
-/* Floating button */
-.resume-download {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--accent-color);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, transform 0.2s ease;
-  z-index: 1000;
-}
-
-.resume-download:hover {
-  background-color: #2d5c7c;
-  transform: translate(-50%, -2px);
-}
-
-/* Remove title if present */
-.page-title {
-  display: none !important;
-}
-
-/*--------------------------------------------------------------
-  8. FOOTER & RESPONSIVE HEADER
---------------------------------------------------------------*/
-
-html,
-body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-}
-
-.site-footer {
-  width: 100%;
-  background-color: var(--header-footer-bg);
-  color: var(--light);
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  margin-top: auto;
-}
-
-.site-footer a {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.site-footer a:hover {
-  text-decoration: underline;
-}
-
-/*--------------------------------------------------------------
-  9. HOME PAGE — HERO, INTRO, PROJECTS PREVIEW
---------------------------------------------------------------*/
-
-/* Hero Section */
-.home-page .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 4rem 2rem;
-  background-color: var(--light-gray);
-}
-
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1100px;
-  flex-wrap: wrap;
-}
-
-.hero-image {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-image img {
-  width: 280px;
-  height: auto;
-  border-radius: 50%;
-  border: 4px solid var(--accent-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.hero-text {
-  flex: 1 1 400px;
-  text-align: left;
-}
-
-.hero-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.2em;
-}
-
-.hero-text h2 {
-  font-weight: 500;
-  color: var(--subtext-color);
-  margin-bottom: 0.5em;
-}
-
-.hero-text p {
-  margin: 0.3em 0;
-  color: var(--subtext-color);
-  font-size: 1.1rem;
-}
-
-/*--------------------------------------------------------------
-  10. PROJECTS CAROUSEL 
---------------------------------------------------------------*/
-.projects-carousel {
-  max-width: 100%;
-  padding: 2rem 1rem;
-  overflow: hidden;
-}
-
-.projects-carousel h2 {
-  text-align: center;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  margin-bottom: 1rem;
-}
-
-.carousel-wrapper {
-  position: relative;
-  overflow: hidden;
-  margin: 2rem 0;
-}
-
-.carousel-container {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 0.5rem;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.carousel-container::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-item {
-  flex: 0 0 auto;
-  width: 300px;
-  scroll-snap-align: start;
-}
-
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  border: none;
-  color: #ffffff;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 10;
-  transition: background 0.3s ease, transform 0.2s ease;
-  font-size: 2rem;
-}
-
-.carousel-arrow:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.left-arrow {
-  left: 1.5rem;
-}
-
-.right-arrow {
-  right: 1.5rem;
-}
-
-/*--------------------------------------------------------------
-  ABOUT PAGE — Banner + Personal Statement
---------------------------------------------------------------*/
-
-.about-page {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-/* Full-width responsive image banner */
-.about-banner {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.about-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Content section */
-.about-content {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 2rem;
-  text-align: center;
-  color: var(--text-color);
-}
-
-.about-content h2 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: var(--text-color);
-}
-
-.about-content p {
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  line-height: 1.7;
-  color: var(--text-color);
-  max-width: 750px;
-  margin: 0 auto;
-}
-
-/*--------------------------------------------------------------
-  12. MEDIA QUERIES (Mobile)
---------------------------------------------------------------*/
-
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .overlay-title {
-    font-size: 1.25rem;
-  }
-
-  .overlay-desc {
-    font-size: 0.9rem;
-  }
-
-  .carousel-item {
-    width: 80%;
-  }
-
-  .carousel-arrow {
-    font-size: 1.5rem;
-    padding: 0.2rem 0.4rem;
-  }
-}
-
-/*--------------------------------------------------------------
-  Project Page — Image Left, Text Right
---------------------------------------------------------------*/
-.project-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
-
-/* alternate image left/right for variety */
-.project-section:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.project-image {
-  flex: 1 1 45%;
-}
-
-/* default single image */
-.project-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* responsive gallery grid inside project-image */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-}
-
-.image-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-.image-grid img:hover {
-  transform: scale(1.02);
-  cursor: pointer;
-}
-
-.project-text {
-  flex: 1 1 55%;
-}
-
-.project-text h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-bottom: 1rem;
-  color: var(--accent-color);
-}
-
-.project-text p {
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
-  line-height: 1.6;
-  color: var(--text-color);
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-  .project-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  /* reset alternating layout for mobile */
-  .project-section:nth-child(even) {
-    flex-direction: column;
-  }
-
-  .project-image,
-  .project-text {
-    flex: 1 1 100%;
-  }
-
-  .image-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-}
-
-/*--------------------------------------------------------------
   Lightbox Styles - UPDATED
 --------------------------------------------------------------*/
 .lightbox {
@@ -620,7 +12,8 @@ main {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  /* Allow scrolling of background content - NO pointer-events: none */
+  /* Allow scrolling of background content */
+  pointer-events: none;
 }
 
 .lightbox.active {
@@ -628,7 +21,7 @@ main {
 }
 
 .lightbox-content {
-  position: fixed;
+  position: fixed; /* Changed to fixed to stay in place during scroll */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -637,11 +30,11 @@ main {
   align-items: center;
   justify-content: center;
   max-width: 90vw;
-  max-height: 70vh;
+  max-height: 70vh; /* 25% top + 25% bottom = 50% used, 50% free */
   width: auto;
   height: auto;
-  padding: 2rem 0;
-  z-index: 10001; /* Higher than other lightbox elements */
+  pointer-events: auto; /* Re-enable pointer events for the content */
+  padding: 2rem 0; /* Added padding for top and bottom spacing */
 }
 
 .lightbox-content img {
@@ -655,24 +48,25 @@ main {
 .lightbox-caption {
   text-align: center;
   color: #f0f0f0;
-  margin-top: 1rem;
+  margin-top: 1rem; /* Increased margin for better spacing */
   font-size: 1rem;
+  pointer-events: auto;
   padding: 0 1rem;
-  z-index: 10001;
 }
 
 /* Close button */
 .lightbox-close {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  font-size: 2.5rem;
+  position: fixed; /* Changed to fixed */
+  top: 2rem; /* Increased from 1rem for better padding */
+  right: 2rem; /* Increased from 1.5rem for better padding */
+  font-size: 2.5rem; /* Slightly larger for better visibility */
   color: white;
   background: none;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease;
-  z-index: 10002; /* Highest z-index */
+  z-index: 10000;
+  pointer-events: auto;
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -688,19 +82,20 @@ main {
 
 /* Navigation arrows */
 .lightbox-nav {
-  position: fixed;
+  position: fixed; /* Changed to fixed */
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3rem;
+  font-size: 3rem; /* Slightly larger for better visibility */
   color: white;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 1rem;
+  padding: 1rem; /* Increased padding for larger click area */
   user-select: none;
   opacity: 0.7;
   transition: opacity 0.2s;
-  z-index: 10002; /* Highest z-index */
+  z-index: 10000;
+  pointer-events: auto;
   width: 4rem;
   height: 4rem;
   display: flex;
@@ -715,14 +110,22 @@ main {
 }
 
 .lightbox-prev {
-  left: 2rem;
+  left: 2rem; /* Increased from 1rem for better padding */
 }
 
 .lightbox-next {
-  right: 2rem;
+  right: 2rem; /* Increased from 1rem for better padding */
 }
 
-/* Single front layer - all lightbox elements stay together */
-.lightbox.active * {
-  pointer-events: auto;
+/* Ensure the lightbox background covers everything and stays fixed */
+.lightbox::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  z-index: -1;
+  pointer-events: none;
 }

@@ -77,9 +77,8 @@ layout: default
   </section>
 </main>
 
-<!-- Lightbox container - SINGLE FRONT LAYER -->
+<!-- Lightbox container -->
 <div class="lightbox" id="lightbox">
-  <!-- Dimmed background, image, arrows, and X are all part of one layer -->
   <button class="lightbox-close" id="lightboxClose">&times;</button>
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
   <div class="lightbox-content">
@@ -117,12 +116,15 @@ layout: default
     lightboxCaption.textContent = img.dataset.caption || img.alt || '';
     lightbox.classList.add('active');
     
-    // DO NOT prevent body scroll - allow background scrolling
+    // Prevent body scroll but allow lightbox background to show scrolling
+    document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
     currentGallery = [];
+    // Restore body scroll
+    document.body.style.overflow = '';
   }
 
   function showNext() {
@@ -170,7 +172,7 @@ layout: default
   });
 
   // Prevent lightbox from closing when clicking on content or controls
-  document.querySelector('.lightbox-content').addEventListener('click', e => {
+  lightbox.querySelector('.lightbox-content').addEventListener('click', e => {
     e.stopPropagation();
   });
   closeBtn.addEventListener('click', e => {
