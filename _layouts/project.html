@@ -6,7 +6,7 @@ layout: default
   <section class="project-header">
     <h1>{{ page.title }}</h1>
     {% if page.subtitle %}
-      <p class="subtitle">{{ page.subtitle }}</p>
+    <p class="subtitle">{{ page.subtitle }}</p>
     {% endif %}
   </section>
 
@@ -14,19 +14,13 @@ layout: default
   <section class="project-section">
     <div class="project-image">
       {% if page.what_gallery %}
-        <div class="image-grid">
-          {% for item in page.what_gallery %}
-            <a
-              href="{{ item.image }}"
-              data-lightbox="{{ page.title | slugify }}-what"
-              data-title="{{ item.caption }}"
-            >
-              <img src="{{ item.image }}" alt="{{ item.caption }}">
-            </a>
-          {% endfor %}
-        </div>
+      <div class="image-grid">
+        {% for item in page.what_gallery %}
+        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}">
+        {% endfor %}
+      </div>
       {% else %}
-        <img src="{{ page.what_image }}" alt="Sketch of {{ page.title }}">
+      <img src="{{ page.what_image }}" alt="Sketch of {{ page.title }}" data-caption="Sketch of {{ page.title }}">
       {% endif %}
     </div>
     <div class="project-text">
@@ -39,37 +33,26 @@ layout: default
   <section class="project-section">
     <div class="project-image">
       {% if page.how_gallery %}
-        <div class="image-grid">
-          {% for item in page.how_gallery %}
-            <a
-              href="{{ item.image }}"
-              data-lightbox="{{ page.title | slugify }}-how"
-              data-title="{{ item.caption }}"
-            >
-              <img src="{{ item.image }}" alt="{{ item.caption }}">
-            </a>
-          {% endfor %}
-        </div>
+      <div class="image-grid">
+        {% for item in page.how_gallery %}
+        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}">
+        {% endfor %}
+      </div>
       {% elsif page.how_images %}
-        <div class="image-grid">
-          {% for image in page.how_images %}
-            <a
-              href="{{ image }}"
-              data-lightbox="{{ page.title | slugify }}-how"
-            >
-              <img src="{{ image }}" alt="Process image for {{ page.title }}">
-            </a>
-          {% endfor %}
-        </div>
+      <div class="image-grid">
+        {% for image in page.how_images %}
+        <img src="{{ image }}" alt="Process image for {{ page.title }}" data-caption="Process image for {{ page.title }}">
+        {% endfor %}
+      </div>
       {% else %}
-        <img src="{{ page.how_image }}" alt="CAD / Mockup of {{ page.title }}">
+      <img src="{{ page.how_image }}" alt="CAD / Mockup of {{ page.title }}" data-caption="CAD / Mockup of {{ page.title }}">
       {% endif %}
     </div>
     <div class="project-text">
       <h2>How</h2>
       <p>{{ page.how_text }}</p>
       {% if page.skills %}
-        <p><strong>Skills:</strong> {{ page.skills }}</p>
+      <p><strong>Skills:</strong> {{ page.skills }}</p>
       {% endif %}
     </div>
   </section>
@@ -78,19 +61,13 @@ layout: default
   <section class="project-section">
     <div class="project-image">
       {% if page.why_gallery %}
-        <div class="image-grid">
-          {% for item in page.why_gallery %}
-            <a
-              href="{{ item.image }}"
-              data-lightbox="{{ page.title | slugify }}-why"
-              data-title="{{ item.caption }}"
-            >
-              <img src="{{ item.image }}" alt="{{ item.caption }}">
-            </a>
-          {% endfor %}
-        </div>
+      <div class="image-grid">
+        {% for item in page.why_gallery %}
+        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}">
+        {% endfor %}
+      </div>
       {% else %}
-        <img src="{{ page.why_image }}" alt="Coming soon!">
+      <img src="{{ page.why_image }}" alt="Coming soon!" data-caption="Coming soon!">
       {% endif %}
     </div>
     <div class="project-text">
@@ -118,21 +95,22 @@ layout: default
   const closeBtn = document.getElementById('lightboxClose');
   const nextBtn = document.getElementById('lightboxNext');
   const prevBtn = document.getElementById('lightboxPrev');
-  const images = document.querySelectorAll('.image-grid img, .project-image img');
+  
+  // Get all images from all sections
+  const images = Array.from(document.querySelectorAll('.image-grid img, .project-image img'));
   let currentIndex = 0;
 
   function openLightbox(index) {
     const img = images[index];
     currentIndex = index;
     lightboxImg.src = img.src;
-    lightboxCaption.textContent = img.alt || '';
+    lightboxCaption.textContent = img.dataset.caption || img.alt || '';
     lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden'; // prevent page scroll
+    // Note: We're NOT setting body overflow to hidden to allow background scrolling
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
-    document.body.style.overflow = ''; // restore scroll
   }
 
   function showNext() {
@@ -144,8 +122,7 @@ layout: default
   }
 
   images.forEach((img, index) => {
-    img.addEventListener('click', e => {
-      e.preventDefault(); // 🔒 stops the default "open image" behavior
+    img.addEventListener('click', () => {
       openLightbox(index);
     });
   });
@@ -154,13 +131,15 @@ layout: default
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
 
-  // Close when clicking outside image or pressing keys
+  // Close when clicking outside image
   lightbox.addEventListener('click', e => {
     if (e.target === lightbox) closeLightbox();
   });
 
+  // Keyboard navigation
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) return;
+    
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') closeLightbox();
