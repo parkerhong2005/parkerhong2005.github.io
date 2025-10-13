@@ -607,53 +607,91 @@ main {
 }
 
 /*--------------------------------------------------------------
-  Lightbox (Image Popup)
+  Lightbox Styles
 --------------------------------------------------------------*/
 .lightbox {
-  display: none; /* hidden by default */
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 9999;
 }
 
 .lightbox.active {
-  display: flex;
   opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
 }
 
 .lightbox img {
-  max-width: 90%;
-  max-height: 85vh;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
 .lightbox-caption {
-  color: #fff;
   text-align: center;
-  margin-top: 1rem;
+  color: #f0f0f0;
+  margin-top: 0.75rem;
   font-size: 1rem;
-  max-width: 80%;
 }
 
 /* Close button */
 .lightbox-close {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1rem;
+  right: 1.5rem;
   font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
+  color: white;
   background: none;
   border: none;
-  font-weight: bold;
+  cursor: pointer;
   transition: transform 0.2s ease;
 }
 
 .lightbox-close:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+}
+
+/* Navigation arrows */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 1rem;
+  user-select: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox-nav:hover {
+  opacity: 1;
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
 }

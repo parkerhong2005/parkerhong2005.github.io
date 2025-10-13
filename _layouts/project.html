@@ -103,48 +103,66 @@ layout: default
 <!-- Lightbox container -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
   <div class="lightbox-content">
     <img id="lightboxImg" src="" alt="Expanded view">
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
 </div>
 
-<!-- Lightbox JS -->
 <script>
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCaption = document.getElementById('lightboxCaption');
-  const lightboxClose = document.getElementById('lightboxClose');
-  const images = document.querySelectorAll('.image-grid img');
+  const closeBtn = document.getElementById('lightboxClose');
+  const nextBtn = document.getElementById('lightboxNext');
+  const prevBtn = document.getElementById('lightboxPrev');
+  const images = document.querySelectorAll('.image-grid img, .project-image img');
   let currentIndex = 0;
 
-  function showLightbox(index) {
+  function openLightbox(index) {
     const img = images[index];
-    if (!img) return;
     currentIndex = index;
     lightboxImg.src = img.src;
     lightboxCaption.textContent = img.alt || '';
     lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // prevent page scroll
   }
 
-  function hideLightbox() {
+  function closeLightbox() {
     lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // restore scroll
+  }
+
+  function showNext() {
+    openLightbox((currentIndex + 1) % images.length);
+  }
+
+  function showPrev() {
+    openLightbox((currentIndex - 1 + images.length) % images.length);
   }
 
   images.forEach((img, index) => {
-    img.addEventListener('click', () => showLightbox(index));
+    img.addEventListener('click', e => {
+      e.preventDefault(); // 🔒 stops the default "open image" behavior
+      openLightbox(index);
+    });
   });
 
-  lightboxClose.addEventListener('click', hideLightbox);
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+
+  // Close when clicking outside image or pressing keys
   lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) hideLightbox();
+    if (e.target === lightbox) closeLightbox();
   });
 
-  // Navigation
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'ArrowRight') showLightbox((currentIndex + 1) % images.length);
-    if (e.key === 'ArrowLeft') showLightbox((currentIndex - 1 + images.length) % images.length);
-    if (e.key === 'Escape') hideLightbox();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'Escape') closeLightbox();
   });
 </script>
