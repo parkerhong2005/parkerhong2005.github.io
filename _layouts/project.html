@@ -13,7 +13,21 @@ layout: default
   <!-- WHAT Section -->
   <section class="project-section">
     <div class="project-image">
-      <img src="{{ page.what_image }}" alt="Sketch of {{ page.title }}">
+      {% if page.what_gallery %}
+        <div class="image-grid">
+          {% for item in page.what_gallery %}
+            <a
+              href="{{ item.image }}"
+              data-lightbox="{{ page.title | slugify }}-what"
+              data-title="{{ item.caption }}"
+            >
+              <img src="{{ item.image }}" alt="{{ item.caption }}">
+            </a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <img src="{{ page.what_image }}" alt="Sketch of {{ page.title }}">
+      {% endif %}
     </div>
     <div class="project-text">
       <h2>What</h2>
@@ -24,7 +38,32 @@ layout: default
   <!-- HOW Section -->
   <section class="project-section">
     <div class="project-image">
-      <img src="{{ page.how_image }}" alt="CAD / Mockup of {{ page.title }}">
+      {% if page.how_gallery %}
+        <div class="image-grid">
+          {% for item in page.how_gallery %}
+            <a
+              href="{{ item.image }}"
+              data-lightbox="{{ page.title | slugify }}-how"
+              data-title="{{ item.caption }}"
+            >
+              <img src="{{ item.image }}" alt="{{ item.caption }}">
+            </a>
+          {% endfor %}
+        </div>
+      {% elsif page.how_images %}
+        <div class="image-grid">
+          {% for image in page.how_images %}
+            <a
+              href="{{ image }}"
+              data-lightbox="{{ page.title | slugify }}-how"
+            >
+              <img src="{{ image }}" alt="Process image for {{ page.title }}">
+            </a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <img src="{{ page.how_image }}" alt="CAD / Mockup of {{ page.title }}">
+      {% endif %}
     </div>
     <div class="project-text">
       <h2>How</h2>
@@ -38,7 +77,21 @@ layout: default
   <!-- WHY Section -->
   <section class="project-section">
     <div class="project-image">
-      <img src="{{ page.why_image }}" alt="Coming soon!">
+      {% if page.why_gallery %}
+        <div class="image-grid">
+          {% for item in page.why_gallery %}
+            <a
+              href="{{ item.image }}"
+              data-lightbox="{{ page.title | slugify }}-why"
+              data-title="{{ item.caption }}"
+            >
+              <img src="{{ item.image }}" alt="{{ item.caption }}">
+            </a>
+          {% endfor %}
+        </div>
+      {% else %}
+        <img src="{{ page.why_image }}" alt="Coming soon!">
+      {% endif %}
     </div>
     <div class="project-text">
       <h2>Why</h2>
