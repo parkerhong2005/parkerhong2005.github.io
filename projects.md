@@ -4,6 +4,7 @@ title: "Projects"
 permalink: /projects/
 ---
 <h1>Projects</h1>
+<h3>This page is currently under construction. 🚧 Check back soon!</h3>
 
 <div class="project-grid">
   {% assign sorted_projects = site.projects | sort: "order" %}
