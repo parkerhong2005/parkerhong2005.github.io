@@ -111,6 +111,7 @@ layout: default
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
   <div class="lightbox-content">
     <img id="lightboxImg" src="" alt="Expanded view">
+    <video id="lightboxVideo" controls style="display:none;"></video>
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
@@ -119,16 +120,16 @@ layout: default
 <script>
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxVideo = document.getElementById('lightboxVideo');
   const lightboxCaption = document.getElementById('lightboxCaption');
   const closeBtn = document.getElementById('lightboxClose');
   const nextBtn = document.getElementById('lightboxNext');
   const prevBtn = document.getElementById('lightboxPrev');
-  
+
   let currentGallery = [];
   let currentIndex = 0;
 
-  // Get all images and organize by gallery
-  const allImages = document.querySelectorAll('.image-grid img, .project-image img');
+  const allMedia = document.querySelectorAll('.image-grid img, .project-media img, .image-grid video, .project-media video');
   const galleries = {
     what: Array.from(document.querySelectorAll('[data-gallery="what"]')),
     how: Array.from(document.querySelectorAll('[data-gallery="how"]')),
@@ -138,16 +139,31 @@ layout: default
   function openLightbox(galleryName, index) {
     currentGallery = galleries[galleryName];
     currentIndex = index;
-    
-    const img = currentGallery[currentIndex];
-    lightboxImg.src = img.src;
-    lightboxCaption.textContent = img.dataset.caption || img.alt || '';
+    const item = currentGallery[currentIndex];
+    const isVideo = item.tagName.toLowerCase() === 'video';
+
+    if (isVideo) {
+      lightboxImg.style.display = 'none';
+      lightboxVideo.style.display = 'block';
+      lightboxVideo.src = item.src;
+      lightboxVideo.play();
+    } else {
+      lightboxVideo.pause();
+      lightboxVideo.style.display = 'none';
+      lightboxImg.style.display = 'block';
+      lightboxImg.src = item.src;
+    }
+
+    lightboxCaption.textContent = item.dataset.caption || item.alt || '';
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
+    lightboxImg.src = '';
     currentGallery = [];
     document.body.style.overflow = '';
   }
@@ -155,24 +171,20 @@ layout: default
   function showNext() {
     if (currentGallery.length === 0) return;
     currentIndex = (currentIndex + 1) % currentGallery.length;
-    const img = currentGallery[currentIndex];
-    lightboxImg.src = img.src;
-    lightboxCaption.textContent = img.dataset.caption || img.alt || '';
+    openLightbox(currentGallery[currentIndex].dataset.gallery, currentIndex);
   }
 
   function showPrev() {
     if (currentGallery.length === 0) return;
     currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-    const img = currentGallery[currentIndex];
-    lightboxImg.src = img.src;
-    lightboxCaption.textContent = img.dataset.caption || img.alt || '';
+    openLightbox(currentGallery[currentIndex].dataset.gallery, currentIndex);
   }
 
-  allImages.forEach((img) => {
-    img.addEventListener('click', () => {
-      const galleryName = img.dataset.gallery;
-      const galleryImages = galleries[galleryName];
-      const index = galleryImages.indexOf(img);
+  allMedia.forEach(item => {
+    item.addEventListener('click', () => {
+      const galleryName = item.dataset.gallery;
+      const galleryItems = galleries[galleryName];
+      const index = galleryItems.indexOf(item);
       openLightbox(galleryName, index);
     });
   });
@@ -181,34 +193,10 @@ layout: default
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) return;
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') closeLightbox();
   });
-
-  lightbox.querySelector('.lightbox-content').addEventListener('click', e => e.stopPropagation());
-  closeBtn.addEventListener('click', e => e.stopPropagation());
-  nextBtn.addEventListener('click', e => e.stopPropagation());
-  prevBtn.addEventListener('click', e => e.stopPropagation());
 </script>
-
-<style>
-.project-video {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto 1rem auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.project-video video {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  display: block;
-}
-</style>
