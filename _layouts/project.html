@@ -143,12 +143,25 @@ layout: default
     const isVideo = item.tagName.toLowerCase() === 'video';
 
     if (isVideo) {
+      // Configure lightbox for video
       lightboxImg.style.display = 'none';
       lightboxVideo.style.display = 'block';
       lightboxVideo.src = item.src;
-      lightboxVideo.play();
+      lightboxVideo.muted = false;
+      lightboxVideo.controls = true;
+      lightboxVideo.playsInline = true;
+      lightboxVideo.autoplay = true;
+
+      // Reload and play after setting properties
+      lightboxVideo.load();
+      lightboxVideo.play().catch(() => {
+        // If autoplay fails, show controls so user can play manually
+        lightboxVideo.controls = true;
+      });
     } else {
+      // Configure lightbox for image
       lightboxVideo.pause();
+      lightboxVideo.src = '';
       lightboxVideo.style.display = 'none';
       lightboxImg.style.display = 'block';
       lightboxImg.src = item.src;
