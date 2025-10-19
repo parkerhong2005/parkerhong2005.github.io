@@ -23,8 +23,10 @@ layout: default
           {% endif %}
         {% endfor %}
       </div>
+      {% elsif item.video %}
+            <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
       {% else %}
-      <img src="{{ page.what_image }}" alt="{{ page.what_text }}" data-caption="{{ page.what_text }}" data-gallery="what">
+      <img src="{{ page.what_image }}" alt="{{ page.what_text }}" data-gallery="what">
       {% endif %}
     </div>
     <div class="project-text">
@@ -40,12 +42,14 @@ layout: default
       <div class="image-grid how-gallery">
         {% for item in page.how_gallery %}
           {% if item.image %}
-            <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
+            <img src="{{ item.image }}" alt="{{ item.caption }}"  data-caption="{{ item.caption }}" data-gallery="how">
           {% elsif item.video %}
             <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
           {% endif %}
         {% endfor %}
       </div>
+      {% elsif item.video %}
+            <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
       {% else %}
       <img src="{{ page.how_image }}" alt="{{ page.how_text }}" data-caption="{{ page.how_text }}" data-gallery="how">
       {% endif %}
@@ -72,8 +76,10 @@ layout: default
           {% endif %}
         {% endfor %}
       </div>
+      {% elsif item.video %}
+            <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
       {% else %}
-      <img src="{{ page.why_image }}" alt="{{ page.why_text }}" data-caption="{{ page.why_text }}" data-gallery="why">
+      <img src="{{ page.why_image }}" alt="{{ page.why_text }}" data-gallery="why">
       {% endif %}
     </div>
     <div class="project-text">
