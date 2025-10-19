@@ -13,21 +13,18 @@ layout: default
   <!-- WHAT Section -->
   <section class="project-section">
     <div class="project-image">
-      {% if page.what_video %}
-      <div class="project-video">
-        <video controls autoplay muted loop playsinline>
-          <source src="{{ page.what_video }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      {% elsif page.what_gallery %}
+      {% if page.what_gallery %}
       <div class="image-grid what-gallery">
         {% for item in page.what_gallery %}
-        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="what">
+          {% if item.image %}
+            <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="what">
+          {% elsif item.video %}
+            <video src="{{ item.video }}" muted playsinline data-caption="{{ item.caption }}" data-gallery="what"></video>
+          {% endif %}
         {% endfor %}
       </div>
       {% else %}
-      <img src="{{ page.what_image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="what">
+      <img src="{{ page.what_image }}" alt="{{ page.what_text }}" data-caption="{{ page.what_text }}" data-gallery="what">
       {% endif %}
     </div>
     <div class="project-text">
@@ -39,38 +36,18 @@ layout: default
   <!-- HOW Section -->
   <section class="project-section">
     <div class="project-image">
-      {% if page.how_video %}
-      <div class="project-video">
-        <video controls autoplay muted loop playsinline>
-          <source src="{{ page.how_video }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      {% elsif page.how_gallery %}
-  <div class="image-grid how-gallery">
-    {% for item in page.how_gallery %}
-      {% if item.image contains '.mp4' %}
-        <video controls autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how">
-          <source src="{{ item.image }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      {% else %}
-        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
-      {% endif %}
-    {% endfor %}
-  </div>
-      {% elsif page.how_images %}
+      {% if page.how_gallery %}
       <div class="image-grid how-gallery">
-  {% for item in page.how_gallery %}
-    {% if item.image %}
-      <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
-    {% elsif item.video %}
-      <video src="{{ item.video }}" muted data-caption="{{ item.caption }}" data-gallery="how" playsinline></video>
-    {% endif %}
-  {% endfor %}
-</div>
+        {% for item in page.how_gallery %}
+          {% if item.image %}
+            <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
+          {% elsif item.video %}
+            <video src="{{ item.video }}" muted playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
+          {% endif %}
+        {% endfor %}
+      </div>
       {% else %}
-      <img src="{{ page.how_image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
+      <img src="{{ page.how_image }}" alt="{{ page.how_text }}" data-caption="{{ page.how_text }}" data-gallery="how">
       {% endif %}
     </div>
     <div class="project-text">
@@ -85,21 +62,18 @@ layout: default
   <!-- WHY Section -->
   <section class="project-section">
     <div class="project-image">
-      {% if page.why_video %}
-      <div class="project-video">
-        <video controls autoplay muted loop playsinline>
-          <source src="{{ page.why_video }}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      {% elsif page.why_gallery %}
+      {% if page.why_gallery %}
       <div class="image-grid why-gallery">
         {% for item in page.why_gallery %}
-        <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="why">
+          {% if item.image %}
+            <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="why">
+          {% elsif item.video %}
+            <video src="{{ item.video }}" muted playsinline data-caption="{{ item.caption }}" data-gallery="why"></video>
+          {% endif %}
         {% endfor %}
       </div>
       {% else %}
-      <img src="{{ page.why_image }}" alt="Final product coming soon!" data-caption="Final product coming soon!" data-gallery="why">
+      <img src="{{ page.why_image }}" alt="{{ page.why_text }}" data-caption="{{ page.why_text }}" data-gallery="why">
       {% endif %}
     </div>
     <div class="project-text">
@@ -115,7 +89,7 @@ layout: default
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
   <div class="lightbox-content">
     <img id="lightboxImg" src="" alt="Expanded view">
-    <video id="lightboxVideo" controls playsinline></video>
+    <video id="lightboxVideo" controls autoplay style="display:none;"></video>
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
@@ -129,12 +103,10 @@ layout: default
   const closeBtn = document.getElementById('lightboxClose');
   const nextBtn = document.getElementById('lightboxNext');
   const prevBtn = document.getElementById('lightboxPrev');
-  
+
   let currentGallery = [];
   let currentIndex = 0;
 
-  // Get all images and videos
-  const allMedia = document.querySelectorAll('.image-grid img, .project-image img, .image-grid video, .project-video video');
   const galleries = {
     what: Array.from(document.querySelectorAll('[data-gallery="what"]')),
     how: Array.from(document.querySelectorAll('[data-gallery="how"]')),
@@ -142,39 +114,37 @@ layout: default
   };
 
   function openLightbox(galleryName, index) {
-  currentGallery = galleries[galleryName];
-  currentIndex = index;
-  const item = currentGallery[currentIndex];
-  const isVideo = item.tagName.toLowerCase() === 'video';
+    currentGallery = galleries[galleryName];
+    currentIndex = index;
+    const item = currentGallery[currentIndex];
+    const isVideo = item.tagName.toLowerCase() === 'video';
 
-  if (isVideo) {
-    lightboxImg.style.display = 'none';
-    lightboxVideo.style.display = 'block';
-    lightboxVideo.src = item.src;
-    lightboxVideo.muted = false; // or true if you want autoplay
-    lightboxVideo.loop = true;
-    lightboxVideo.load();
-    lightboxVideo.play().catch(() => {
-      lightboxVideo.controls = true;
-    });
-  } else {
-    lightboxVideo.pause();
-    lightboxVideo.src = '';
-    lightboxVideo.style.display = 'none';
-    lightboxImg.style.display = 'block';
-    lightboxImg.src = item.src;
+    if (isVideo) {
+      lightboxImg.style.display = 'none';
+      lightboxVideo.style.display = 'block';
+      lightboxVideo.src = item.src;
+      lightboxVideo.muted = false;
+      lightboxVideo.loop = true;
+      lightboxVideo.load();
+      lightboxVideo.play().catch(() => { lightboxVideo.controls = true; });
+    } else {
+      lightboxVideo.pause();
+      lightboxVideo.src = '';
+      lightboxVideo.style.display = 'none';
+      lightboxImg.style.display = 'block';
+      lightboxImg.src = item.src;
+    }
+
+    lightboxCaption.textContent = item.dataset.caption || item.alt || '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
-
-  lightboxCaption.textContent = item.dataset.caption || item.alt || '';
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
 
   function closeLightbox() {
     lightbox.classList.remove('active');
+    currentGallery = [];
     lightboxVideo.pause();
     lightboxVideo.src = '';
-    lightboxImg.src = '';
     document.body.style.overflow = '';
   }
 
@@ -190,11 +160,10 @@ layout: default
     openLightbox(currentGallery[currentIndex].dataset.gallery, currentIndex);
   }
 
-  allMedia.forEach(item => {
+  Object.values(galleries).flat().forEach((item, i) => {
     item.addEventListener('click', () => {
       const galleryName = item.dataset.gallery;
-      const galleryItems = galleries[galleryName];
-      const index = galleryItems.indexOf(item);
+      const index = galleries[galleryName].indexOf(item);
       openLightbox(galleryName, index);
     });
   });
@@ -203,10 +172,38 @@ layout: default
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) return;
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') closeLightbox();
   });
+
+  ['click','keydown'].forEach(evt => {
+    lightbox.querySelector('.lightbox-content').addEventListener(evt, e => e.stopPropagation());
+    closeBtn.addEventListener(evt, e => e.stopPropagation());
+    nextBtn.addEventListener(evt, e => e.stopPropagation());
+    prevBtn.addEventListener(evt, e => e.stopPropagation());
+  });
 </script>
+
+<style>
+/* Grid videos match image styling */
+.image-grid video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* Lightbox video fills available space like images */
+#lightboxVideo {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+</style>
