@@ -11,9 +11,9 @@ how_gallery:
       caption: "Installed a new, more powerful motor for better performance."
     - image: /images/swing_how.JPG
       caption: "3D printing a custom pulley mount for the new motor."
-    - image: "/videos/swing-2.mp4"
+    - image: /videos/swing-2.mp4
       caption: "Experimented with different catch-and release systems to push the swing."
-    - image: "/images/swing_how4.JPG"
+    - image: /images/swing_how4.JPG
       caption: "Reinforced the seat for a stronger, more robust system."
 how_text: "While all parts of the swing were present and functioning when I inherited it, it was apparent that many of the parts could easily be upgraded– in design, material, or both. Water damage meant that putting on a new motor was imminent, and the slightly different size meant designing and 3D printing a new mount for the pulley. The system in place made use of some springs to push the swing, but some testing landed us on a spring-band combo to push and pull the swing. "
 skills: "Rapid Prototyping, SolidWorks, Mill, Bandsaw, CNC Mill, 3D Printer."
