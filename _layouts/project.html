@@ -13,7 +13,14 @@ layout: default
   <!-- WHAT Section -->
   <section class="project-section">
     <div class="project-image">
-      {% if page.what_gallery %}
+      {% if page.what_video %}
+      <div class="project-video">
+        <video controls autoplay muted loop playsinline>
+          <source src="{{ page.what_video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {% elsif page.what_gallery %}
       <div class="image-grid what-gallery">
         {% for item in page.what_gallery %}
         <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="what">
@@ -32,7 +39,14 @@ layout: default
   <!-- HOW Section -->
   <section class="project-section">
     <div class="project-image">
-      {% if page.how_gallery %}
+      {% if page.how_video %}
+      <div class="project-video">
+        <video controls autoplay muted loop playsinline>
+          <source src="{{ page.how_video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {% elsif page.how_gallery %}
       <div class="image-grid how-gallery">
         {% for item in page.how_gallery %}
         <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
@@ -60,7 +74,14 @@ layout: default
   <!-- WHY Section -->
   <section class="project-section">
     <div class="project-image">
-      {% if page.why_gallery %}
+      {% if page.why_video %}
+      <div class="project-video">
+        <video controls autoplay muted loop playsinline>
+          <source src="{{ page.why_video }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      {% elsif page.why_gallery %}
       <div class="image-grid why-gallery">
         {% for item in page.why_gallery %}
         <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="why">
@@ -115,15 +136,12 @@ layout: default
     lightboxImg.src = img.src;
     lightboxCaption.textContent = img.dataset.caption || img.alt || '';
     lightbox.classList.add('active');
-    
-    // Prevent body scroll but allow lightbox background to show scrolling
     document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
     currentGallery = [];
-    // Restore body scroll
     document.body.style.overflow = '';
   }
 
@@ -143,7 +161,6 @@ layout: default
     lightboxCaption.textContent = img.dataset.caption || img.alt || '';
   }
 
-  // Add click events to all images
   allImages.forEach((img) => {
     img.addEventListener('click', () => {
       const galleryName = img.dataset.gallery;
@@ -156,32 +173,35 @@ layout: default
   closeBtn.addEventListener('click', closeLightbox);
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
-  // Close when clicking on the dimmed background
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  // Keyboard navigation
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) return;
-    
     if (e.key === 'ArrowRight') showNext();
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') closeLightbox();
   });
 
-  // Prevent lightbox from closing when clicking on content or controls
-  lightbox.querySelector('.lightbox-content').addEventListener('click', e => {
-    e.stopPropagation();
-  });
-  closeBtn.addEventListener('click', e => {
-    e.stopPropagation();
-  });
-  nextBtn.addEventListener('click', e => {
-    e.stopPropagation();
-  });
-  prevBtn.addEventListener('click', e => {
-    e.stopPropagation();
-  });
+  lightbox.querySelector('.lightbox-content').addEventListener('click', e => e.stopPropagation());
+  closeBtn.addEventListener('click', e => e.stopPropagation());
+  nextBtn.addEventListener('click', e => e.stopPropagation());
+  prevBtn.addEventListener('click', e => e.stopPropagation());
 </script>
+
+<style>
+.project-video {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-video video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+}
+</style>
