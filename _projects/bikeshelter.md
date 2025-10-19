@@ -6,7 +6,7 @@ short_description: "Shelter for bike racks at ETHS."
 order: 5
 what_image: "/images/grid_bikeshelter.png"
 what_text: "A customized bike shelter for Evanston Township High School students."
-how_gallery:
+how_image: "/images/sheltersite.JPG"
 how_text: "Site visits and measurements, then modeling and rendering in CAD and BIM software."
 skills: "AutoCAD, Rhino, Revit"
 why_image: "/images/shelterhow.JPG"
