@@ -42,7 +42,7 @@ layout: default
           {% if item.image %}
             <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
           {% elsif item.video %}
-            <video src="{{ item.video }}" muted playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
+            <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
           {% endif %}
         {% endfor %}
       </div>
