@@ -111,7 +111,7 @@ layout: default
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
   <div class="lightbox-content">
     <img id="lightboxImg" src="" alt="Expanded view">
-    <video id="lightboxVideo" controls style="display:none;"></video>
+    <video id="lightboxVideo" controls playsinline></video>
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
   <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
@@ -125,11 +125,12 @@ layout: default
   const closeBtn = document.getElementById('lightboxClose');
   const nextBtn = document.getElementById('lightboxNext');
   const prevBtn = document.getElementById('lightboxPrev');
-
+  
   let currentGallery = [];
   let currentIndex = 0;
 
-  const allMedia = document.querySelectorAll('.image-grid img, .project-media img, .image-grid video, .project-media video');
+  // Get all images and videos
+  const allMedia = document.querySelectorAll('.image-grid img, .project-image img, .image-grid video, .project-video video');
   const galleries = {
     what: Array.from(document.querySelectorAll('[data-gallery="what"]')),
     how: Array.from(document.querySelectorAll('[data-gallery="how"]')),
@@ -143,23 +144,16 @@ layout: default
     const isVideo = item.tagName.toLowerCase() === 'video';
 
     if (isVideo) {
-      // Configure lightbox for video
       lightboxImg.style.display = 'none';
       lightboxVideo.style.display = 'block';
       lightboxVideo.src = item.src;
-      lightboxVideo.muted = false;
-      lightboxVideo.controls = true;
-      lightboxVideo.playsInline = true;
-      lightboxVideo.autoplay = true;
-
-      // Reload and play after setting properties
       lightboxVideo.load();
+      lightboxVideo.currentTime = 0;
+      lightboxVideo.muted = false;
       lightboxVideo.play().catch(() => {
-        // If autoplay fails, show controls so user can play manually
-        lightboxVideo.controls = true;
+        lightboxVideo.controls = true; // fallback if autoplay blocked
       });
     } else {
-      // Configure lightbox for image
       lightboxVideo.pause();
       lightboxVideo.src = '';
       lightboxVideo.style.display = 'none';
@@ -177,7 +171,6 @@ layout: default
     lightboxVideo.pause();
     lightboxVideo.src = '';
     lightboxImg.src = '';
-    currentGallery = [];
     document.body.style.overflow = '';
   }
 
