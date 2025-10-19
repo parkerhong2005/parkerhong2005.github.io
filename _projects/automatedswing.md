@@ -11,7 +11,7 @@ how_gallery:
       caption: "Installed a new, more powerful motor for better performance."
     - image: /images/swing_how.JPG
       caption: "3D printing a custom pulley mount for the new motor."
-    - image: /videos/swing-2.mp4
+    - video: /videos/swing-2.mp4
       caption: "Experimented with different catch-and release systems."
     - image: /images/swing_how4.JPG
       caption: "Reinforced the seat for a stronger, more robust system."

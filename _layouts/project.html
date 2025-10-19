@@ -61,10 +61,14 @@ layout: default
   </div>
       {% elsif page.how_images %}
       <div class="image-grid how-gallery">
-        {% for image in page.how_images %}
-        <img src="{{ image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
-        {% endfor %}
-      </div>
+  {% for item in page.how_gallery %}
+    {% if item.image %}
+      <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
+    {% elsif item.video %}
+      <video src="{{ item.video }}" muted data-caption="{{ item.caption }}" data-gallery="how" playsinline></video>
+    {% endif %}
+  {% endfor %}
+</div>
       {% else %}
       <img src="{{ page.how_image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="how">
       {% endif %}
@@ -138,33 +142,33 @@ layout: default
   };
 
   function openLightbox(galleryName, index) {
-    currentGallery = galleries[galleryName];
-    currentIndex = index;
-    const item = currentGallery[currentIndex];
-    const isVideo = item.tagName.toLowerCase() === 'video';
+  currentGallery = galleries[galleryName];
+  currentIndex = index;
+  const item = currentGallery[currentIndex];
+  const isVideo = item.tagName.toLowerCase() === 'video';
 
-    if (isVideo) {
-      lightboxImg.style.display = 'none';
-      lightboxVideo.style.display = 'block';
-      lightboxVideo.src = item.src;
-      lightboxVideo.load();
-      lightboxVideo.currentTime = 0;
-      lightboxVideo.muted = false;
-      lightboxVideo.play().catch(() => {
-        lightboxVideo.controls = true; // fallback if autoplay blocked
-      });
-    } else {
-      lightboxVideo.pause();
-      lightboxVideo.src = '';
-      lightboxVideo.style.display = 'none';
-      lightboxImg.style.display = 'block';
-      lightboxImg.src = item.src;
-    }
-
-    lightboxCaption.textContent = item.dataset.caption || item.alt || '';
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
+  if (isVideo) {
+    lightboxImg.style.display = 'none';
+    lightboxVideo.style.display = 'block';
+    lightboxVideo.src = item.src;
+    lightboxVideo.muted = false; // or true if you want autoplay
+    lightboxVideo.loop = true;
+    lightboxVideo.load();
+    lightboxVideo.play().catch(() => {
+      lightboxVideo.controls = true;
+    });
+  } else {
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
+    lightboxVideo.style.display = 'none';
+    lightboxImg.style.display = 'block';
+    lightboxImg.src = item.src;
   }
+
+  lightboxCaption.textContent = item.dataset.caption || item.alt || '';
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
   function closeLightbox() {
     lightbox.classList.remove('active');
