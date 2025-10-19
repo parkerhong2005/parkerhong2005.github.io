@@ -26,7 +26,7 @@ layout: default
       {% elsif item.video %}
             <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
       {% else %}
-      <img src="{{ page.what_image }}" alt="{{ page.what_text }}" data-gallery="what">
+      <img src="{{ page.what_image }}" data-gallery="what">
       {% endif %}
     </div>
     <div class="project-text">
@@ -51,7 +51,7 @@ layout: default
       {% elsif item.video %}
             <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
       {% else %}
-      <img src="{{ page.how_image }}" alt="{{ page.how_text }}" data-caption="{{ page.how_text }}" data-gallery="how">
+      <img src="{{ page.how_image }}" data-gallery="how">
       {% endif %}
     </div>
     <div class="project-text">
@@ -79,7 +79,7 @@ layout: default
       {% elsif item.video %}
             <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
       {% else %}
-      <img src="{{ page.why_image }}" alt="{{ page.why_text }}" data-gallery="why">
+      <img src="{{ page.why_image }}" data-gallery="why">
       {% endif %}
     </div>
     <div class="project-text">
