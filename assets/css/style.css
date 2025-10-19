@@ -548,6 +548,25 @@ main {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
+.project-video {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-video iframe,
+.project-video video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: none;
+}
+
+
 /* responsive gallery grid inside project-image */
 .image-grid {
   display: grid;
