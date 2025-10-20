@@ -15,6 +15,16 @@ how_gallery:
       caption: "Using the CNC mill to cleanly cut out the boxes."
     - image: /images/playspace_how3.JPG
       caption: "Finished tic-tac-toe face for a box."
+    - image: /images/playsapce_how5.jpg
+      caption: "Taking pieces out of the CNC mill."
+    - video: /videos/playspace_how8.mp4
+      caption: "Using the mill to make holes."
+    - image: /images/playspace_how6.JPG
+      caption: "Milled aluminum angle."
+    - image: /images/playspace_how9.JPG
+      caption: "Initial mockup of the box."
+    - video: /videos/playspace_how7.mp4
+      caption: "Using the laser cutter."
 how_text: "CAD modeling and the CNC mill, then lots of drilling, milling, and good old fashioned woodworking. Mockups were made with cardboard, 3D printing, and some scrap wood before we moved on to the real thing."
 skills: "SolidWorks, Onshape, CNC Mill, Conversational Mill, Table Saw, Router, 3D Printer, Laser Cutter"
 why_image: "/images/grid_portableplayspace.png"

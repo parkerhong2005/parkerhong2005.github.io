@@ -1,23 +1,22 @@
 ---
-title: "Formula Racing Steering Wheel"
+layout: project
+title: "F1 Steering Wheel"
 image: "/images/grid_formulawheel.jpg"
-description: "Designed a carbon fiber steering wheel optimizing driver ergonomics and reducing mass for Northwestern Formula Racing."
 short_description: "New steering wheel for NUFR."
 order: 2
-tools: ["SolidWorks", "Carbon Fiber Layup", "Ergonomics"]
+what_image: "/images/wheel_what.JPG"
+what_text: "A custom carbon fiber steering wheel optimized for driver experience and performance."
+how_gallery:
+    - image: /images/wheellaser.JPG
+      caption: "Using the laser cutter to make mockups."
+    - image: /images/wheeloldmokcup.JPG
+      caption: "An initial mockup with finger holes."
+    - video: /images/wheelmockup.JPG
+      caption: "Updated mockup for better ergonomics."
+    - image: /images/wheeltest1.JPG
+      caption: "Our driver testing the mockup."
+how_text: "Using SolidWorks and Onshape to make quick mockups, then laser cutting them for physical testing on the car and in the driver's hands. The grips, while not made yet, are planned to be made out of curable molds that will then be 3D scanned, uploaded, and 3D printed. The wheel itself is planned to be outsourced to a company to be made out of carbon fiber."
+skills: "Rapid Prototyping, SolidWorks, Onshape, Laser Cutter, 3D Scanning, 3D Printing, Carbon Fiber"
+why_image: "/images/grid_formulawheel.jpg"
+why_text: "As they develop their first fully functional electric vehicle, the Northwestern Formula Racing team is looking to upgrade all parts of their vehicle to maximize its performance. As part of the ergonomics division of the chassis subteam, I'm currently working to design a new steering wheel that allows our driver to perform at his best, maintaining a comfortable yet commanding driving experience. Through a combination of fixing old designs and incorporating new ideas, the goal is to create a wheel that will give the driver confidence and complete control of the vehicle."
 ---
-
-## Overview
-Developed a lightweight, ergonomic steering wheel for the Northwestern Formula Racing EV chassis team.
-
-## Key Features
-- Reduced weight by 20% while maintaining stiffness.
-- Enhanced button layout for improved driver usability.
-- Integrated electronics for telemetry input.
-
-## Tools Used
-- SolidWorks for CAD
-- CNC foam mold fabrication
-- Carbon fiber hand layup
-
-![Formula Racing Steering Wheel](/assets/images/formula_render.jpg)
