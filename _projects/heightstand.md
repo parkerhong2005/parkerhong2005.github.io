@@ -3,10 +3,18 @@ layout: project
 title: "The Heightstand"
 image: "/images/grid_heightstand.jpg"
 short_description: "Nightstand for lofted beds."
-order: 
+order: 7
 what_image: "/images/pulley_mockup_sketch.JPG"
 what_text: "A height-adjustable nightstand for lofted beds."
-how_image: "/images/heightstand_mockup.jpg"
+how_gallery:
+    - image: 
+      caption: 
+    - image: /images/heightstand_mockup.jpg
+      caption: "An early mockup 
+    - image: 
+      caption: "
+    - image: /images/swing_how4.JPG
+      caption: "Reinforced the seat for a stronger, more robust system."
 how_text: "Lots of low-fidelity mockups utilizing recycled parts from the Shop, and testing concepts even if we weren't one hundred percent sure how they worked. For example, our 'pulley' system, made from PLA spools, rope, and sandpaper, may not have been the most traditional setup but it worked well enough to test."
 skills: "Rapid Prototyping, Recycling, UX"
 why_image: "/images/heightstandfull.JPG"
