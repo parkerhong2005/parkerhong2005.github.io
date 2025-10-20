@@ -15,8 +15,6 @@ how_gallery:
       caption: "Using the CNC mill to cleanly cut out the boxes."
     - image: /images/playspace_how3.JPG
       caption: "Finished tic-tac-toe face for a box."
-    - image: /images/playsapce_how5.jpg
-      caption: "Taking pieces out of the CNC mill."
     - video: /videos/playspace_how8.mp4
       caption: "Using the mill to make holes."
     - image: /images/playspace_how6.JPG
