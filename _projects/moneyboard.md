@@ -11,7 +11,7 @@ how_gallery:
       caption: "An initial mockup of the device."
     - image: /images/Money Board Layout (Coins) (2).jpg
       caption: "Measuring out the coin side."
-    - image: /images/money,jpg
+    - image: /images/money.jpg
       caption: "Facsimile dollar bills for the bill side."
     - image: /images/bumps.jpeg
       caption: "Creating texture for a sensory experience."
