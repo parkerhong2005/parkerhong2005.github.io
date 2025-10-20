@@ -9,9 +9,9 @@ what_text: "A custom carbon fiber steering wheel optimized for driver experience
 how_gallery:
     - image: /images/wheellaser.JPG
       caption: "Using the laser cutter to make mockups."
-    - image: /images/wheeloldmokcup.JPG
+    - image: /images/wheeloldmockup.JPG
       caption: "An initial mockup with finger holes."
-    - video: /images/wheelmockup.JPG
+    - image: /images/wheelmockup.JPG
       caption: "Updated mockup for better ergonomics."
     - image: /images/wheeltest1.JPG
       caption: "Our driver testing the mockup."
