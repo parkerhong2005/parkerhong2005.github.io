@@ -13,7 +13,7 @@ how_gallery:
       caption: "An early mockup of the pulley with basket."
     - image: /images/heightstandtop.JPG
       caption: "Top view of the Heightstand, temporarily secured to bed."
-    - image: /videos/heightstanddemo.mp4
+    - video: /videos/heightstanddemo.mp4
       caption: "Demonstrating the Heightstand's pulley."
 how_text: "Lots of low-fidelity mockups utilizing recycled parts from the Shop, and testing concepts even if we weren't one hundred percent sure how they worked. For example, our 'pulley' system, made from PLA spools, rope, and sandpaper, may not have been the most traditional setup but it worked well enough to test."
 skills: "Rapid Prototyping, Recycling, UX"
