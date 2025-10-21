@@ -76,11 +76,11 @@ layout: default
           {% endif %}
         {% endfor %}
       </div>
-      {% elsif item.video %}
-            <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
-      {% else %}
-      <img src="{{ page.why_image }}" data-gallery="why">
-      {% endif %}
+      {% elsif page.why_video %}
+  <video src="{{ page.why_video }}" autoplay muted loop playsinline data-gallery="why"></video>
+{% else %}
+  <img src="{{ page.why_image }}" data-gallery="why">
+{% endif %}
     </div>
     <div class="project-text">
       <h2>Why</h2>
