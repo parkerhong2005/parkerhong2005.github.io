@@ -7,7 +7,7 @@ order: 3
 what_image: "/images/circuitdiagram.JPG"
 what_text: "A buzzer system that rewards the quickest hand, as seen on Family Feud."
 how_gallery:
-    - image: /images/moneymockup.jpg
+    - image: /images/familyfeuduser.JPG
       caption: "Mapping the user(s) interactions with the box."
     - image: /images/familyfeudlaser.JPG
       caption: "Using the laser cutter to make the casing for the Pico."
