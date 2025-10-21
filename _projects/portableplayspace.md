@@ -26,5 +26,5 @@ how_gallery:
 how_text: "CAD modeling and the CNC mill, then lots of drilling, milling, and good old fashioned woodworking. Mockups were made with cardboard, 3D printing, and some scrap wood before we moved on to the real thing."
 skills: "SolidWorks, Onshape, CNC Mill, Conversational Mill, Table Saw, Router, 3D Printer, Laser Cutter"
 why_image: "/images/grid_portableplayspace.png"
-why_text: "In partnership with Tribraining, the Evanston Public Library at the Robert Crown Center asked us to create a playspace that could be put out for playtime and stored away neatly when the space was used otherwise. Inspired by the work and innovation of a previous group of Segal interns, we sought to design a set of play modules that would optimize limited space and maximize creativity at the same time."
+why_text: "In partnership with Tribraining, the Evanston Public Library at the Robert Crown Center asked us to create a playspace that could be put out for playtime and stored away neatly when the space was used otherwise. Inspired by the work and innovation of a previous group of Segal interns, we sought to design a set of play modules that would optimize limited space and maximize creativity at the same time. This fall, I am continuing to work on this project in hopes of having it ready for a showcase in December."
 ---

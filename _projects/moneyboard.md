@@ -16,7 +16,7 @@ how_gallery:
     - image: /images/bumps.jpeg
       caption: "Creating texture for a sensory experience."
 how_text: "Creating a few mockups with old materials before prototyping the real deal. Milling for the coin slots, laser cutting the acrylic pieces, and printing edited dollar bills to be put on the side of the board with bills."
-skills: "Bandsaw, Mill, Laser Cutter, Recycling, Obeying Federal Law."
+skills: "Bandsaw, Mill, Laser Cutter, Recycling, Obeying Federal Law"
 why_gallery:
     - image: /images/bills.JPEG
       caption: "Finished bill side."
