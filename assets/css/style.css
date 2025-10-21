@@ -548,6 +548,23 @@ main {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Make project videos match image styling */
+.project-image video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px; /* match the same rounding as images */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.project-image video:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+}
+
 .project-video {
   width: 100%;
   max-width: 800px;
