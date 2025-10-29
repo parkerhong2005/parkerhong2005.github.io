@@ -5,7 +5,7 @@ image: "/images/grid_automatedswing.jpeg"
 short_description: "Playground swing automated with a motor."
 order: 4
 what_image: "/images/swing_what.png"
-what_text: "A playground swing capabale of swinging on its own after the first push; safe, smooth, and serene. An electric bike motor paired with a scotch yoke swings the user at a calming cadence and takes all the hard work out of a delightful swinging experience."
+what_text: "A playground swing capable of swinging on its own after the first push; safe, smooth, and serene. An electric bike motor paired with a scotch yoke swings the user at a calming cadence and takes all the hard work out of a delightful swinging experience."
 how_gallery:
     - image: /images/swing_how3.JPG
       caption: "Installed a new, more powerful motor for better performance."
