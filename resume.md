@@ -43,12 +43,12 @@ permalink: /resume/
 <h2>LEADERSHIP EXPERIENCE</h2>
 
 <p><strong>Northwestern Crew | Evanston, IL</strong></p>
-<p><em>Varsity Men’s Captain</em> — May 2025 – Present</p>
+<p><em>Varsity Men’s Captain</em><span class="date">May 2025 – Present</span></p>
 <ul>
   <li>Lead a 50+ member intercollegiate rowing program, coordinating training, competitions, and logistics.</li>
   <li>Serve as liaison between athletes, coaches, and administration to communicate needs and concerns.</li>
 </ul>
-<p><em>Recruitment Chair</em> — May 2024 – May 2025</p>
+<p><em>Recruitment Chair</em><span class="date">May 2024 – May 2025</span></p>
 <ul>
   <li>Increased athlete participation by 50% through targeted outreach and onboarding initiatives.</li>
   <li>Strengthened team cohesion through team-building events and intersquad integration.</li>
@@ -78,9 +78,5 @@ permalink: /resume/
 <h2>SOFT SKILLS</h2>
 <p><strong>Personal:</strong> Time Management, Organization, Problem-Solving, Critical Thinking, Initiative<br>
    <strong>Interpersonal:</strong> Leadership, Communication, Adaptability, Conflict Resolution, Empathy</p>
-
-<div class="resume-download">
-  <a href="/assets/Hong_Parker_Resume.pdf" download>⬇️ Download PDF</a>
-</div>
 
 </section> </div>
