@@ -5,6 +5,9 @@ permalink: /projects/
 ---
 <h1>Projects</h1>
 
+<p>
+The following are a representation of classroom assignments, internship projects, and freelance design work. Each presented a unique set of design and problem-solving challenges. Click on a project icon to learn more about my work!</p>
+
 <div class="project-grid">
   {% assign sorted_projects = site.projects | sort: "order" %}
   {% for project in sorted_projects %}
