@@ -206,66 +206,95 @@ img {
   7. RESUME PAGE — Full-Screen PDF with Floating Download Button
 --------------------------------------------------------------*/
 .resume-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: calc(100vh - 120px);
-  /* accounts for header + footer */
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color);
-  box-sizing: border-box;
+width: 100%;
+max-width: 850px;
+margin: 3rem auto;
+padding: 0 1.5rem 4rem;
+display: block;
+height: auto;
+background-color: var(--bg-color);
+overflow: visible;
+box-sizing: border-box;
 }
 
-/* PDF fills available space */
-.resume-container {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  box-sizing: border-box;
+/* Text resume formatting */
+.resume {
+font-family: 'Urbanist', sans-serif;
+color: var(--text-color);
+line-height: 1.6;
 }
 
-.resume-frame {
-  width: 90%;
-  height: 100%;
-  border: none;
-  display: block;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
+.resume h1 {
+text-align: center;
+font-size: 2rem;
+margin-bottom: 0.25em;
 }
 
-/* Floating button */
+.resume .contact {
+text-align: center;
+font-size: 0.95rem;
+margin-bottom: 2rem;
+}
+
+.resume h2 {
+border-bottom: 1px solid var(--border-color);
+margin-top: 2rem;
+padding-bottom: 0.3rem;
+font-size: 1.2rem;
+text-transform: uppercase;
+letter-spacing: 0.03em;
+}
+
+.resume ul {
+margin: 0.3rem 0 1rem 1.2rem;
+padding: 0;
+}
+
+.resume p {
+margin: 0.4rem 0;
+}
+
+.resume .date {
+float: right;
+font-style: italic;
+color: var(--subtext-color);
+}
+
+/* Center the download button below resume content */
 .resume-download {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--accent-color);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, transform 0.2s ease;
-  z-index: 1000;
+position: static;
+display: inline-block;
+margin: 2rem auto 0;
+background-color: var(--accent-color);
+color: #fff;
+text-decoration: none;
+font-weight: 500;
+padding: 0.6rem 1.2rem;
+border-radius: 6px;
+font-size: 0.9rem;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .resume-download:hover {
-  background-color: #2d5c7c;
-  transform: translate(-50%, -2px);
+background-color: #2d5c7c;
+transform: translateY(-2px);
 }
 
-/* Remove title if present */
-.page-title {
-  display: none !important;
+/* Responsive tweaks */
+@media (max-width: 768px) {
+.resume-section {
+padding: 1rem;
+}
+.resume h1 {
+font-size: 1.6rem;
+}
+.resume h2 {
+font-size: 1.1rem;
+}
+.resume ul {
+margin-left: 1rem;
+}
 }
 
 /*--------------------------------------------------------------
