@@ -10,8 +10,7 @@
   --bg-color: #ffffff;
   --text-color: #111111;
   --subtext-color: #555555;
-  --accent-color: #004aad;
-  /* clean, engineering blue */
+  --accent-color: #004aad; /* clean, engineering blue */
   --light-gray: #f5f5f5;
   --border-color: #e0e0e0;
   --header-footer-bg: #111111;
@@ -19,12 +18,16 @@
 }
 
 /* Body & global font */
+html,
 body {
-  background-color: var(--bg-color);
-  font-family: 'Urbanist', sans-serif;
-  color: var(--text-color);
+  height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Urbanist', sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
 }
 
@@ -194,7 +197,7 @@ nav ul li a:hover {
 }
 
 /*--------------------------------------------------------------
-  6. OPTIONAL: GLOBAL UTILS
+  6. GLOBAL UTILS
 --------------------------------------------------------------*/
 
 img {
@@ -203,110 +206,61 @@ img {
 }
 
 /*--------------------------------------------------------------
-  7. RESUME PAGE — Full-Screen PDF with Floating Download Button
+  7. RESUME PAGE
 --------------------------------------------------------------*/
+
 .resume-section {
-width: 100%;
-max-width: 850px;
-margin: 3rem auto;
-padding: 0 1.5rem 4rem;
-display: block;
-height: auto;
-background-color: var(--bg-color);
-overflow: visible;
-box-sizing: border-box;
+  width: 100%;
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 0 1.5rem 4rem;
+  background-color: var(--bg-color);
+  box-sizing: border-box;
 }
 
-/* Text resume formatting */
 .resume {
-font-family: 'Urbanist', sans-serif;
-color: var(--text-color);
-line-height: 1.6;
+  line-height: 1.6;
 }
 
 .resume h1 {
-text-align: center;
-font-size: 2rem;
-margin-bottom: 0.25em;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.25em;
 }
 
 .resume .contact {
-text-align: center;
-font-size: 0.95rem;
-margin-bottom: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
 }
 
 .resume h2 {
-border-bottom: 1px solid var(--border-color);
-margin-top: 2rem;
-padding-bottom: 0.3rem;
-font-size: 1.2rem;
-text-transform: uppercase;
-letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--border-color);
+  margin-top: 2rem;
+  padding-bottom: 0.3rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .resume ul {
-margin: 0.3rem 0 1rem 1.2rem;
-padding: 0;
+  margin: 0.3rem 0 1rem 1.2rem;
+  padding: 0;
 }
 
 .resume p {
-margin: 0.4rem 0;
+  margin: 0.4rem 0;
 }
 
 .resume .date {
-float: right;
-font-style: italic;
-color: var(--subtext-color);
-}
-
-/* Center the download button below resume content */
-.resume-download {
-position: static;
-display: inline-block;
-margin: 2rem auto 0;
-background-color: var(--accent-color);
-color: #fff;
-text-decoration: none;
-font-weight: 500;
-padding: 0.6rem 1.2rem;
-border-radius: 6px;
-font-size: 0.9rem;
-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.resume-download:hover {
-background-color: #2d5c7c;
-transform: translateY(-2px);
-}
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-.resume-section {
-padding: 1rem;
-}
-.resume h1 {
-font-size: 1.6rem;
-}
-.resume h2 {
-font-size: 1.1rem;
-}
-.resume ul {
-margin-left: 1rem;
-}
+  float: right;
+  font-style: italic;
+  color: var(--subtext-color);
 }
 
 /*--------------------------------------------------------------
-  8. FOOTER & RESPONSIVE HEADER
+  8. FOOTER
 --------------------------------------------------------------*/
-
-html,
-body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
 
 main {
   flex: 1;
@@ -333,48 +287,36 @@ main {
 }
 
 /*--------------------------------------------------------------
-  9. HOME PAGE — HERO, INTRO, PROJECTS PREVIEW
+  9. HOME PAGE — HERO
 --------------------------------------------------------------*/
 
-/* Hero Section */
 .home-page .hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  padding: 4rem 2rem;
-  background-color: var(--light-gray);
-}
-
-.hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1100px;
-  flex-wrap: wrap;
-}
-
-.clean-hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   text-align: center;
-  padding: 4rem 1rem;
+  min-height: 100vh;
+  background-color: var(--light-gray);
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
 }
 
 .hero-headshot {
   width: 260px;
-  border-radius: 0; /* square image */
+  border-radius: 0;
   object-fit: cover;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
 }
 
 .hero-text {
-  flex: 1 1 400px;
-  text-align: left;
+  max-width: 500px;
+  text-align: center;
 }
 
 .hero-text h1 {
@@ -395,7 +337,7 @@ main {
 }
 
 /*--------------------------------------------------------------
-  ABOUT PAGE — Banner + Personal Statement
+  10. ABOUT PAGE
 --------------------------------------------------------------*/
 
 .about-page {
@@ -405,7 +347,6 @@ main {
   overflow-x: hidden;
 }
 
-/* Full-width responsive image banner */
 .about-banner {
   width: 100%;
   overflow: hidden;
@@ -416,10 +357,8 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Content section */
 .about-content {
   max-width: 900px;
   margin: 4rem auto;
@@ -432,189 +371,54 @@ main {
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: var(--text-color);
 }
 
 .about-content p {
   font-size: clamp(1rem, 2vw, 1.15rem);
   line-height: 1.7;
-  color: var(--text-color);
   max-width: 750px;
   margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
-  12. MEDIA QUERIES (Mobile)
+  11. RESPONSIVE DESIGN
 --------------------------------------------------------------*/
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   nav ul {
     flex-direction: column;
     gap: 0.75rem;
   }
 
-  .project-grid {
-    grid-template-columns: 1fr;
+  .hero-text h1 {
+    font-size: 2rem;
   }
 
-  .overlay-title {
-    font-size: 1.25rem;
+  .hero-text h2 {
+    font-size: 1.1rem;
   }
 
-  .overlay-desc {
-    font-size: 0.9rem;
+  .resume-section {
+    padding: 1rem;
   }
 
-  .carousel-item {
-    width: 80%;
+  .resume h1 {
+    font-size: 1.6rem;
   }
 
-  .carousel-arrow {
-    font-size: 1.5rem;
-    padding: 0.2rem 0.4rem;
-  }
-}
-
-/*--------------------------------------------------------------
-  Project Page — Image Left, Text Right
---------------------------------------------------------------*/
-.project-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
-
-/* alternate image left/right for variety */
-.project-section:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.project-image {
-  flex: 1 1 45%;
-}
-
-/* default single image */
-.project-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Make project videos match image styling */
-.project-image video {
-  width: 100%;
-  height: auto;
-  border-radius: 12px; /* match the same rounding as images */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
-  display: block;
-  cursor: pointer;
-  margin: 0 auto;
-}
-
-.project-image video:hover {
-  transform: scale(1.01);
-  transition: transform 0.2s ease;
-}
-
-.project-video {
-  width: 100%;
-  max-width: 800px;
-  margin: 1.5rem auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.project-video iframe,
-.project-video video {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  display: block;
-  border: none;
-}
-
-
-/* responsive gallery grid inside project-image */
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-}
-
-.image-grid > * {
-  aspect-ratio: 1 / 1; /* Forces each cell to be square */
-  overflow: hidden;    /* Clips content that overflows */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-
-.image-grid img,
-.image-grid video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  cursor: pointer;
-}
-
-.image-grid img:hover {
-  transform: scale(1.02);
-  cursor: pointer;
-}
-
-.image-grid video:hover {
-  transform: scale(1.02);
-}
-
-.project-text {
-  flex: 1 1 55%;
-}
-
-.project-text h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-bottom: 1rem;
-  color: var(--accent-color);
-}
-
-.project-text p {
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
-  line-height: 1.6;
-  color: var(--text-color);
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-  .project-section {
-    flex-direction: column;
-    text-align: center;
+  .resume h2 {
+    font-size: 1.1rem;
   }
 
-  /* reset alternating layout for mobile */
-  .project-section:nth-child(even) {
-    flex-direction: column;
-  }
-
-  .project-image,
-  .project-text {
-    flex: 1 1 100%;
-  }
-
-  .image-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  .resume ul {
+    margin-left: 1rem;
   }
 }
 
 /*--------------------------------------------------------------
-  Lightbox Styles - UPDATED
+  12. LIGHTBOX
 --------------------------------------------------------------*/
+
 .lightbox {
   display: none;
   position: fixed;
@@ -622,7 +426,7 @@ main {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -647,7 +451,6 @@ main {
   height: auto;
   padding: 2rem 0;
   z-index: 10001;
-  /* Remove background: transparent from here */
 }
 
 .lightbox-content img {
@@ -656,7 +459,7 @@ main {
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-  background: transparent; /* Keep image background transparent */
+  background: transparent;
 }
 
 .lightbox-caption {
@@ -666,10 +469,9 @@ main {
   font-size: 1rem;
   padding: 0 1rem;
   z-index: 10001;
-  background: transparent; /* Keep caption background transparent */
+  background: transparent;
 }
 
-/* Close button */
 .lightbox-close {
   position: fixed;
   top: 2rem;
@@ -694,7 +496,6 @@ main {
   border-radius: 50%;
 }
 
-/* Navigation arrows */
 .lightbox-nav {
   position: fixed;
   top: 50%;
@@ -730,7 +531,6 @@ main {
   right: 2rem;
 }
 
-/* Only make specific elements transparent, not the main lightbox */
 .lightbox-content,
 .lightbox-content img,
 .lightbox-caption,
@@ -739,7 +539,6 @@ main {
   background: transparent !important;
 }
 
-/* Ensure the lightbox background covers everything */
 .lightbox::before {
   content: '';
   position: fixed;
@@ -747,6 +546,6 @@ main {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   z-index: -1;
 }
