@@ -15,8 +15,8 @@ permalink: /resume/
     </p>
 
     <h2>EDUCATION</h2>
-    <p><strong>Northwestern University</strong> | Evanston, IL — <em>Anticipated Graduation Jun 2027</em><br>
-      <strong>Bachelor of Science</strong>, Major in Manufacturing and Design Engineering — GPA: 3.84/4.0</p>
+    <p><strong>Northwestern University</strong> | Evanston, IL <span class="date">Anticipated Graduation Jun 2027</span><br>
+      <strong>Bachelor of Science</strong>, Major in Manufacturing and Design Engineering <span class="date">GPA: 3.84/4.0</span></p>
     <p><strong>Achievements:</strong> High Honors Dean’s List (Spring 2025), Dean’s List (Fall 2024, Winter 2024, Spring 2024, Winter 2025)</p>
     <p><strong>Relevant Coursework:</strong> Computer-Integrated Manufacturing, Mechanical Design and Manufacturing, Quality Improvement by Experimental Design, Materials Selection, Mechanics of Materials, Electronics Design, Design Thinking and Communication, Smart Electronics in Design</p>
 
