@@ -7,7 +7,7 @@
   --bg-color: #ffffff;
   --text-color: #111111;
   --subtext-color: #555555;
-  --accent-color: #004aad; /* clean, engineering blue */
+  --accent-color: #004aad;
   --light-gray: #f5f5f5;
   --border-color: #e0e0e0;
   --header-footer-bg: #111111;
@@ -364,18 +364,27 @@ main {
   cursor: pointer;
 }
 
+/* ✅ FIXED GALLERY GRID */
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
+  width: 100%;
 }
 
 .image-grid > * {
+  width: 100%;
   aspect-ratio: 1 / 1;
-  overflow: hidden;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-grid > *:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 /*--------------------------------------------------------------
@@ -412,9 +421,10 @@ main {
   z-index: 10001;
 }
 
-.lightbox-content img {
+.lightbox-content img,
+#lightboxVideo {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80vh;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
@@ -478,17 +488,6 @@ main {
   right: 2rem;
 }
 
-.lightbox::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: -1;
-}
-
 /*--------------------------------------------------------------
   13. MEDIA QUERIES
 --------------------------------------------------------------*/
@@ -509,5 +508,9 @@ main {
 
   .hero-text h1 {
     font-size: 2rem;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
