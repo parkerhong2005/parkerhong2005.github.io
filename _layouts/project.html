@@ -102,6 +102,7 @@ layout: default
 </div>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxVideo = document.getElementById('lightboxVideo');
@@ -113,6 +114,7 @@ layout: default
   let currentGallery = [];
   let currentIndex = 0;
 
+  // ✅ Grab all galleries after DOM is ready
   const galleries = {
     what: Array.from(document.querySelectorAll('[data-gallery="what"]')),
     how: Array.from(document.querySelectorAll('[data-gallery="how"]')),
@@ -166,18 +168,21 @@ layout: default
     openLightbox(currentGallery[currentIndex].dataset.gallery, currentIndex);
   }
 
-  Object.values(galleries).flat().forEach((item, i) => {
-    item.addEventListener('click', () => {
-      const galleryName = item.dataset.gallery;
-      const index = galleries[galleryName].indexOf(item);
-      openLightbox(galleryName, index);
+  // ✅ Attach click listeners AFTER all galleries are ready
+  Object.entries(galleries).forEach(([galleryName, items]) => {
+    items.forEach((item, index) => {
+      item.addEventListener('click', () => openLightbox(galleryName, index));
     });
   });
 
+  // ✅ Controls & close behavior
   closeBtn.addEventListener('click', closeLightbox);
   nextBtn.addEventListener('click', showNext);
   prevBtn.addEventListener('click', showPrev);
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
 
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) return;
@@ -185,13 +190,7 @@ layout: default
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'Escape') closeLightbox();
   });
-
-  ['click','keydown'].forEach(evt => {
-    lightbox.querySelector('.lightbox-content').addEventListener(evt, e => e.stopPropagation());
-    closeBtn.addEventListener(evt, e => e.stopPropagation());
-    nextBtn.addEventListener(evt, e => e.stopPropagation());
-    prevBtn.addEventListener(evt, e => e.stopPropagation());
-  });
+});
 </script>
 
 <style>
