@@ -71,8 +71,8 @@ nav ul li a:hover {
 --------------------------------------------------------------*/
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* max 3 columns */
-  gap: 0.5rem; /* smaller spacing between cards */
+  grid-template-columns: repeat(3, 1fr); /* always 3 columns */
+  gap: 0.5rem; /* spacing between cards */
   width: 100%; /* full page width */
   padding: 0.5rem;
   box-sizing: border-box;
@@ -83,8 +83,7 @@ nav ul li a:hover {
 .project-card {
   position: relative;
   width: 100%;
-  max-width: 320px; /* ensures squares don't get too wide */
-  aspect-ratio: 1 / 1; /* keep square shape */
+  aspect-ratio: 1 / 1; /* square shape */
   overflow: hidden;
   border-radius: 12px;
   cursor: pointer;
@@ -128,7 +127,7 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center; /* vertical centering */
   text-align: center;
-  color: var(--light);
+  color: #ffffff; /* all text white */
   opacity: 0;
   transition: opacity 0.3s ease;
   background-color: rgba(0,0,0,0.6);
@@ -152,25 +151,18 @@ nav ul li a:hover {
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
+  color: #ffffff; /* white text */
 }
 
 .overlay-desc {
   font-size: 0.9rem;
   line-height: 1.2;
+  color: #ffffff; /* white text */
 }
 
 /* RESPONSIVE GRID */
-@media (max-width: 1024px) {
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-  }
-}
-
-@media (max-width: 600px) {
-  .project-grid {
-    grid-template-columns: 1fr; /* 1 column on small screens */
-    gap: 0.5rem;
-  }
+.project-grid {
+  grid-template-columns: repeat(3, 1fr); /* force 3 columns on all screens */
 }
 
 /*--------------------------------------------------------------
