@@ -69,6 +69,7 @@ nav ul li a:hover {
 /*--------------------------------------------------------------
   3. PROJECT GRID
 --------------------------------------------------------------*/
+/* PROJECT GRID */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* always 3 columns */
@@ -76,14 +77,14 @@ nav ul li a:hover {
   width: 100%; /* full page width */
   padding: 0.5rem;
   box-sizing: border-box;
-  justify-items: center; /* center cards horizontally */
+  justify-items: center;
   margin: 2rem auto;
 }
 
 .project-card {
   position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1; /* square shape */
+  width: 100%; /* full width of the grid cell */
+  aspect-ratio: 1 / 1; /* perfect square */
   overflow: hidden;
   border-radius: 12px;
   cursor: pointer;
@@ -160,9 +161,23 @@ nav ul li a:hover {
   color: #ffffff; /* white text */
 }
 
-/* RESPONSIVE GRID */
-.project-grid {
-  grid-template-columns: repeat(3, 1fr); /* force 3 columns on all screens */
+/* RESPONSIVE: keep 3 columns, square cards */
+@media (max-width: 1200px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /*--------------------------------------------------------------
