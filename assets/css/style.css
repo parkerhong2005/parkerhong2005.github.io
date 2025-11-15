@@ -66,19 +66,18 @@ nav ul li a:hover {
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-  3. PROJECT GRID
---------------------------------------------------------------*/
-
+/* -------------------------------
+   PROJECT GRID — 3 COLUMN SQUARES
+------------------------------- */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* always 3 columns */
-  gap: 0.25rem; /* slightly smaller spacing */
-  width: 100%; /* full page width */
-  padding: 0.25rem;
+  gap: 0.5rem;                           /* spacing between cards */
+  width: 100%;                            /* full width of page */
+  padding: 0.5rem;
   box-sizing: border-box;
   justify-items: center;
-  margin: 1.5rem auto;
+  margin: 2rem auto;
 }
 
 .project-card {
@@ -90,11 +89,10 @@ nav ul li a:hover {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.25s ease;
-  background-color: var(--light);
-
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--light);
 }
 
 .project-card:hover {
@@ -106,24 +104,19 @@ nav ul li a:hover {
   height: 100%;
 }
 
-.project-image-wrapper img {
+.project-image-wrapper img,
+.project-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* ensures image covers the square */
+  object-fit: cover;         /* image fills the square fully */
   display: block;
   border-radius: 12px;
   transition: transform 0.3s ease;
 }
 
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
-}
-
-/* OVERLAY */
+/* -------------------------------
+   OVERLAY TEXT
+------------------------------- */
 .project-overlay {
   position: absolute;
   top: 0;
@@ -132,9 +125,9 @@ nav ul li a:hover {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center; /* vertical centering */
+  align-items: center;      /* vertical centering */
   text-align: center;
-  color: #ffffff; /* all text white */
+  color: #ffffff;           /* all overlay text white */
   opacity: 0;
   transition: opacity 0.3s ease;
   background-color: rgba(0,0,0,0.6);
@@ -151,40 +144,34 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
-  text-align: center; /* ensures text centered horizontally */
 }
 
 .overlay-title {
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
-  color: #ffffff; /* white text */
+  color: #ffffff;
 }
 
 .overlay-desc {
   font-size: 0.9rem;
   line-height: 1.2;
-  color: #ffffff; /* white text */
+  color: #ffffff;
 }
 
-/* RESPONSIVE: keep 3 columns, square cards */
+/* -------------------------------
+   RESPONSIVE — always 3 columns
+------------------------------- */
 @media (max-width: 1200px) {
-  .project-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .project-grid { grid-template-columns: repeat(3, 1fr); }
 }
-
 @media (max-width: 900px) {
-  .project-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .project-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .project-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (max-width: 600px) {
-  .project-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 /*--------------------------------------------------------------
   5. MARKDOWN CONTENT IMAGES
