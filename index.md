@@ -17,7 +17,7 @@ title: Home
       <div class="hero-text">
         <h1>Parker Hong</h1>
         <h2>Manufacturing & Design Engineering (MaDE)</h2>
-        <p>Northwestern University | Class of 2027</p>
+        <p>McCormick School of Engineering and Applied Science<br>Northwestern University | Class of 2027</p>
         <p>Email: <a href="mailto:parkerhong2027@u.northwestern.edu" style="color:inherit; text-decoration:underline;">parkerhong2027@u.northwestern.edu</a></p>
         <p>LinkedIn: <a href="https://linkedin.com/in/parker-hong/" target="_blank" style="color:inherit; text-decoration:underline;">linkedin.com/in/parker-hong</a></p>
       </div>
