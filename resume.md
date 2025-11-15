@@ -16,13 +16,14 @@ permalink: /resume/
 
     <h2>EDUCATION</h2>
     <p><strong>Northwestern University</strong> | Evanston, IL <span class="date">Anticipated Graduation Jun 2027</span><br>
-      <strong>Bachelor of Science</strong>, Major in Manufacturing and Design Engineering <span class="date">GPA: 3.84/4.0</span></p>
+      <strong>McCormick School of Engineering and Applied Science</strong><br>
+      <em>BS, Manufacturing and Design Engineering</em><span class="date">GPA: 3.84/4.0</span></p>
     <p><strong>Achievements:</strong> High Honors Dean’s List (Spring 2025), Dean’s List (Fall 2024, Winter 2024, Spring 2024, Winter 2025)</p>
     <p><strong>Relevant Coursework:</strong> Computer-Integrated Manufacturing, Mechanical Design and Manufacturing, Quality Improvement by Experimental Design, Materials Selection, Mechanics of Materials, Electronics Design, Design Thinking and Communication, Smart Electronics in Design</p>
 
     <h2>LEADERSHIP EXPERIENCE</h2>
 
-    <p><strong>Northwestern Crew | Evanston, IL</strong></p>
+    <p><strong>Northwestern Crew</strong> | Evanston, IL</p>
     <p><em>Varsity Men’s Captain</em> <span class="date">May 2025 – Present</span></p>
     <ul>
       <li>Lead a 50+ member intercollegiate club rowing program, coordinating year-long training, competitions, and team logistics.</li>
@@ -66,7 +67,7 @@ permalink: /resume/
 
     <h2>EMPLOYMENT EXPERIENCE</h2>
 
-    <p><strong>Northwestern University Residential Services | Evanston, IL</strong> <span class="date">Sep 2024 – Present</span><br>
+    <p><strong>Northwestern University Residential Services</strong> | Evanston, IL <span class="date">Sep 2024 – Present</span><br>
       <em>Resident Assistant</em></p>
     <ul>
       <li>Facilitate acclimation of new students through proactive event planning and intentional engagement of residents.</li>
@@ -74,7 +75,7 @@ permalink: /resume/
       <li>Provide support and resources while enhancing the overall residential community experience.</li>
     </ul>
 
-    <p><strong>Evanston Township High School | Evanston, IL</strong> <span class="date">Jun 2025 – Present</span><br>
+    <p><strong>Evanston Township High School</strong> | Evanston, IL <span class="date">Jun 2025 – Present</span><br>
       <em>Assistant Varsity Rowing Coach</em></p>
     <ul>
       <li>Support athletes in developing their rowing technique, fitness, and strategy during water and land workouts.</li>
