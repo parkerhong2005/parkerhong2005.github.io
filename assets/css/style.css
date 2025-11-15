@@ -71,18 +71,19 @@ nav ul li a:hover {
 --------------------------------------------------------------*/
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* max 3 columns */
-  gap: 0.75rem; /* smaller spacing between cards */
+  grid-template-columns: repeat(3, 1fr); /* max 3 columns */
+  gap: 0.5rem; /* smaller spacing between cards */
+  width: 100%; /* full page width */
+  padding: 0.5rem;
+  box-sizing: border-box;
   justify-items: center; /* center cards horizontally */
-  padding: 0.5rem; /* reduce padding around grid */
-  max-width: 1000px; /* overall max width */
-  margin: 2rem auto; /* center grid on page */
+  margin: 2rem auto;
 }
 
 .project-card {
   position: relative;
   width: 100%;
-  max-width: 300px; /* ensure cards don't get too wide */
+  max-width: 320px; /* ensures squares don't get too wide */
   aspect-ratio: 1 / 1; /* keep square shape */
   overflow: hidden;
   border-radius: 12px;
@@ -90,8 +91,8 @@ nav ul li a:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.25s ease;
   background-color: var(--light);
+
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -111,7 +112,7 @@ nav ul li a:hover {
 .project-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fill square, crop if necessary */
+  object-fit: cover;
   display: block;
   border-radius: 12px;
 }
@@ -125,13 +126,13 @@ nav ul li a:hover {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; /* vertical centering */
   text-align: center;
   color: var(--light);
   opacity: 0;
   transition: opacity 0.3s ease;
   background-color: rgba(0,0,0,0.6);
-  padding: 0.5rem; /* reduce padding inside overlay */
+  padding: 0.5rem;
 }
 
 .project-card:hover .project-overlay {
@@ -143,7 +144,8 @@ nav ul li a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.25rem; /* smaller spacing between title and description */
+  gap: 0.25rem;
+  text-align: center; /* ensures text centered horizontally */
 }
 
 .overlay-title {
@@ -158,68 +160,17 @@ nav ul li a:hover {
 }
 
 /* RESPONSIVE GRID */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .project-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
   }
 }
 
 @media (max-width: 600px) {
   .project-grid {
-    grid-template-columns: 1fr; /* 1 column for small screens */
+    grid-template-columns: 1fr; /* 1 column on small screens */
     gap: 0.5rem;
   }
-}
-
-/*--------------------------------------------------------------
-  4. OVERLAY
---------------------------------------------------------------*/
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--light);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.65);
-}
-
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
-.overlay-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  max-width: 90%;
-}
-
-.overlay-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--light);
-}
-
-.overlay-desc {
-  font-size: 1rem;
-  color: var(--light);
-  opacity: 0.95;
-}
-
-.overlay-tools,
-.tool-pill {
-  display: none !important;
 }
 
 /*--------------------------------------------------------------
