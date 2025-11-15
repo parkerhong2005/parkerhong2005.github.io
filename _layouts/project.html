@@ -23,10 +23,10 @@ layout: default
             {% endif %}
           {% endfor %}
         </div>
-      {% elsif item.video %}
-        <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
+      {% elsif page.what_video %}
+        <video src="{{ page.what_video }}" autoplay muted loop playsinline data-caption="What section video"></video>
       {% else %}
-        <img src="{{ page.what_image }}" data-gallery="what">
+        <img src="{{ page.what_image }}" alt="What section image" data-gallery="what">
       {% endif %}
     </div>
 
@@ -49,10 +49,10 @@ layout: default
             {% endif %}
           {% endfor %}
         </div>
-      {% elsif item.video %}
-        <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="how"></video>
+      {% elsif page.how_video %}
+        <video src="{{ page.how_video }}" autoplay muted loop playsinline data-caption="How section video"></video>
       {% else %}
-        <img src="{{ page.how_image }}" data-gallery="how">
+        <img src="{{ page.how_image }}" alt="How section image" data-gallery="how">
       {% endif %}
     </div>
 
@@ -79,9 +79,9 @@ layout: default
           {% endfor %}
         </div>
       {% elsif page.why_video %}
-        <video src="{{ page.why_video }}" autoplay muted loop playsinline data-gallery="why"></video>
+        <video src="{{ page.why_video }}" autoplay muted loop playsinline data-caption="Why section video"></video>
       {% else %}
-        <img src="{{ page.why_image }}" data-gallery="why">
+        <img src="{{ page.why_image }}" alt="Why section image" data-gallery="why">
       {% endif %}
     </div>
 
@@ -92,38 +92,113 @@ layout: default
   </section>
 </main>
 
-<!-- Lightbox container -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose">&times;</button>
-  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
+<!-- Lightbox -->
+<div class="lightbox">
+  <button class="lightbox-close">&times;</button>
+  <button class="lightbox-nav lightbox-prev">&#10094;</button>
 
   <div class="lightbox-content">
-    <img id="lightboxImg" src="" alt="Expanded view">
+    <img id="lightboxImage" src="" alt="">
     <video id="lightboxVideo" controls autoplay style="display:none;"></video>
-    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-caption"></div>
   </div>
 
-  <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
+  <button class="lightbox-nav lightbox-next">&#10095;</button>
 </div>
 
 <script>
-  // (JS unchanged—omitted here for brevity)
+/* ------------------------------------------------------------
+   LIGHTBOX LOGIC (Fully Working)
+------------------------------------------------------------ */
+const lightbox = document.querySelector(".lightbox");
+const lightboxImg = document.getElementById("lightboxImage");
+const lightboxVideo = document.getElementById("lightboxVideo");
+const captionBox = document.querySelector(".lightbox-caption");
+
+let galleryItems = [];
+let currentIndex = 0;
+
+// Gather all clickable media
+function registerGalleryItems() {
+  galleryItems = Array.from(
+    document.querySelectorAll(".project-image img, .project-image video, .image-grid img, .image-grid video")
+  );
+}
+
+// Open the lightbox
+function openLightbox(index) {
+  currentIndex = index;
+  const item = galleryItems[index];
+  const src = item.getAttribute("src");
+
+  if (item.tagName === "VIDEO") {
+    lightboxImg.style.display = "none";
+    lightboxVideo.style.display = "block";
+    lightboxVideo.src = src;
+  } else {
+    lightboxVideo.style.display = "none";
+    lightboxImg.style.display = "block";
+    lightboxImg.src = src;
+  }
+
+  captionBox.textContent = item.dataset.caption || item.alt || "";
+  lightbox.classList.add("active");
+}
+
+// Navigation
+function navigateLightbox(dir) {
+  currentIndex = (currentIndex + dir + galleryItems.length) % galleryItems.length;
+  openLightbox(currentIndex);
+}
+
+// Close
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightboxImg.src = "";
+  lightboxVideo.src = "";
+}
+
+// Setup listeners
+function enableLightbox() {
+  registerGalleryItems();
+
+  galleryItems.forEach((item, index) => {
+    item.style.cursor = "pointer";
+    item.addEventListener("click", () => openLightbox(index));
+  });
+
+  document.querySelector(".lightbox-close").onclick = closeLightbox;
+  document.querySelector(".lightbox-prev").onclick = () => navigateLightbox(-1);
+  document.querySelector(".lightbox-next").onclick = () => navigateLightbox(1);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") navigateLightbox(-1);
+    if (e.key === "ArrowRight") navigateLightbox(1);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", enableLightbox);
 </script>
 
 <style>
-  .image-grid video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-    object-fit: cover;
-  }
+.image-grid video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  object-fit: cover;
+}
 
-  #lightboxVideo {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 8px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-  }
+#lightboxVideo {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
 </style>
