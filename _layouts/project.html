@@ -186,6 +186,70 @@ document.addEventListener("DOMContentLoaded", enableLightbox);
 </script>
 
 <style>
+/* ------------------------------------------------------------
+   PROJECT SECTION LAYOUT
+------------------------------------------------------------ */
+.project-section {
+  display: flex;
+  flex-direction: row;        /* image left, text right */
+  align-items: center;        /* vertical centering */
+  justify-content: center;
+  gap: 2rem;                  /* space between image and text */
+  flex-wrap: wrap;            /* wrap on smaller screens */
+  margin: 3rem 0;
+}
+
+.project-image {
+  flex: 1;
+  min-width: 300px;           /* ensures it doesn’t shrink too much */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image img,
+.project-image video,
+.image-grid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.project-text {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* vertical centering */
+  gap: 1rem;
+}
+
+.project-text h2 {
+  margin: 0 0 0.5rem 0;
+}
+
+.project-text p {
+  margin: 0.25rem 0;
+}
+
+/* ------------------------------------------------------------
+   IMAGE GRID (inside project sections)
+------------------------------------------------------------ */
+.image-grid img,
+.image-grid video {
+  width: 100%;
+  aspect-ratio: 1 / 1;      /* square images */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  display: block;
+}
+
+/* ------------------------------------------------------------
+   LIGHTBOX VIDEO
+------------------------------------------------------------ */
 .image-grid video {
   width: 100%;
   height: auto;
@@ -200,5 +264,21 @@ document.addEventListener("DOMContentLoaded", enableLightbox);
   max-height: 80vh;
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE ADJUSTMENTS
+------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .project-section {
+    flex-direction: column;    /* stack image above text on smaller screens */
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .project-text {
+    justify-content: flex-start; /* align text top when stacked */
+  }
 }
 </style>
