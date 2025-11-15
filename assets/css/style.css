@@ -404,22 +404,39 @@ main {
 }
 
 /*--------------------------------------------------------------
-  12. LIGHTBOX (universal dark overlay + fixed scaling)
+  12. LIGHTBOX (robust full-viewport overlay)
+  - explicit edges, enforced height, !important for active state,
+    pointer-events ensured, higher z-index for controls
 --------------------------------------------------------------*/
 .lightbox {
   display: none;
-  position: fixed;
-  inset: 0;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+
+  /* guarantee full viewport coverage */
+  width: 100% !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+
   background: rgba(0, 0, 0, 0.9);
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+
+  /* ensure clicks register & overlay sits above everything */
+  pointer-events: auto;
+  z-index: 2147483646; /* very high but below browser/system reserved */
+  overflow: hidden;
 }
 
 .lightbox.active {
-  display: flex;
+  display: flex !important; /* force display even if other rules try to override */
+  pointer-events: auto !important;
 }
 
+/* central content (image/video + caption) */
 .lightbox-content {
   position: relative;
   max-width: 90vw;
@@ -428,6 +445,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  pointer-events: auto;
 }
 
 .lightbox-content img,
@@ -440,25 +458,29 @@ main {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
 }
 
+/* caption under media */
 .lightbox-caption {
   text-align: center;
   color: #f0f0f0;
   margin-top: 1rem;
   font-size: 1rem;
   padding: 0 1rem;
+  pointer-events: auto;
 }
 
+/* close button: fixed and on top */
 .lightbox-close {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 1.25rem;
+  right: 1.25rem;
   font-size: 2.5rem;
   color: white;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 10002;
+  z-index: 2147483647;
   transition: transform 0.2s ease;
+  pointer-events: auto;
 }
 
 .lightbox-close:hover {
@@ -467,6 +489,7 @@ main {
   border-radius: 50%;
 }
 
+/* navigation arrows */
 .lightbox-nav {
   position: fixed;
   top: 50%;
@@ -478,23 +501,24 @@ main {
   cursor: pointer;
   padding: 1rem;
   user-select: none;
-  opacity: 0.7;
+  opacity: 0.85;
   transition: opacity 0.2s;
-  z-index: 10002;
+  z-index: 2147483647;
+  pointer-events: auto;
 }
 
 .lightbox-nav:hover {
   opacity: 1;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 50%;
 }
 
 .lightbox-prev {
-  left: 2rem;
+  left: 1.25rem;
 }
 
 .lightbox-next {
-  right: 2rem;
+  right: 1.25rem;
 }
 
 /*--------------------------------------------------------------
