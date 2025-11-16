@@ -5,7 +5,7 @@ image: "/images/grid_brakecaliper.jpg"
 short_description: "Lightweight, high-performance brake caliper."
 order: 6
 what_image: "/images/calipersketch.jpg"
-what_text: "A lightweight bike caliper designed from scratch using NX."
+what_text: "A custom lightweight bike caliper developed from first principles in Siemens NX, focusing on optimized geometry and material reduction without compromising performance."
 how_gallery: 
     - image: /images/caliperdesignspace.png
       caption: "Modeling the design space of the caliper on a bike."
@@ -15,8 +15,8 @@ how_gallery:
       caption: "FEA simulations to show where the highest stresses were."
     - image: /images/calipertest.png
       caption: "An intermediate design for the calipers."
-how_text: "Starting with the full design space of the caliper, then optimizing it with various simulations, including topology optimization (TO) to see the load paths and finite element analysis (FEA) to make sure it could withstand loads and forces. Then, having it printed in the lab with sintered Nylon-12 and testing it on a real road bike."
+how_text: "The project began by defining the full design space of the caliper, followed by iterative optimization using a range of simulation tools. Topology optimization was used to identify primary load paths, while finite element analysis validated structural performance under expected operating loads. The final design was fabricated in-house using sintered Nylon-12 and subsequently tested on a functional road bike to evaluate real-world performance."
 skills: "Siemens NX, Topology Optimization, Finite Element Analysis, 3D Printing (SLS)"
 why_image: "/images/calipersfinal.jpg"
-why_text: "To learn more about manufacturing and performance, this set of calipers was created as a real-world example of competitive product design. Both numerical and digital analysis went into designing the calipers to ensure that they would be able to withstand braking friction and normal forces. Multiple iterations of the calipers were created following each stage of analysis, which revealed new things about the structure and strength of our caliper system and allowed us to optimize its weight and brake performance."
+why_text: "To deepen our understanding of manufacturing processes and component performance, this caliper set was developed as a real-world example of competitive product design. Both analytical and simulation-based methods were employed to ensure the calipers could withstand braking friction and associated normal forces. Multiple design iterations were produced following each analysis phase, each revealing new insights into structural behavior and system strength. This iterative process enabled targeted improvements to both weight efficiency and braking performance."
 ---
