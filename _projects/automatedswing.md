@@ -5,18 +5,18 @@ image: "/images/grid_automatedswing.jpeg"
 short_description: "Playground swing automated with a motor."
 order: 4
 what_image: "/images/swing_what.png"
-what_text: "A playground swing capable of swinging on its own after the first push; safe, smooth, and serene. An electric bike motor paired with a scotch yoke swings the user at a calming cadence and takes all the hard work out of a delightful swinging experience."
+what_text: "A self-propelled playground swing designed to maintain motion after an initial push, delivering a safe, smooth, and controlled ride experience."
 how_gallery:
     - image: /images/swing_how3.JPG
-      caption: "Installed a new, more powerful motor for better performance."
+      caption: "Installing a new, more powerful motor for better performance."
     - image: /images/swing_how.JPG
       caption: "3D printing a custom pulley mount for the new motor."
     - video: /videos/swing-2.mp4
-      caption: "Experimented with different catch-and release systems."
+      caption: "Experimenting with different catch-and release systems."
     - image: /images/swing_how4.JPG
-      caption: "Reinforced the seat for a stronger, more robust system."
-how_text: "While all parts of the swing were present and functioning when I inherited it, it was apparent that many of the parts could easily be upgraded– in design, material, or both. Water damage meant that putting on a new motor was imminent, and the slightly different size meant designing and 3D printing a new mount for the pulley. The system in place made use of some springs to push the swing, but some testing landed us on a spring-band combo to push and pull the swing. "
+      caption: "Reinforcing the seat for a stronger, more robust system."
+how_text: "Although the swing was fully assembled and operational when I inherited the project, it was clear that several components warranted redesign or material upgrades. Water intrusion had compromised the existing motor, necessitating a replacement, and the change in motor geometry required a newly designed and 3D-printed pulley mount. The original actuation system relied solely on springs to drive the swing, but subsequent testing demonstrated improved performance and motion control using a combined spring-and-band mechanism to both push and pull the swing."
 skills: "Rapid Prototyping, SolidWorks, Mill, Bandsaw, CNC Mill, 3D Printer"
 why_image: "/images/swing_why.jpeg"
-why_text: "Originally made for a young girl who loved to swing but was unable to swing herself, the project has been generalized to be for anyone with a love for swinging. Safety and a semi-realistic swinging motion were two of the most important considerations for this project, which added specific design changes such as a bike motor instead of a regular DC motor and a combination band-spring system. The swing continues to be developed in hopes of helping bring the free-swinging experience to anyone and everyone."
+why_text: "This swing was made for a young girl who loved to swing but was unable to swing herself. Safety and realistic motion dynamics were primary design priorities, leading to key decisions such as selecting a bicycle-grade motor over a standard DC motor and implementing a combined band-spring mechanism to refine the oscillatory profile. Development is ongoing with the goal of making the free-swinging experience accessible to users of all abilities."
 ---
