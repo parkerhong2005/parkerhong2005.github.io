@@ -26,7 +26,10 @@ layout: default
       {% elsif page.what_video %}
         <video src="{{ page.what_video }}" autoplay muted loop playsinline data-caption="What section video"></video>
       {% else %}
-        <img src="{{ page.what_image }}" alt="What section image" data-gallery="what">
+        <img src="{{ page.what_image }}"
+          alt="{{ page.what_caption | default: 'Sketch of the project.' }}"
+          data-caption="{{ page.what_caption }}"
+          data-gallery="what">
       {% endif %}
     </div>
 
@@ -52,7 +55,10 @@ layout: default
       {% elsif page.how_video %}
         <video src="{{ page.how_video }}" autoplay muted loop playsinline data-caption="How section video"></video>
       {% else %}
-        <img src="{{ page.how_image }}" alt="How section image" data-gallery="how">
+        <img src="{{ page.how_image }}"
+     alt="{{ page.how_caption | default: 'Skills and tools used for this project.' }}"
+     data-caption="{{ page.how_caption }}"
+     data-gallery="how">
       {% endif %}
     </div>
 
@@ -81,7 +87,10 @@ layout: default
       {% elsif page.why_video %}
         <video src="{{ page.why_video }}" autoplay muted loop playsinline data-caption="Why section video"></video>
       {% else %}
-        <img src="{{ page.why_image }}" alt="Why section image" data-gallery="why">
+        <img src="{{ page.why_image }}"
+     alt="{{ page.why_caption | default: 'The final or latest prototype.' }}"
+     data-caption="{{ page.why_caption }}"
+     data-gallery="why">
       {% endif %}
     </div>
 
