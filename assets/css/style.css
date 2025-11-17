@@ -409,6 +409,18 @@ main {
   cursor: pointer;
 }
 
+.project-image img,
+.project-image video {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* add smooth transition */
+  cursor: pointer; /* optional: pointer on hover */
+}
+
+.project-image img:hover,
+.project-image video:hover {
+  transform: scale(1.05); /* enlarge on hover */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* optional: slightly stronger shadow */
+}
+
 .project-text {
   flex: 1;
   min-width: 300px;
