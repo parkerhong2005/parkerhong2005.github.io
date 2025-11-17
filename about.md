@@ -12,8 +12,12 @@ permalink: /about/
   </div>
 
   <!-- Personal statement section -->
+  <div class="project-page">
+    <div class="project-header">
+      <h1>About Me</h1>
+    </div>
+  </div>
   <div class="about-content">
-    <h2>About Me</h2>
     <p>
     Born and raised in Chicago, Illinois, I’ve been fascinated with the world of engineering and design from an early age. From LEGO bricks to buildings to boats, I’ve always been drawn into the world of building and design from an early age. Whether working with puzzle pieces or people, I aim to leverage my skills in design and organization to create solutions that are greater than the sum of their parts.
     <br> <br>
