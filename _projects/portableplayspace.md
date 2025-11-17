@@ -1,16 +1,14 @@
 ---
 layout: project
 title: "Portable Playspace"
-image: "/images/grid_portableplayspace.png"
+image: "/images/playspace_cover.jpg"
 short_description: "Portable wooden playspace and puppet theater."
 order: 1
 what_image: "/images/playspace_sketches.JPG"
-what_text: "A wooden puppet theater and three nested play boxes, featuring interactive games and activities, complete with a portable bench for seating and storage."
+what_text: "A wooden puppet theater accompanied by three nested play boxes, designed to support interactive games and activities. The system includes a portable bench that provides both seating and integrated storage, creating a versatile and engaging play experience."
 how_gallery:
     - image: /images/playspace_how.JPG
-      caption: "A full-size cardboard mockup of the theater."
-    - image: /images/playspace_how2.png
-      caption: "3D prints of the components."
+      caption: "A full-size cardboard mockup of the puppet theater."
     - image: /images/playspace_how4.JPG
       caption: "Using the CNC mill to cleanly cut out the boxes."
     - image: /images/playspace_how3.JPG
@@ -18,13 +16,15 @@ how_gallery:
     - video: /videos/playspace_how8.mp4
       caption: "Using the mill to make holes."
     - image: /images/playspace_how6.JPG
-      caption: "Milled aluminum angle."
-    - image: /images/playspace_how9.JPG
-      caption: "Initial mockup of the box."
+      caption: " Cut and milled aluminum angle for reinforcement."
     - video: /videos/playspace_how7.mp4
-      caption: "Using the laser cutter."
-how_text: "CAD modeling and the CNC mill, then lots of drilling, milling, and good old fashioned woodworking. Mockups were made with cardboard, 3D printing, and some scrap wood before we moved on to the real thing."
+      caption: "Using the laser cutter to etch designs."
+how_text: "The project involved detailed CAD modeling and CNC milling, followed by extensive manual fabrication including drilling, milling, and traditional woodworking techniques. Initial mockups were created using cardboard, 3D printing, and scrap wood to refine the design prior to constructing the final assembly."
 skills: "SolidWorks, Onshape, CNC Mill, Conversational Mill, Table Saw, Router, 3D Printer, Laser Cutter"
-why_image: "/images/grid_portableplayspace.png"
-why_text: "In partnership with Tribraining, the Evanston Public Library at the Robert Crown Center asked us to create a playspace that could be put out for playtime and stored away neatly when the space was used otherwise. Inspired by the work and innovation of a previous group of Segal interns, we sought to design a set of play modules that would optimize limited space and maximize creativity at the same time. This fall, I am continuing to work on this project in hopes of having it ready for a showcase in December."
+why_gallery:
+  - image: /images/smallbox1.JPG
+    caption: "Putting together the smallest play box."
+  - video: /videos/largebox.mp4
+    caption: "Functional parts of the largest play box."
+why_text: "In collaboration with Tribraining during the summer of 2025, the Evanston Public Library at the Robert Crown Center commissioned a modular playspace that can be deployed for playtime and easily stored when the space is used for other purposes. Building on the innovative work of previous Segal interns, our goal was to design play modules that optimize limited space while fostering creativity. This fall, I am continuing development with the aim of completing the project for a December showcase."
 ---
