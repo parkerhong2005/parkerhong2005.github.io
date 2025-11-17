@@ -85,7 +85,7 @@ layout: default
           {% endfor %}
         </div>
       {% elsif page.why_video %}
-        <video src="{{ page.why_video }}" autoplay muted loop playsinline data-caption="Why section video"></video>
+        <video src="{{ page.why_video }}" autoplay muted loop playsinline data-caption="{{ page.why_caption }}"></video>
       {% else %}
         <img src="{{ page.why_image }}"
      alt="{{ page.why_caption | default: 'The final or latest prototype.' }}"

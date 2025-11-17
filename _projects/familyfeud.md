@@ -5,10 +5,11 @@ image: "/images/familyfeudfinished.JPG"
 short_description: "Buzzer system for Family Feud game."
 order: 3
 what_image: "/images/circuitdiagram.JPG"
-what_text: "A buzzer system that rewards the quickest hand, as seen on Family Feud."
+what_caption: "Circuit diagram of the project."
+what_text: "A Family Feud-style buzzer system created with a Raspberry Pi Pico, sensors, and actuators."
 how_gallery:
     - image: /images/familyfeuduser.JPG
-      caption: "Mapping the user(s) interactions with the box."
+      caption: "Mapping the user(s') interactions with the box."
     - image: /images/familyfeudlaser.JPG
       caption: "Using the laser cutter to make the casing for the Pico."
     - image: /images/boxprototype.JPG
@@ -16,9 +17,10 @@ how_gallery:
     - image: "/images/grid_familyfeud.png"
       caption: "CAD rendering of the box in SolidWorks."
 how_text: |
-  Coding a Raspberry Pi Pico in CircuitPython, then adding all the circuit components including buttons, LEDs, RC servo, speaker, and amplifier. Some soldering was required for the big buttons. I also laser cut the box from a customized DXF, and it fit together nicely without any glue or adhesive due to the joints. You can find the link to my CircuitPython code <a href="https://github.com/parkerhong2005/familyfeud" target="_blank" rel="noopener noreferrer">here</a>.
+  The project involved programming a Raspberry Pi Pico using CircuitPython and integrating a range of electronic components, including buttons, LEDs, an RC servo, a speaker, and an amplifier. Soldering was required for the larger push-buttons. The enclosure was laser-cut from a custom DXF file and assembled using precision joints, eliminating the need for glue or adhesives. The complete CircuitPython code is available <a href="https://github.com/parkerhong2005/familyfeud" target="_blank" rel="noopener noreferrer">here</a>.
 
 skills: "Electronics Design, Raspberry Pi, CircuitPython, Laser Cutter, SolidWorks, Soldering"
 why_video: /videos/familyfeuddemo.mp4
-why_text: "This was my final project for DSGN 297 at Northwestern, a course in designing with smart electronics. Learning to use the Raspberry Pi Pico opened a lot of doors, and it was cool to learn how to incorporate a ton of different components in one comprehensive design. Surprisingly, no official Family Feud buzzers are available for purchase, so this was a step towards potentially putting a first one on the market. Until then, I can use this for Family Feud game nights with my friends and family. Credits to Professor Nick Marchuk and ChatGPT for all their help in making this project come together."
+why_caption: "Demonstration of the project, complete with light, sound, and motor."
+why_text: "This project and portfolio itself served as my final assignment for DSGN 297 at Northwestern, a course focused on designing with smart electronics. Working with the Raspberry Pi Pico provided valuable hands-on experience in integrating multiple components into a single, cohesive system. Notably, no commercially available Family Feud buzzers exist, making this project a potential prototype for a market-ready design."
 ---
