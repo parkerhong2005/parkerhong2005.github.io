@@ -5,18 +5,24 @@ image: "/images/grid_formulawheel.jpg"
 short_description: "New steering wheel for NUFR."
 order: 2
 what_image: "/images/wheel_what.JPG"
-what_text: "A custom carbon fiber steering wheel optimized for driver experience and performance."
+what_caption: "Quick sketches of various steering wheel concepts."
+what_text: "A custom carbon fiber steering wheel engineered to enhance driver experience while optimizing performance through lightweight construction and ergonomic design."
 how_gallery:
-    - image: /images/wheellaser.JPG
-      caption: "Using the laser cutter to make mockups."
     - image: /images/wheeloldmockup.JPG
       caption: "An initial mockup with finger holes."
     - image: /images/wheelmockup.JPG
       caption: "Updated mockup for better ergonomics."
     - image: /images/wheeltest1.JPG
       caption: "Our driver testing the mockup."
-how_text: "Using SolidWorks and Onshape to make quick mockups, then laser cutting them for physical testing on the car and in the driver's hands. The grips, while not made yet, are planned to be made out of curable molds that will then be 3D scanned, uploaded, and 3D printed. The wheel itself is planned to be outsourced to a company to be made out of carbon fiber."
+    - image: /images/wheelmockup3.jpeg
+      caption: "Updated design after driver feedback to make more room for fingers."
+    - image: /images/wheelmockup4.jpeg
+      caption: "The finalized shape of the wheel after preliminary design review."
+    - image: /images/gripstest.jpeg
+      caption: "Starting to test grips for optimized ergonomics."
+how_text: "Initial mockups were developed in SolidWorks and Onshape, then laser-cut for physical testing both on the vehicle and for driver ergonomics. The grips are planned to be fabricated using curable molds, which will be 3D scanned, digitized, and 3D printed for final evaluation. The steering wheel itself is intended to be manufactured externally from carbon fiber to achieve optimal strength-to-weight performance."
 skills: "Rapid Prototyping, SolidWorks, Onshape, Laser Cutter, 3D Scanning, 3D Printing, Carbon Fiber"
 why_image: "/images/grid_formulawheel.jpg"
-why_text: "As they develop their first fully functional electric vehicle, the Northwestern Formula Racing team is looking to upgrade all parts of their vehicle to maximize its performance. As part of the ergonomics division of the chassis subteam, I'm currently working to design a new steering wheel that allows our driver to perform at his best, maintaining a comfortable yet commanding driving experience. Through a combination of fixing old designs and incorporating new ideas, the goal is to create a wheel that will give the driver confidence and complete control of the vehicle. Pictured here is the old design, but this page will be updated with the new one!"
+why_caption: "The previous design of the steering wheel, soon to be replaced with ours."
+why_text: "As Northwestern Formula Racing develops its first fully functional electric vehicle, the team is upgrading components across the vehicle to maximize performance. As a member of the ergonomics division within the chassis subteam, I am designing a new steering wheel aimed at optimizing driver performance by balancing comfort with precise control. By refining previous designs and integrating new concepts, the objective is to produce a wheel that instills confidence and enables full command of the vehicle. The image shown here depicts the previous design; updates will reflect the new, optimized version."
 ---
