@@ -607,3 +607,62 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
+
+/*--------------------------------------------------------------
+PROJECT PAGE HEADER & PROJECT TITLES
+--------------------------------------------------------------*/
+
+/* Main projects page title (<h1>) */
+.project-page > .project-header h1 {
+  font-size: 3rem;           /* bigger than default */
+  margin-top: 3rem;          /* add space from top of page */
+  margin-bottom: 1rem;       /* space below title */
+  text-align: center;        /* center aligned */
+}
+
+/* Paragraph under main projects page title */
+.project-page > .project-header p {
+  font-size: 1.1rem;
+  margin: 0 auto 2rem auto;  /* top 0, bottom 2rem, centered */
+  max-width: 800px;           /* optional: limit line length */
+  text-align: center;
+}
+
+/* Individual project titles inside project pages */
+.project-page h1 {
+  font-size: 2.5rem;          /* larger for individual project title */
+  margin-top: 2.5rem;         /* space from top */
+  margin-bottom: 1rem;        /* space below title */
+  text-align: left;           /* optional: align left */
+}
+
+.project-page h2 {
+  font-size: 2rem;            /* section headers: What / How / Why */
+  margin-top: 2rem;           /* space above section */
+  margin-bottom: 1rem;        /* space below section title */
+}
+
+/* ------------------------------------------------------------
+RESPONSIVE ADJUSTMENTS FOR SMALL SCREENS
+------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .project-page > .project-header h1 {
+    font-size: 2.25rem;       /* shrink slightly on small screens */
+    margin-top: 2rem;
+  }
+
+  .project-page > .project-header p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-page h1 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .project-page h2 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
