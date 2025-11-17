@@ -2,10 +2,11 @@
 layout: project
 title: "The Heightstand"
 image: "/images/grid_heightstand.jpg"
-short_description: "Nightstand for lofted beds."
+short_description: "Adjustable nightstand for lofted beds."
 order: 7
 what_image: "/images/pulley_mockup_sketch.JPG"
-what_text: "A height-adjustable nightstand for lofted beds."
+what_caption: "A sketch of the Heightstand."
+what_text: "A height-adjustable nightstand designed for students with lofted beds, providing convenient access to belongings both above and below the bed while maximizing space efficiency."
 how_gallery:
     - image: /images/adjustable_arm_2.JPG
       caption: "Testing adjustable height mechanisms early on."
@@ -15,9 +16,10 @@ how_gallery:
       caption: "Top view of the Heightstand, temporarily secured to bed."
     - video: /videos/heightstanddemo.mp4
       caption: "Demonstrating the Heightstand's pulley."
-how_text: "Lots of low-fidelity mockups utilizing recycled parts from the Shop, and testing concepts even if we weren't one hundred percent sure how they worked. For example, our 'pulley' system, made from PLA spools, rope, and sandpaper, may not have been the most traditional setup but it worked well enough to test."
+how_text: "Numerous low-fidelity prototypes were developed using recycled materials from the shop, allowing rapid concept testing even when the mechanisms were unconventional. For example, our pulley system– constructed from PLA spools, rope, and sandpaper– was nontraditional but sufficiently functional for evaluating design concepts and informing iterative improvements."
 skills: "Rapid Prototyping, Bandsaw, Lathe, Recycling, UX"
 why_image: "/images/heightstandfull.JPG"
-why_text: "College students everywhere loft their dorm room beds. While this is an excellent method for making space, it almost always comes at the loss of a typical nightstand experience. The classic bedside table for your phone, water, glasses, and whatever else you may need at night is no longer an option. Plus, you'll need those things when you're out of bed too. The Heightstand offers the perfect solution, allowing users access to their items regardless of their elevation. Complete with a basket and outlet at the top, the heightstand can be adjusted to be a nightstand when you need it to be, and a quick and easy transport system when you're back on the ground."
+why_caption: "The Heightstand attached to a user's bed."
+why_text: "Lofted dorm beds maximize space but often eliminate the functionality of a traditional nightstand. The Heightstand addresses this problem by providing accessible storage for personal items both above and below the bed. Featuring an adjustable height, integrated basket, and built-in outlet, the Heightstand functions as a conventional nightstand when elevated and easily converts for convenient use at ground level, offering a versatile solution for modern student living."
 ---
 
