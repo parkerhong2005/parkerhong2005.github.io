@@ -4,6 +4,50 @@ title: "Projects"
 permalink: /projects/
 ---
 
+<style>
+/*--------------------------------------------------------------
+PROJECTS PAGE HEADER STYLING
+--------------------------------------------------------------*/
+
+/* Main Projects page title (<h1>) */
+.project-page > .project-header h1 {
+  font-size: 3rem;           /* bigger title */
+  margin-top: 3rem;          /* space from top of page */
+  margin-bottom: 1rem;       /* space below title */
+  text-align: center;        /* center aligned */
+}
+
+/* Paragraph under main title */
+.project-page > .project-header p {
+  font-size: 1.1rem;         /* slightly bigger paragraph */
+  margin: 0 auto 2rem auto;  /* top 0, bottom 2rem, centered */
+  max-width: 800px;          /* optional: limit line length */
+  text-align: center;
+}
+
+/* Extra spacing between header and project grid */
+.project-page .project-grid {
+  margin-top: 2rem;          /* adds space below paragraph */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-page > .project-header h1 {
+    font-size: 2.25rem;
+    margin-top: 2rem;
+  }
+
+  .project-page > .project-header p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-page .project-grid {
+    margin-top: 1.5rem;
+  }
+}
+</style>
+
 <h1>Projects</h1>
 
 <p>
