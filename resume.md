@@ -92,3 +92,9 @@ permalink: /resume/
       <strong>Interpersonal:</strong> Leadership, Collaboration, Communication, Adaptability, Conflict Resolution</p>
   </section>
 </div>
+
+<div class="resume-download-wrapper" style="text-align:center; margin-top:2rem;">
+  <a href="{{ '/assets/Hong_Parker_Resume.pdf' | relative_url }}" class="resume-download" download>
+    Download Resume
+  </a>
+</div>
