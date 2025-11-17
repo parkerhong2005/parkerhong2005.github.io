@@ -19,7 +19,7 @@ layout: default
             {% if item.image %}
               <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="what">
             {% elsif item.video %}
-              <video src="{{ item.video }}" muted playsinline data-caption="{{ item.caption }}" data-gallery="what"></video>
+              <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="what"></video>
             {% endif %}
           {% endfor %}
         </div>
@@ -80,7 +80,7 @@ layout: default
             {% if item.image %}
               <img src="{{ item.image }}" alt="{{ item.caption }}" data-caption="{{ item.caption }}" data-gallery="why">
             {% elsif item.video %}
-              <video src="{{ item.video }}" muted playsinline data-caption="{{ item.caption }}" data-gallery="why"></video>
+              <video src="{{ item.video }}" autoplay muted loop playsinline data-caption="{{ item.caption }}" data-gallery="why"></video>
             {% endif %}
           {% endfor %}
         </div>
