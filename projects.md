@@ -48,11 +48,13 @@ PROJECTS PAGE HEADER STYLING
 }
 </style>
 
-<h1>Projects</h1>
-
-<p>
-The following are a representation of classroom assignments, internship projects, and freelance design work. Each presented a unique set of design and problem-solving challenges. Click on a project icon to learn more about my work!
-</p>
+<div class="project-page">
+  <div class="project-header">
+    <h1>Projects</h1>
+    <p>
+      The following are a representation of classroom assignments, internship projects, and freelance design work. Each presented a unique set of design and problem-solving challenges. Click on a project icon to learn more about my work!
+    </p>
+  </div>
 
 <div class="project-grid">
   {% assign sorted_projects = site.projects | sort: "order" %}
