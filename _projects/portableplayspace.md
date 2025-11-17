@@ -5,6 +5,7 @@ image: "/images/playspace_cover.jpg"
 short_description: "Portable wooden playspace and puppet theater."
 order: 1
 what_image: "/images/playspace_sketches.JPG"
+what_caption: "Initial sketches of the boxes, theater, and bench."
 what_text: "A wooden puppet theater accompanied by three nested play boxes, designed to support interactive games and activities. The system includes a portable bench that provides both seating and integrated storage, creating a versatile and engaging play experience."
 how_gallery:
     - image: /images/playspace_how.JPG
