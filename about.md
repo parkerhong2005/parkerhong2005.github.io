@@ -16,7 +16,7 @@ permalink: /about/
     <div class="project-header">
       <h1>About Me</h1>
       <p>
-    Born and raised in Chicago, Illinois, I’ve been fascinated with the world of engineering and design from an early age. From LEGO bricks to buildings to boats, I’ve always been drawn into the world of building and design from an early age. Whether working with puzzle pieces or people, I aim to leverage my skills in design and organization to create solutions that are greater than the sum of their parts.
+    Born and raised in Chicago, Illinois, I’ve been fascinated with learning about how things work and come together from an early age. From LEGO bricks to buildings to boats, I’ve always been drawn into the world of building and design. Whether working with puzzle pieces or people, I aim to leverage my skills in design and organization to create solutions that are greater than the sum of their parts.
     <br> <br>
     Through the multidisciplinary Manufacturing and Design Engineering (MaDE) curriculum, I’m honing my design, machining, and rapid prototyping abilities, applying them to hands-on projects with Northwestern’s Segal Design Institute, the Northwestern Formula SAE team, and Evanston Township High School (ETHS). Each of these experiences have given me a unique perspective on collaborative problem-solving and iterative design.
     <br> <br>
