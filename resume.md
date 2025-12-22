@@ -17,7 +17,7 @@ permalink: /resume/
     <h2>EDUCATION</h2>
     <p><strong>Northwestern University</strong> | Evanston, IL <span class="date">Anticipated Graduation Jun 2027</span><br>
       <strong>McCormick School of Engineering and Applied Science</strong><br>
-      <em>BS, Manufacturing and Design Engineering</em><span class="date">GPA: 3.84/4.0</span></p>
+      <em>BS, Manufacturing and Design Engineering</em><span class="date">GPA: 3.80/4.0</span></p>
     <p><strong>Achievements:</strong> High Honors Dean’s List (Spring 2025), Dean’s List (Fall 2024, Winter 2024, Spring 2024, Winter 2025)</p>
     <p><strong>Relevant Coursework:</strong> Computer-Integrated Manufacturing, Mechanical Design and Manufacturing, Quality Improvement by Experimental Design, Materials Selection, Mechanics of Materials, Electronics Design, Design Thinking and Communication, Smart Electronics in Design</p>
 
@@ -45,11 +45,11 @@ permalink: /resume/
       <li>Collaborate with other sub-teams to create a fully functional electric vehicle optimized for performance.</li>
     </ul>
 
-    <p><strong>Segal Design Institute – Engineering Intern</strong> <span class="date">Jun 2025 – Present</span></p>
+    <p><strong>Segal Design Institute – Engineering Intern</strong> <span class="date">Jun 2025 – Dec 2025</span></p>
     <ul>
-      <li>Develop CAD models in SolidWorks and Onshape and fabricate physical prototypes using CNC, 3D printing, and machining equipment.</li>
-      <li>Conduct biweekly design reviews with faculty and industry professionals, incorporating feedback into iterative design improvements.</li>
-      <li>Strengthen rapid prototyping skills by transitioning digital concepts to functional prototypes, improving design-for-manufacturability.</li>
+      <li>Developed CAD models in SolidWorksand fabricated physical prototypes using CNC, 3D printing, and machining equipment.</li>
+      <li>Conducted biweekly design reviews with faculty and industry professionals, incorporating feedback into iterative design improvements.</li>
+      <li>Strengthened rapid prototyping skills by transitioning digital concepts to functional prototypes, improving design-for-manufacturability.</li>
     </ul>
 
     <p><strong>Mechanical Design and Manufacturing</strong> <span class="date">Mar 2025 – Jun 2025</span></p>
@@ -85,7 +85,7 @@ permalink: /resume/
     <h2>TECHNICAL SKILLS</h2>
     <p><strong>CAD & Simulation:</strong> SolidWorks, Siemens NX, Onshape, ANSYS, AutoCAD, Rhino, Revit, WUFI<br>
       <strong>Programming & Analysis:</strong> MATLAB, Minitab, Python, HTML/CSS, Java, C, C++, Microsoft Office<br>
-      <strong>Manufacturing & Prototyping:</strong> CNC Router, 3D Printing, Laser Cutting, Milling, Turning, Drilling, Soldering</p>
+      <strong>Manufacturing & Prototyping:</strong> CNC Router, Waterjetting, 3D Printing, Laser Cutting, Milling, Turning, Drilling, Soldering</p>
 
     <h2>PROFESSIONAL SKILLS</h2>
     <p><strong>Personal:</strong> Integrity, Discipline, Critical Thinking, Problem-Solving, Goal Orientation, Organization<br>
